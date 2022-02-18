@@ -60,14 +60,14 @@ My DMs are always open! If you are a student looking for professional advice, fe
 - Misleading Repurposing on Twitter
 - Characterizing Retweet Bots: The Case of Black-Market Accounts
 
-## Services
-- Conference Reviewer: ICWSM 2022, Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
-- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media
-
 ## Teaching
 - Distributed Information Systems 2018-
 - Applied Data Science Fall 2018
 - Introduction à la Programmation Fall 2019
+
+## Services
+- Conference Reviewer: ICWSM 2022, Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
+- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media
 
 ## Media
 - Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
