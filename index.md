@@ -70,10 +70,10 @@ My DMs are always open! If you are a student looking for professional advice, fe
 - Introduction à la Programmation Fall 2019
 
 ## Media
-Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
-Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
-Producer of many interviews at Turquia1912 Youtube Channel
-Directed the Short Film [Lemongrass](https://www.youtube.com/watch?v=_vbw9gL60gA)
+- Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
+- Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
+- Interviews while being the president of [Turquia1912](https://www.youtube.com/watch?v=GyJOCltA1Ak&list=PLrrZ8PX0n3IxYN9PcEGmJnGn4nvZypC2-)
+- Directed the Short Film [Lemongrass](https://www.youtube.com/watch?v=_vbw9gL60gA)
 
 
 
