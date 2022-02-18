@@ -4,51 +4,55 @@ layout: homepage
 
 ## About Me
 
-Hi, I am a 5th Ph.D. student at LSIR, EPFL, Switzerland, supervised by Prof. Karl Aberer, working on the field of Social Media Manipulation. My research focuses on understanding the characteristics of bots and fake accounts and the specific strategies they employ to manipulate social media. I'm also interested in 
+I am currently on the 2022-2023 academic job market.
 
- For a concrete example, in my recent EuroS&P paper, I discovered and studied astroturfing bots who were pushing political slogans on Twitter trends exploiting a vulnerability in Twitter’s trending algorithm. I uncovered 108,000 bots active between 2015-2019 and pushed 19,000 keywords to trending topics in 2019, which made up at least 47% of Twitter trends in Turkey and 20% of global trends. This work received media attention globally (ACM Technews, Yahoo News, Mashable, TNW). Throughout my Ph.D. I have been moving into projects that require and benefit from an interdisciplinary lens, even recently collaborating with political scientists at our neighboring university.
+Hi, I am a 5th Ph.D. student working in the field of Social Media Manipulation at LSIR, EPFL, Switzerland, supervised by Prof. Karl Aberer. My research focuses on understanding the characteristics of bots and fake accounts and the specific strategies they employ to manipulate social media. I'm also interested in analysing such adversaries' impact and building solutions against them. I mainly employ data science techniques in my research.
 
+Before coming to EPFL, I was an undergraduate student in the Department of Computer Engineering at Bilkent University, where I had to chance to work in CicekLab with Prof. Ercüment Çiçek to help building Database of Reconstructed Metabolic Networks (DORMAN). I also spent a summer in Intelligent User Interfaces lab, worked with Prof. Metin Sezgin on the iMotion project.
 
-
-## Research Interests
-
-- **Computer Vision:** image recognition, image generation, video captioning
-- **Machine Learning:** meta-learning, incremental learning, transfer learning
+I'm also the - now deanonimized - author of popular blog https://azimliyazar.blogspot.com
+My DMs are always open! If you are a student looking for professional advice, feel free to email me: tugrulcanelmas@gmail.com
 
 ## News
 
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019.
+- **[Feb. 2022]** Nothing specific for the moment - I'll update soon :) 
 
 ## Publications
 
-- **Mnemonics Training: Multi-Class Incremental Learning without Forgetting**
-  <br>
-  **Yaoyao Liu**, Yuting Su, An-An Liu, Bernt Schiele, Qianru Sun
-  <br>
-  IEEE Conference on Computer Vision and Pattern Recognition. **CVPR 2020**.
-  <br>
-  [[PDF](https://arxiv.org/pdf/2002.10211.pdf)] [[Code](https://github.com/yaoyao-liu/mnemonics)] <strong><i style="color:#e74d3c">Oral Presentation</i></strong>
+### 2021
 
-- **Learning to Self-Train for Semi-Supervised Few-Shot Classification**
+- **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
   <br>
-  Xinzhe Li, Qianru Sun, **Yaoyao Liu**, Shibao Zheng, Qin Zhou, Tat-Seng Chua, Bernt Schiele
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Ahmed Furkan Özkalay, Karl Aberer
   <br>
-  33rd Conference on Neural Information Processing Systems. **NeurIPS 2019**.
+  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**.
   <br>
-  [[PDF](http://papers.nips.cc/paper/9216-learning-to-self-train-for-semi-supervised-few-shot-classification.pdf)] [[Code](https://github.com/xinzheli1217/learning-to-self-train)]
+  [[PDF](https://arxiv.org/pdf/1910.07783.pdf)] [[Code](https://github.com/tugrulz/EphemeralAstroturfing)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
-- **Meta-Transfer Learning for Few-Shot Learning**
+- **A Dataset of State-Censored Tweets**
   <br>
-  Qianru Sun\*, **Yaoyao Liu\***, Tat-Seng Chua, Bernt Schiele
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  IEEE Conference on Computer Vision and Pattern Recognition. **CVPR 2019**.
+  15th International Conference On Web And Social Media **ICWSM 2021**.
   <br>
-  [[PDF](http://openaccess.thecvf.com/content_CVPR_2019/papers/Sun_Meta-Transfer_Learning_for_Few-Shot_Learning_CVPR_2019_paper.pdf)] [[Code](https://github.com/yaoyao-liu/meta-transfer-learning)] [[Project](https://mtl.yyliu.net/)]
+  [[PDF](https://arxiv.org/pdf/2101.05919.pdf)] [[Data](https://zenodo.org/record/4439509)] <strong><i style="color:#e74d3c">Dataset Paper</i></strong>
+
+### 2020
+
+- **Can Celebrities Burst Your Bubble**
+  <br>
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
+  <br>
+  Innovative Ideas in Data Science **colocated WWW 2020**.
+  MISINFO **colocated with WWW 2020**.
+  <br>
+  [[PDF](https://arxiv.org/pdf/2003.06857.pdf)]<strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+
 
 ## Services
 
-- Conference Reviewers: NeurIPS 2020, CVPR 2020.
-- Journal Reviewers: T-PAMI, IJCV.
+- Conference Reviewers: ICWSM 2022. 
+- Journal Reviewers: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media
+
+## Other
+
