@@ -51,7 +51,7 @@ My DMs are always open! If you are a student looking for professional advice, fe
   **Tuğrulcan Elmas**, Kristina Hardi, Rebekah Overdorf, Karl Aberer
   <br>
   Innovative Ideas in Data Science **colocated with WWW 2020**.
-  MISINFO **colocated with WWW 2020**.
+  **MISINFO **colocated with WWW 2020**.
   <br>
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
