@@ -10,8 +10,9 @@ Hi, I am a 5th Ph.D. student working in the field of Social Media Manipulation a
 
 Before coming to EPFL, I was an undergraduate student in the Department of Computer Engineering at Bilkent University, where I had to chance to work in CicekLab with Prof. Ercüment Çiçek to help building Database of Reconstructed Metabolic Networks (DORMAN). I also spent a summer in Intelligent User Interfaces lab, worked with Prof. Metin Sezgin on the iMotion project.
 
-I'm also the - now deanonimized - author of popular blog https://azimliyazar.blogspot.com
-My DMs are always open! If you are a student looking for professional advice, feel free to email me: tugrulcanelmas@gmail.com
+I'm also the - now deanonimized - author of popular blog (https://azimliyazar.blogspot.com)
+
+My DMs are always open! If you are a student looking for professional advice, feel free to email me: tugrulcanelmas at gmail.com
 
 ## News
 
