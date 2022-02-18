@@ -15,10 +15,6 @@ I'm also the - now deanonimized - author of popular blog [azimliyazar.blogspot.c
 My DMs are always open!<br/> 
 If you are a student looking for professional advice, feel free to email me: tugrulcanelmas at gmail.com
 
-## News
-
-- **[Feb. 2022]** Nothing specific for the moment - I'll update soon :) 
-
 ## Publications
 
 - **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
