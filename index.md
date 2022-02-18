@@ -4,7 +4,11 @@ layout: homepage
 
 ## About Me
 
-I am a Ph.D. student at ...
+Hi, I am a 5th Ph.D. student at LSIR, EPFL, Switzerland, supervised by Prof. Karl Aberer, working on the field of Social Media Manipulation. My research focuses on understanding the characteristics of bots and fake accounts and the specific strategies they employ to manipulate social media. I'm also interested in 
+
+ For a concrete example, in my recent EuroS&P paper, I discovered and studied astroturfing bots who were pushing political slogans on Twitter trends exploiting a vulnerability in Twitter’s trending algorithm. I uncovered 108,000 bots active between 2015-2019 and pushed 19,000 keywords to trending topics in 2019, which made up at least 47% of Twitter trends in Turkey and 20% of global trends. This work received media attention globally (ACM Technews, Yahoo News, Mashable, TNW). Throughout my Ph.D. I have been moving into projects that require and benefit from an interdisciplinary lens, even recently collaborating with political scientists at our neighboring university.
+
+
 
 ## Research Interests
 
