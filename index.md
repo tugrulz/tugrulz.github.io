@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-<b>I am currently on the 2022-2023 academic job market.</b>
+<b>I am joining OSOME at Indiana University at Bloomington as a postdoc in December 2022.</b>
 
 Hi, I am a 5th Ph.D. student working in the field of Social Media Manipulation at LSIR, EPFL, Switzerland, supervised by Prof. Karl Aberer. My research focuses on understanding the characteristics of bots and fake accounts and the specific strategies they employ to manipulate social media. I'm also interested in analysing such adversaries' impact and building solutions against them. I mainly employ data science techniques in my research. I also work with Maud Reveilhac and Prof. Anke Thresch from University of Lausanne. 
 
@@ -16,6 +16,14 @@ My DMs are always open!<br/>
 If you are a student looking for professional advice, feel free to email me: tugrulcanelmas at gmail.com
 
 ## Publications
+
+- **Characterizing Retweet Bots: The Case of Black Market Accounts**
+  <br>
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
+  <br>
+  16th International Conference On Web And Social Media **ICWSM 2022**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2112.02366)] [[Data](https://github.com/tugrulz/RetweetBots)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
   <br>
