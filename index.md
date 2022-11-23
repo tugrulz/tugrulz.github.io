@@ -21,12 +21,11 @@ If you are a student looking for professional advice, feel free to email me: tug
   <br>
   [[PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)] <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
 
-
 - **Misleading Repurposing on Twitter**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  16th International Conference On Web And Social Media **ICWSM 2023**.
+  17th International Conference On Web And Social Media **ICWSM 2023**.
   <br>
   [[PDF](https://arxiv.org/abs/2010.10600)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
@@ -52,7 +51,7 @@ If you are a student looking for professional advice, feel free to email me: tug
   <br>
   **Tuğrulcan Elmas**, Thomas Romain Ibanez, Alexandre Hutter, Rebekah Overdorf, Karl Aberer
   <br>
-  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022**.
+  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022** (colocated with ASONAM 2022).
   <br>
   <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
@@ -76,8 +75,9 @@ If you are a student looking for professional advice, feel free to email me: tug
   <br>
   **Tuğrulcan Elmas**, Kristina Hardi, Rebekah Overdorf, Karl Aberer
   <br>
-  Innovative Ideas in Data Science **colocated with WWW 2020**.
-  **MISINFO **colocated with WWW 2020**.
+  Innovative Ideas in Data Science (colocated with **WebConf 2020**).
+  <br>
+  MISINFO (colocated with **WebConf 2021**).
   <br>
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
