@@ -19,7 +19,7 @@ If you are a student looking for professional advice, feel free to email me: tug
   <br>
   **Tuğrulcan Elmas**
   <br>
-  [[PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)] <strong><i style="color:#e74d3c">Ph. D. Thesis</i></strong>
+  [[PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)] <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
 
 
 - **Misleading Repurposing on Twitter**
@@ -48,6 +48,13 @@ If you are a student looking for professional advice, feel free to email me: tug
   <br>
   Featured in [The Next Web](https://thenextweb.com/news/twitter-trending-topics-algorithm-has-vulnerability-hackers-using-ephemeral-astroturfing-attacks), [ACM Technews](https://technews.acm.org/archives.cfm?fo=2021-06-jun/jun-04-2021.html), [Le Temps](https://www.letemps.ch/societe/une-etude-lepfl-indique-20-tendances-twitter-faussees-contenus-ephemeres), [Mashable ME](https://me.mashable.com/tech/14085/turkish-twitter-being-flooded-with-fake-trends-created-by-bots-that-manipulate-algorithms), [Atlantic](https://www.theatlantic.com/technology/archive/2021/09/twitter-should-abolish-trending-topics/620026/), [Anadolu Agency](https://www.aa.com.tr/en/world/half-of-twitter-trending-topics-in-turkey-found-to-be-fake/2269405), [Milliyet](https://www.milliyet.com.tr/yazarlar/savas-onemli/epfl-arastirmasina-gore-turkiye-twitter-gundeminde-yer-alan-trendlerin-yarisi-sahte-6525080), [Hacker News](https://news.ycombinator.com/item?id=27368214), [Ekşi Sözlük](https://eksisozluk.com/2-haziran-2021-twitter-manipulasyon-ifsasi--6937655), Countless Others
 
+- **WayPop Machine: A Wayback Machine to Investigate Popularity and Root Out Trolls**
+  <br>
+  **Tuğrulcan Elmas**, Thomas Romain Ibanez, Alexandre Hutter, Rebekah Overdorf, Karl Aberer
+  <br>
+  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022**.
+  <br>
+  <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **A Dataset of State-Censored Tweets**
   <br>
