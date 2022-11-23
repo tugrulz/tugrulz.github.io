@@ -4,18 +4,31 @@ layout: homepage
 
 ## About Me
 
-<b>I am joining OSOME at Indiana University at Bloomington as a postdoc in December 2022.</b>
+I am a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I also collaborate with Prof. Dr. Karl Aberer and Dr. Remi Lebret from EPFL and Prof. Dr. Rebekah Overdorf and Prof. Dr. Mathias Humbert from UNIL, Switzerland.
 
-Hi, I am a 5th Ph.D. student working in the field of Social Media Manipulation at LSIR, EPFL, Switzerland, supervised by Prof. Karl Aberer. My research focuses on understanding the characteristics of bots and fake accounts and the specific strategies they employ to manipulate social media. I'm also interested in analysing such adversaries' impact and building solutions against them. I mainly employ data science techniques in my research. I also work with Maud Reveilhac and Prof. Anke Thresch from University of Lausanne. 
+My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
 
-Before coming to EPFL, I was an undergraduate student in the Department of Computer Engineering at Bilkent University, where I had to chance to work in CicekLab with Prof. Ercüment Çiçek to help building Database of Reconstructed Metabolic Networks (DORMAN). I also spent a summer in Intelligent User Interfaces lab, worked with Prof. Metin Sezgin on the iMotion project.
-
-I'm also the - now deanonimized - author of popular blog [azimliyazar.blogspot.com](https://azimliyazar.blogspot.com)
+I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017. 
 
 My DMs are always open!<br/> 
 If you are a student looking for professional advice, feel free to email me: tugrulcanelmas at gmail.com
 
 ## Publications
+
+- **The Role of Compromised Accounts in Social Media Manipulation**
+  <br>
+  **Tuğrulcan Elmas**
+  <br>
+  [[PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)] <strong><i style="color:#e74d3c">Ph. D. Thesis</i></strong>
+
+
+- **Misleading Repurposing on Twitter**
+  <br>
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
+  <br>
+  16th International Conference On Web And Social Media **ICWSM 2023**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2010.10600)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Characterizing Retweet Bots: The Case of Black Market Accounts**
   <br>
@@ -62,15 +75,15 @@ If you are a student looking for professional advice, feel free to email me: tug
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 ## Preprints
-- Misleading Repurposing on Twitter
-- Characterizing Retweet Bots: The Case of Black-Market Accounts
+- The Impact of Data Persistence Bias on Social Media Studies
 
 ## Teaching Assistant
-- Distributed Information Systems 2018-
+- Distributed Information Systems 2018-2021
 - Applied Data Science Fall 2018
 - Introduction à la Programmation Fall 2019
 
 ## Services
+- PC Member: WebSci 2023
 - Conference Reviewer: ICWSM 2022, Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media
 
@@ -79,6 +92,12 @@ If you are a student looking for professional advice, feel free to email me: tug
 - Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
 - Interviews while being the president of [Turquia1912](https://www.youtube.com/watch?v=GyJOCltA1Ak&list=PLrrZ8PX0n3IxYN9PcEGmJnGn4nvZypC2-)
 - Directed the Short Film [Lemongrass](https://www.youtube.com/watch?v=_vbw9gL60gA)
+
+## Misc
+- Deanonimized author of the popular Turkish blog [azimliyazar.blogspot.com](https://azimliyazar.blogspot.com) (4+ million views)
+- President of Switzerland Turkish Student Association (2019-2021)
+- Bilkent University Ultimate Frisbee Team (2015-2017) - Fencing Team (2017) - Orienteering Team (2015)
+- Developer of @DisinfoNews - A Twitter Bot to share disinformation related tweets (https://twitter.com/DisinfoNews)
 
 
 
