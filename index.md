@@ -15,6 +15,22 @@ If you are a student looking for professional advice, feel free to email me: tug
 
 ## Publications
 
+- **Analyzing Activity and Suspension Patterns of Twitter Bots Attacking Turkish Twitter Trends by a Longitudinal Dataset**
+  <br>
+  **Tuğrulcan Elmas**
+  <br>
+  International Workshop on Cyber Social Threats **CySoc 2023** (colocated with WebConf 2023).
+  <br>
+  [[PDF](https://arxiv.org/abs/2304.07907)] [[Data](https://github.com/tugrulz/EphemeralAstroturfing)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+
+- **The Impact of Data Persistence Bias on Social Media Studies**
+  <br>
+  **Tuğrulcan Elmas**
+  <br>
+  15th ACM Web Science Conference **WebSci 2023**.
+  <br>
+  [[PDF](https://arxiv.org/pdf/2303.00902)] [[Data](https://github.com/tugrulz/DataPersistenceBias)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+
 - **The Role of Compromised Accounts in Social Media Manipulation**
   <br>
   **Tuğrulcan Elmas**
@@ -82,7 +98,7 @@ If you are a student looking for professional advice, feel free to email me: tug
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 ## Preprints
-- The Impact of Data Persistence Bias on Social Media Studies
+- Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
 
 ## Teaching Assistant
 - Distributed Information Systems 2018-2021
