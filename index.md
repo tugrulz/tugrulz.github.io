@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I am an incoming Lecturer at the University of Edinburgh School of Informatics. I am looking for PhD students to join our [[Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk)] group.
+I am an incoming Lecturer at the University of Edinburgh School of Informatics. I am looking for PhD students to join our group: [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk).
 
 I am a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I also collaborate with Prof. Dr. Karl Aberer and Dr. Remi Lebret from EPFL and Prof. Dr. Rebekah Overdorf and Prof. Dr. Mathias Humbert from UNIL, Switzerland.
 
