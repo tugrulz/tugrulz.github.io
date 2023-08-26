@@ -4,6 +4,8 @@ layout: homepage
 
 ## About Me
 
+I am an incoming Lecturer at the University of Edinburgh School of Informatics. I am looking for PhD students to join our [[Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk)] group.
+
 I am a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I also collaborate with Prof. Dr. Karl Aberer and Dr. Remi Lebret from EPFL and Prof. Dr. Rebekah Overdorf and Prof. Dr. Mathias Humbert from UNIL, Switzerland.
 
 My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
@@ -11,9 +13,19 @@ My research focuses on computational approaches to understand and counter social
 I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017. 
 
 My DMs are always open!<br/> 
-If you are a student looking for professional advice, feel free to email me: tugrulcanelmas at gmail.com
+If you are a student looking for professional advice, feel free to email me. 
+
+Contact: tugrulcanelmas at gmail.com
 
 ## Publications
+
+- **Measuring and Detecting Virality on Social Media: The Case of Twitter's Viral Tweets Topic**
+  <br>
+  **Tuğrulcan Elmas**, Selim Stephane, Célia Houssiaux
+  <br>
+  ACM Web Conference 2023 **WebConf 2023**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2303.06120)] [[Data](https://github.com/tugrulz/ViralTweets)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **Analyzing Activity and Suspension Patterns of Twitter Bots Attacking Turkish Twitter Trends by a Longitudinal Dataset**
   <br>
@@ -108,7 +120,7 @@ If you are a student looking for professional advice, feel free to email me: tug
 ## Services
 - PC Member: WebSci 2023
 - Conference Reviewer: ICWSM 2022, Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
-- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media
+- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science
 
 ## Media
 - Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
