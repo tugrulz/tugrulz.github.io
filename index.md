@@ -2,20 +2,38 @@
 layout: homepage
 ---
 
-## About Me
+## Ph.D. Students Wanted! 
 
-I am an incoming Lecturer at the University of Edinburgh School of Informatics. I am looking for PhD students to join our group: [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk).
+I'm joining the School of Informatics at the University of Edinburgh in February 2024 and looking for PhD students to work with in the academic year of 2024-2025.
 
-I am a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I also collaborate with Prof. Dr. Karl Aberer and Dr. Remi Lebret from EPFL and Prof. Dr. Rebekah Overdorf and Prof. Dr. Mathias Humbert from UNIL, Switzerland.
+The University of Edinburgh boasts an exceptional reputation, ranking 20th globally in Computer Science and 22nd overall. As part of the academic community, I will be co-directing the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. We are an interdisciplinary team focusing on computational social science from diverse perspectives. Notably, each PhD student benefits from the guidance and support of at least two supervisors, enhancing the overall experience through increased collaboration opportunities.
 
-My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
+Ph.D. students working with me are encouraged to employ & master data science methodologies such as Applied NLP, Network Science, and Causal Inference on potential projects that can be described by the following buzzwords:
 
-I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017. 
+- Trolling, Social Media Manipulation, Influence Campaigns
+- Detection & Analysis of Public Sentiment Towards News & Events
+- Virality, Information Spread, Influencers
+- Polarization, Echo Chambers, Filter Bubbles
+- Censorship, Freedom of Speech, Hate Speech, Content Moderation
+- Automated fact-checking & Disinformation Detection
+- Applications of AI Generated Content (e.g., ChatGPT, Midjourney)
 
-My DMs are always open!<br/> 
-If you are a student looking for professional advice, feel free to email me. 
+To express your interest, I invite you to apply for our PhD Fellowship programs, mention my name in your application, and send me your CV and transcripts via email. The application deadline will be likely around November 2023.
+
+The program is open to both undergraduates and master students from computer science or relevant disciplines. Students from social sciences are encouraged to apply to Ph.D. programs in their field and get in touch with me for possible collaborations.
+
+For more information about the available programs and application process, please visit:
+https://www.ed.ac.uk/student-funding/postgraduate/international/science-engineering/informatics/informatics-global-phd-scholarships
+
+I look forward to welcoming passionate individuals who are eager to contribute to cutting-edge research in the field of Computational Social Science. Feel free to reach out if you have any questions or wish to explore potential research directions.
 
 Contact: tugrulcanelmas at gmail.com
+
+## About Me
+
+I am currently a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017. 
+
+My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
 
 ## Publications
 
@@ -118,11 +136,12 @@ Contact: tugrulcanelmas at gmail.com
 - Introduction à la Programmation Fall 2019
 
 ## Services
-- PC Member: WebSci 2023
-- Conference Reviewer: ICWSM 2022, Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
+- PC Member: WebSci 2023, ICWSM 2023
+- Conference Reviewer: ICWMS 2022 Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science
 
 ## Media
+- Interviewed by [Ali Tarakçı](https://www.youtube.com/watch?v=UDcsgBqcQQ0)
 - Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
 - Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
 - Interviews while being the president of [Turquia1912](https://www.youtube.com/watch?v=GyJOCltA1Ak&list=PLrrZ8PX0n3IxYN9PcEGmJnGn4nvZypC2-)
@@ -133,8 +152,3 @@ Contact: tugrulcanelmas at gmail.com
 - President of Switzerland Turkish Student Association (2019-2021)
 - Bilkent University Ultimate Frisbee Team (2015-2017) - Fencing Team (2017) - Orienteering Team (2015)
 - Developer of @DisinfoNews - A Twitter Bot to share disinformation related tweets (https://twitter.com/DisinfoNews)
-
-
-
-
-
