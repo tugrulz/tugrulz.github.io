@@ -22,8 +22,7 @@ To express your interest, I invite you to apply for our PhD Fellowship programs,
 
 The program is open to both undergraduates and master students from computer science or relevant disciplines. Students from social sciences are encouraged to apply to Ph.D. programs in their field and get in touch with me for possible collaborations.
 
-For more information about the available programs and application process, please visit:
-https://www.ed.ac.uk/student-funding/postgraduate/international/science-engineering/informatics/informatics-global-phd-scholarships
+For more information about the available programs and application process [please visit here.](https://www.ed.ac.uk/student-funding/postgraduate/international/science-engineering/informatics/informatics-global-phd-scholarships)
 
 I look forward to welcoming passionate individuals who are eager to contribute to cutting-edge research in the field of Computational Social Science. Feel free to reach out if you have any questions or wish to explore potential research directions.
 
