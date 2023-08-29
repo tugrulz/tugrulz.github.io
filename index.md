@@ -8,17 +8,9 @@ I'm joining the School of Informatics at the University of Edinburgh in February
 
 The University of Edinburgh boasts an exceptional reputation, ranking 20th globally in Computer Science and 22nd overall. As part of the academic community, I will be co-directing the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. We are an interdisciplinary team focusing on computational social science from diverse perspectives. Notably, each PhD student benefits from the guidance and support of at least two supervisors, enhancing the overall experience through increased collaboration opportunities.
 
-Ph.D. students working with me are encouraged to employ & master data science methodologies such as Applied NLP, Network Science, and Causal Inference on potential projects that can be described by the following buzzwords:
+Ph.D. students working with me are encouraged to employ & master Data Science methodologies such as Applied NLP, Network Science, and Causal Inference on projects related to Social Media and Computational Social Science. 
 
-- Trolling, Social Media Manipulation, Influence Campaigns
-- Detection & Analysis of Public Sentiment Towards News & Events
-- Virality, Information Spread, Influencers
-- Polarization, Echo Chambers, Filter Bubbles
-- Censorship, Freedom of Speech, Hate Speech, Content Moderation
-- Automated fact-checking & Disinformation Detection
-- Applications of AI Generated Content (e.g., ChatGPT, Midjourney)
-
-To express your interest, I invite you to apply for our PhD Fellowship programs, mention my name in your application, and send me your CV and transcripts via email. The application deadline will be likely around November 2023.
+To express your interest, I invite you to apply for our PhD Fellowship programs, mention my name in your application, and send me your CV, transcripts, a brief paragraph of your research interests, the names and contacts of your references (optional) via email. The application deadline will be likely around November 2023.
 
 The program is open to both undergraduates and master students from computer science or relevant disciplines. Students from social sciences are encouraged to apply to Ph.D. programs in their field and get in touch with me for possible collaborations.
 
