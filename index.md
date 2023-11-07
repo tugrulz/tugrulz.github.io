@@ -2,27 +2,9 @@
 layout: homepage
 ---
 
-## Ph.D. Students Wanted! 
+I’m joining the School of Informatics at the University of Edinburgh in February 2024. I will be co-directing the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. I am also looking for PhD students to work with in the academic year of 2024-2025. Feel free to get in touch if you are interested in working with me: tugrulcanelmas at gmail.com
 
-I'm joining the School of Informatics at the University of Edinburgh in February 2024 and looking for PhD students to work with in the academic year of 2024-2025.
-
-The University of Edinburgh boasts an exceptional reputation, ranking 20th globally in Computer Science and 22nd overall. As part of the academic community, I will be co-directing the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. We are an interdisciplinary team focusing on computational social science from diverse perspectives. Notably, each PhD student benefits from the guidance and support of at least two supervisors, enhancing the overall experience through increased collaboration opportunities.
-
-Ph.D. students working with me are encouraged to employ & master Data Science methodologies such as Applied NLP, Network Science, and Causal Inference on projects related to Social Media and Computational Social Science. 
-
-To express your interest, I invite you to apply for our PhD Fellowship programs, mention my name in your application, and send me your CV, transcripts, a brief paragraph of your research interests, the names and contacts of your references (optional) via email. The application deadline will be likely around November 2023.
-
-The program is open to both undergraduates and master students from computer science or relevant disciplines. Students from social sciences are encouraged to apply to Ph.D. programs in their field and get in touch with me for possible collaborations.
-
-For more information about the available programs and application process [please visit here.](https://www.ed.ac.uk/student-funding/postgraduate/international/science-engineering/informatics/informatics-global-phd-scholarships)
-
-I look forward to welcoming passionate individuals who are eager to contribute to cutting-edge research in the field of Computational Social Science. Feel free to reach out if you have any questions or wish to explore potential research directions.
-
-Contact: tugrulcanelmas at gmail.com
-
-## About Me
-
-I am currently a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017. 
+I am currently a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
 My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
 
