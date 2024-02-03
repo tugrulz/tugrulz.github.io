@@ -16,7 +16,6 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
   <br>
   16th ACM Web Science Conference **WebSci 2024**.
   <br>
-  [[PDF](https://arxiv.org/abs/2303.06120)] [[Data](https://github.com/tugrulz/ViralTweets)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **Measuring and Detecting Virality on Social Media: The Case of Twitter's Viral Tweets Topic**
   <br>
