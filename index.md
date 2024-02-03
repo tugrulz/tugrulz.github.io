@@ -2,13 +2,21 @@
 layout: homepage
 ---
 
-I’m joining the School of Informatics at the University of Edinburgh in February 2024. I will be co-directing the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. I am also looking for PhD students to work with in the academic year of 2024-2025. Feel free to get in touch if you are interested in working with me: tugrulcanelmas at gmail.com
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
 
-I am currently a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
+I am looking for PhD students to work with in the academic year of 2024-2025. Feel free to get in touch if you are interested in working with me: tugrulcanelmas at gmail.com
 
-My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
+Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
 ## Publications
+
+- **Shorts vs. Regular Videos on YouTube: A Comparative Analysis of User Engagement and Content Creation Trends**
+  <br>
+  Caroline Violot, **Tuğrulcan Elmas**, Igor Bilogrevic, Mathias Humbert
+  <br>
+  16th ACM Web Science Conference **WebSci 2024**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2303.06120)] [[Data](https://github.com/tugrulz/ViralTweets)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **Measuring and Detecting Virality on Social Media: The Case of Twitter's Viral Tweets Topic**
   <br>
@@ -102,8 +110,11 @@ My research focuses on computational approaches to understand and counter social
 
 ## Preprints
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
+- #TeamFollowBack - Detection and Analysis of Follow Back Accounts
+- Toxic Synergy Between Hate Speech and Fake News Exposure
 
-## Teaching Assistant
+## Teaching
+- Computational Social Science 2024-
 - Distributed Information Systems 2018-2021
 - Applied Data Science Fall 2018
 - Introduction à la Programmation Fall 2019
@@ -119,6 +130,7 @@ My research focuses on computational approaches to understand and counter social
 - Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
 - Interviews while being the president of [Turquia1912](https://www.youtube.com/watch?v=GyJOCltA1Ak&list=PLrrZ8PX0n3IxYN9PcEGmJnGn4nvZypC2-)
 - Directed the Short Film [Lemongrass](https://www.youtube.com/watch?v=_vbw9gL60gA)
+- Turkish Youtube Channel [Dr. Tuğrulcan Elmas](https://www.youtube.com/@tugrulcan)
 
 ## Misc
 - Deanonimized author of the popular Turkish blog [azimliyazar.blogspot.com](https://azimliyazar.blogspot.com) (4+ million views)
