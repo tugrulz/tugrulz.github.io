@@ -10,6 +10,14 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
 
 ## Publications
 
+- **#TeamFollowBack - Detection and Analysis of Follow Back Accounts**
+  <br>
+  **Tuğrulcan Elmas**, Mathis Randl, Youssef Attia
+  <br>
+  18th International Conference On Web And Social Media **ICWSM 2024**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2403.15856)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+
 - **Shorts vs. Regular Videos on YouTube: A Comparative Analysis of User Engagement and Content Creation Trends**
   <br>
   Caroline Violot, **Tuğrulcan Elmas**, Igor Bilogrevic, Mathias Humbert
@@ -109,7 +117,6 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
 
 ## Preprints
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
-- #TeamFollowBack - Detection and Analysis of Follow Back Accounts
 - Toxic Synergy Between Hate Speech and Fake News Exposure
 
 ## Teaching
