@@ -121,15 +121,17 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
 - Toxic Synergy Between Hate Speech and Fake News Exposure
 
 ## Teaching
-- Computational Social Science 2024-
+- Computational Social Science 2025-
+- Evidence, Argument and Persuasion in Digital Age 2025-
+- Text Technologies in Data Science 2024-
 - Distributed Information Systems 2018-2021
 - Applied Data Science Fall 2018
 - Introduction à la Programmation Fall 2019
 
 ## Services
-- PC Member: WebSci 2023, ICWSM 2023
-- Conference Reviewer: ICWMS 2022 Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
-- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science
+- PC Member: WebSci, ICWSM
+- Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
+- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ
 
 ## Media
 - Interviewed by [Ali Tarakçı](https://www.youtube.com/watch?v=UDcsgBqcQQ0)
