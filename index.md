@@ -4,11 +4,49 @@ layout: homepage
 
 I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
 
-I am looking for PhD students to work with in the academic year of 2024-2025. Feel free to get in touch if you are interested in working with me.
-
 Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
+If you would like to pursue a PhD with me, feel free to get in touch.
+
+## Team
+<ul>
+  <li>Yusuf Mücahit Çetinkaya (Postdoc)</li>
+  <li>Mustafa Hakan Kara (PhDc)</li>
+</ul>
+
 ## Publications
+
+- **#Cross-Partisan Interactions on Social Media**
+  <br>
+  Yusuf Mücahit Çetinkaya, Vahid Ghafouri, Jose Such, Guillermo Suarez Tangil, **Tuğrulcan Elmas**
+  <br>
+  19th International Conference On Web And Social Media **ICWSM 2025**.
+  <br>
+  [[PDF is coming soon](https://arxiv.org/abs/2410.19272)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+
+- **#Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
+  <br>
+  Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
+  <br>
+  19th International Conference On Web And Social Media **ICWSM 2025**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2503.00599)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+
+- **#Coordinated Reply Attacks in Influence Operations: Characterization and Detection**
+  <br>
+  Manita Pote, **Tuğrulcan Elmas**, Alessandro Flammini, Fil Menczer
+  <br>
+  19th International Conference On Web And Social Media **ICWSM 2025**.
+  <br>
+  [[PDF](https://arxiv.org/abs/2410.19272)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+
+- **#Toxic Synergy Between Hate Speech and Fake News Exposure**
+  <br>
+  Munjung Kim, **Tuğrulcan Elmas**, Filippo Menczer
+  <br>
+  International Workshop on Cyber Social Threats **CySoc 2024** (colocated with ICWSM 2024).
+  <br>
+  [[PDF](https://arxiv.org/abs/2404.08110)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **#TeamFollowBack - Detection and Analysis of Follow Back Accounts**
   <br>
@@ -118,18 +156,18 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
 
 ## Preprints
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
-- Toxic Synergy Between Hate Speech and Fake News Exposure
 
 ## Teaching
 - Computational Social Science 2025-
 - Evidence, Argument and Persuasion in Digital Age 2025-
 - Text Technologies in Data Science 2024-
+- Introduction to Object Oriented Programming 2025-
 - Distributed Information Systems 2018-2021
-- Applied Data Science Fall 2018
-- Introduction à la Programmation Fall 2019
+- Applied Data Science 2018
+- Introduction à la Programmation 2019
 
 ## Services
-- PC Member: WebSci, ICWSM
+- PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ
 
