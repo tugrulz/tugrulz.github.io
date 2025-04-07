@@ -16,7 +16,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Publications
 
-- **#Cross-Partisan Interactions on Social Media**
+- **Cross-Partisan Interactions on Social Media**
   <br>
   Yusuf Mücahit Çetinkaya, Vahid Ghafouri, Jose Such, Guillermo Suarez Tangil, **Tuğrulcan Elmas**
   <br>
@@ -24,7 +24,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   <br>
   [[PDF is coming soon](https://arxiv.org/abs/2410.19272)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
-- **#Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
+- **Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
   <br>
   Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
   <br>
@@ -153,6 +153,12 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   MISINFO (colocated with **WebConf 2021**).
   <br>
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+
+## Talks
+- Navigating the Social Media Landscape in 2025 - Invited Seminar at John Hopkins SAIS
+- Panelist at AMLD 2025, Lausanne, Switzerland
+- Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
+- Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Preprints
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
