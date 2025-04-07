@@ -155,7 +155,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   [[PDF](https://arxiv.org/pdf/2003.06857.pdf)] <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 ## Talks
-- Navigating the Social Media Landscape in 2025 - Invited Seminar at John Hopkins SAIS
+- Invited Teaching Seminar at John Hopkins SAIS Conflicts and Cultures in Contemporary Turkey course by Lisel Hintz
 - Panelist at AMLD 2025, Lausanne, Switzerland
 - Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
