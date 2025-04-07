@@ -32,7 +32,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   <br>
   [[PDF](https://arxiv.org/abs/2503.00599)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
-- **#Coordinated Reply Attacks in Influence Operations: Characterization and Detection**
+- **Coordinated Reply Attacks in Influence Operations: Characterization and Detection**
   <br>
   Manita Pote, **Tuğrulcan Elmas**, Alessandro Flammini, Fil Menczer
   <br>
@@ -40,7 +40,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   <br>
   [[PDF](https://arxiv.org/abs/2410.19272)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
-- **#Toxic Synergy Between Hate Speech and Fake News Exposure**
+- **Toxic Synergy Between Hate Speech and Fake News Exposure**
   <br>
   Munjung Kim, **Tuğrulcan Elmas**, Filippo Menczer
   <br>
