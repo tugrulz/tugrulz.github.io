@@ -10,8 +10,8 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Team
 <ul>
-  <li>[[Yusuf Mücahit Çetinkaya (Postdoc)]] (https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)</li>
-  <li>[[Mustafa Hakan Kara (PhDc)]] (https://www.linkedin.com/in/mustafa-hakan-kara)</li>
+  <li>[[Yusuf Mücahit Çetinkaya (Postdoc)] (https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)]</li>
+  <li>[[Mustafa Hakan Kara (PhDc)] (https://www.linkedin.com/in/mustafa-hakan-kara)]</li>
 </ul>
 
 ## Publications
