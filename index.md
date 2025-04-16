@@ -10,8 +10,8 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Team
 <ul>
-  <li>Yusuf Mücahit Çetinkaya (Postdoc)</li>
-  <li>Mustafa Hakan Kara (PhDc)</li>
+  <li>[[Yusuf Mücahit Çetinkaya (Postdoc)]] (https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)</li>
+  <li>[[Mustafa Hakan Kara (PhDc)]] (https://www.linkedin.com/in/mustafa-hakan-kara)</li>
 </ul>
 
 ## Publications
@@ -22,7 +22,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   <br>
   19th International Conference On Web And Social Media **ICWSM 2025**.
   <br>
-  [[PDF is coming soon](https://arxiv.org/abs/2410.19272)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [[PDF]([https://arxiv.org/abs/2410.19272](https://arxiv.org/abs/2504.09376))] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
   <br>
@@ -175,7 +175,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 ## Services
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
-- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ
+- Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ, OSNEM
 
 ## Media
 - Interviewed by [Ali Tarakçı](https://www.youtube.com/watch?v=UDcsgBqcQQ0)
