@@ -9,11 +9,9 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington wo
 If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Team
-<ul>
-  <li>[[Yusuf Mücahit Çetinkaya (Postdoc)] (https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)]</li>
-  <li>[[Mustafa Hakan Kara (PhDc)] (https://www.linkedin.com/in/mustafa-hakan-kara)]</li>
-</ul>
-
+- [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
+- [Mustafa Hakan Kara (PhDc)](https://www.linkedin.com/in/mustafa-hakan-kara)
+  
 ## Publications
 
 - **Cross-Partisan Interactions on Social Media**
@@ -22,7 +20,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
   <br>
   19th International Conference On Web And Social Media **ICWSM 2025**.
   <br>
-  [[PDF]([https://arxiv.org/abs/2410.19272](https://arxiv.org/abs/2504.09376))] <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [[PDF](https://arxiv.org/abs/2504.09376)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
   <br>
