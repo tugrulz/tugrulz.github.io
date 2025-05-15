@@ -10,7 +10,7 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
-- [Mustafa Hakan Kara (PhDc)](https://www.linkedin.com/in/mustafa-hakan-kara)
+- 3 PhDcs to join in September 2025
   
 ## Publications
 
