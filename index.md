@@ -2,9 +2,9 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I’m also interested in understanding and describing humans' interactions with each other on social media platforms and with the platforms themselves. I use a combination of security, data science and computational social science methods to conduct my research.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I'm also interested in other applications of social media analysis. I use a combination of security, data science and natural language processing methods in my research.
 
-Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington working with Prof. Dr. Filippo Menczer and Prof. Dr. Alessandro Flammini at Observatory on Social Media (OSOME). I received my Ph.D. from EPFL, under supervision of Prof. Dr. Karl Aberer in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
+Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
 If you would like to pursue a PhD with me, feel free to get in touch.
 
@@ -13,6 +13,14 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 - 3 PhDcs to join in September 2025
   
 ## Publications
+
+- **Density-aware Walks for Coordinated Campaign Detection**
+  <br>
+  Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
+  <br>
+  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**.
+  <br>
+  <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Cross-Partisan Interactions on Social Media**
   <br>
@@ -159,10 +167,11 @@ If you would like to pursue a PhD with me, feel free to get in touch.
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Preprints
+- State \& Geopolitical Censorship on Twitter (X): Detection \& Impact Analysis of Withheld Content
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
 
 ## Teaching
-- Computational Social Science 2025-
+- Computational Social Science 2026-
 - Evidence, Argument and Persuasion in Digital Age 2025-
 - Text Technologies in Data Science 2024-
 - Introduction to Object Oriented Programming 2025-
