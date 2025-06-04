@@ -165,7 +165,7 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Preprints
-- State \& Geopolitical Censorship on Twitter (X): Detection \& Impact Analysis of Withheld Content
+- State & Geopolitical Censorship on Twitter (X): Detection & Impact Analysis of Withheld Content
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
 
 ## Teaching
