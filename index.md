@@ -2,11 +2,9 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I'm also interested in other applications of social media analysis. I use a combination of security, data science and natural language processing methods in my research.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I use a combination of security, data science and natural language processing methods in my research.
 
 Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
-
-If you would like to pursue a PhD with me, feel free to get in touch.
 
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
