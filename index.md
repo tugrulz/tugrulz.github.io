@@ -2,15 +2,28 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I use a combination of security, data science and natural language processing methods in my research.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I am broadly interested in Computational Social Science and Natural Language Processing as well.
 
 Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
-- 3 PhDcs to join in September 2025
+- [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
+- [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
+- Erencem Özbey (Undergrad)
+- Basem Mohammed (Undergrad)
+- Ömer Bıçakçıoğlu (Undergrad)
+
   
 ## Publications
+
+- **State & Geopolitical Censorship on Twitter (X): Detection & Impact Analysis of Withheld Content**
+  <br>
+  Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
+  <br>
+  The Conference on Information and Knowledge Management **CIKM 2025**.
+  <br>
+  [[PDF](https://www.arxiv.org/abs/2508.13375)]<strong><i style="color:#e74d3c">Short Paper</i></strong>
 
 - **Density-aware Walks for Coordinated Campaign Detection**
   <br>
@@ -165,7 +178,6 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Preprints
-- State & Geopolitical Censorship on Twitter (X): Detection & Impact Analysis of Withheld Content
 - Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
 
 ## Teaching
