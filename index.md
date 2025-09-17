@@ -23,7 +23,7 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
   <br>
   The Conference on Information and Knowledge Management **CIKM 2025**.
   <br>
-  [[PDF](https://www.arxiv.org/abs/2508.13375)]<strong><i style="color:#e74d3c">Short Paper</i></strong>
+  [[PDF](https://www.arxiv.org/abs/2508.13375)] <strong><i style="color:#e74d3c">Short Paper</i></strong>
 
 - **Density-aware Walks for Coordinated Campaign Detection**
   <br>
@@ -31,7 +31,7 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
   <br>
   European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**.
   <br>
-  <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [[PDF](https://arxiv.org/abs/2506.13912)] <strong><i style="color:#e74d3c">Full Paper</i></strong>
 
 - **Cross-Partisan Interactions on Social Media**
   <br>
