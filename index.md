@@ -6,6 +6,8 @@ I’m an Assistant Professor in the School of Informatics at the University of E
 
 Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
+I currently teach [Understanding Society with Big Data: Computational Social Science (CSS)](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm).
+
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
@@ -13,7 +15,6 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
 - Erencem Özbey (Undergrad)
 - Basem Mohammed (Undergrad)
 - Ömer Bıçakçıoğlu (Undergrad)
-
   
 ## Publications
 
