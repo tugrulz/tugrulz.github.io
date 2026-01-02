@@ -8,12 +8,17 @@ Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's 
 
 I currently teach [Understanding Society with Big Data: Computational Social Science (CSS)](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm).
 
+**A PhD position to work at the intersection of LLMS and social media / misinformation is available! Please contact me directly.**
+
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
 - [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
+- Suzuki Kaho (MSc)
 - Erencem Özbey (Undergrad)
 - Basem Mohammed (Undergrad)
+
+## Alumni
 - Ömer Bıçakçıoğlu (Undergrad)
   
 ## Publications
