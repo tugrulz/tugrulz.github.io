@@ -14,7 +14,7 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
 - [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
-- Suzuki Kaho (MSc)
+- Kaho Suzuki (MSc)
 - Erencem Özbey (Undergrad)
 - Basem Mohammed (Undergrad)
 
