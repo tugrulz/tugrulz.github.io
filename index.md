@@ -10,6 +10,8 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 
 **A fully funded PhD position to work at the intersection of LLMs and social media / misinformation is available! Please contact me directly.**
 
+I welcome self-sponsored in-person visitors to the University of Edinburgh and our lab. University of Edinburgh students with an interest in our research are also welcome. Contact me if you are interested
+
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
