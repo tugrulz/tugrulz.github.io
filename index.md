@@ -2,7 +2,7 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on computational approaches to understand and counter social media manipulation. I am broadly interested in Computational Social Science and Natural Language Processing as well.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on Truth & Trust Online, using computational approaches to understand and counter social media manipulation, deepfakes, online Human-Human & Human-AI interactions and the epistemic authority of LLMs. I am broadly interested in Computational Social Science and Natural Language Processing.
 
 Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
 
@@ -17,11 +17,11 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
 - [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
 - Kaho Suzuki (MSc)
-- Erencem Özbey (Undergrad)
-- Basem Mohammed (Undergrad)
 
 ## Alumni
 - Ömer Bıçakçıoğlu (Undergrad)
+- Basem Mohammed (Undergrad)
+- Erencem Özbey (Undergrad)
   
 ## Publications
 
