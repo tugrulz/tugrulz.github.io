@@ -16,12 +16,13 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
 - [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
 - [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
-- Kaho Suzuki (MSc)
+- Dhyey Mehta (Undergrad)
 
 ## Alumni
 - Ömer Bıçakçıoğlu (Undergrad)
 - Basem Mohammed (Undergrad)
 - Erencem Özbey (Undergrad)
+- Kaho Suzuki (MSc)
   
 ## Publications
 
