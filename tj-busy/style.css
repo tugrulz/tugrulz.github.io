@@ -1,0 +1,272 @@
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #e0e0e0;
+  --muted: #888;
+  --accent-low: #4caf50;
+  --accent-med: #ff9800;
+  --accent-high: #f44336;
+  --accent-crit: #9c27b0;
+  --header-color: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  transition: background 0.5s;
+}
+
+body.level-very-busy {
+  background: #1a0000;
+  animation: pulse-bg 2s ease-in-out infinite;
+}
+
+@keyframes pulse-bg {
+  0%, 100% { background: #1a0000; }
+  50% { background: #2a0000; }
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+#busy-header {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--header-color);
+  transition: color 0.5s, text-shadow 0.5s, font-size 0.4s;
+  line-height: 1.1;
+}
+
+#busy-header.very {
+  font-size: clamp(3rem, 12vw, 7rem);
+  color: #ff1744;
+  text-shadow: 0 0 30px #ff174488, 0 0 60px #ff174444;
+  animation: flicker 1.5s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.9; }
+  47% { opacity: 0.6; }
+  49% { opacity: 1; }
+}
+
+#busy-score-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#busy-score-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+#busy-score {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+#busy-level {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: var(--border);
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ── Add Task Section ── */
+.add-task {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-task h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#task-input {
+  flex: 1 1 200px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#task-input:focus {
+  border-color: #555;
+}
+
+#urgency-select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+}
+
+#add-btn {
+  background: #333;
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-btn:hover {
+  background: #444;
+}
+
+/* ── Task List ── */
+.task-list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.task-list h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+#task-count {
+  color: var(--muted);
+}
+
+#tasks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.task-item.done {
+  opacity: 0.4;
+}
+
+.task-item.done .task-name {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.urgency-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.urgency-1 { background: #1b3a1c; color: var(--accent-low); }
+.urgency-2 { background: #3a2a00; color: var(--accent-med); }
+.urgency-3 { background: #3a1010; color: var(--accent-high); }
+.urgency-4 { background: #2a0a3a; color: #ce93d8; }
+
+.task-name {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.done-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.done-btn:hover { background: #2a3a2a; }
+.delete-btn:hover { background: #3a1a1a; }
+
+.empty-msg {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+/* ── Score color states ── */
+.score-free    { color: var(--accent-low); }
+.score-light   { color: #8bc34a; }
+.score-moderate{ color: var(--accent-med); }
+.score-busy    { color: #ff5722; }
+.score-very    { color: #ff1744; }
+
+.level-free    { background: #1b3a1c; color: var(--accent-low); }
+.level-light   { background: #2a3a10; color: #8bc34a; }
+.level-moderate{ background: #3a2a00; color: var(--accent-med); }
+.level-busy    { background: #3a1a00; color: #ff5722; }
+.level-very    { background: #3a0010; color: #ff1744; }
