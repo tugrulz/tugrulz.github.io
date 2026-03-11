@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Tj Busy?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="busy-header">IS TJ BUSY?</h1>
+      <div id="busy-score-wrapper">
+        <div id="busy-score-label">Busyness Score</div>
+        <div id="busy-score">0</div>
+        <div id="busy-level">Calculating...</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="add-task">
+        <h2>Add Task</h2>
+        <div class="input-row">
+          <input id="task-input" type="text" placeholder="What needs to be done?" />
+          <select id="urgency-select">
+            <option value="1">Low</option>
+            <option value="2">Medium</option>
+            <option value="3" selected>High</option>
+            <option value="4">Critical</option>
+          </select>
+          <button id="add-btn">Add</button>
+        </div>
+      </section>
+
+      <section class="task-list">
+        <h2>Tasks <span id="task-count">(0)</span></h2>
+        <ul id="tasks"></ul>
+        <p id="empty-msg" class="empty-msg">No tasks yet. Tj is free!</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
