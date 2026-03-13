@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Is Tj Busy?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 id="busy-header">IS TJ BUSY?</h1>
+      <div id="busy-score-wrapper">
+        <!-- Arc gauge -->
+        <div class="gauge-wrap">
+          <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
+            <!-- half-circle arc: r=60, center 70,75, from 180° to 0° -->
+            <path id="gauge-track"
+              d="M 10,75 A 60,60 0 0,1 130,75"
+              stroke-dasharray="188.5"
+              stroke-dashoffset="0" />
+            <path id="gauge-fill"
+              d="M 10,75 A 60,60 0 0,1 130,75"
+              stroke-dasharray="188.5"
+              stroke-dashoffset="188.5" />
+          </svg>
+          <div id="busy-score">0</div>
+        </div>
+        <div id="busy-score-label">Busyness Score</div>
+        <div id="busy-level">Calculating...</div>
+      </div>
+    </header>
+
+    <section class="card add-task">
+      <div class="add-task-label">Add Task</div>
+      <div class="input-row">
+        <input id="task-input" type="text" placeholder="What needs to be done?" autocomplete="off" />
+        <select id="urgency-select">
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3" selected>High</option>
+          <option value="4">Critical</option>
+        </select>
+        <button id="add-btn">Add</button>
+      </div>
+    </section>
+
+    <section class="card task-list">
+      <div class="task-list-header">
+        <div class="task-list-header-left">
+          <span class="task-list-label">Tasks</span>
+          <span id="task-count">0</span>
+        </div>
+        <button id="clear-done-btn">Clear done</button>
+      </div>
+      <ul id="tasks"></ul>
+      <p id="empty-msg" class="empty-msg">
+        <span class="free-icon">🌿</span>
+        No tasks — Tj is free!
+      </p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
