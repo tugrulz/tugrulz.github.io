@@ -61,22 +61,26 @@ body.level-very-busy {
   min-height: 42px;
 }
 
-#user-bar-left {
-  display: flex;
-  align-items: center;
-}
-
 #user-name {
   font-size: 0.82rem;
   color: var(--muted);
   letter-spacing: 0.02em;
 }
 
-.guest-note {
-  text-align: center;
+.signin-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.signin-footer-text {
   font-size: 0.8rem;
   color: var(--muted);
-  margin-top: -0.25rem;
+  text-align: center;
 }
 
 .user-bar-actions {
