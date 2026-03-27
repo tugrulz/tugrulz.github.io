@@ -354,6 +354,7 @@ header { text-align: center; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+.task-item:not(.done).urgency-border-0 { border-left-color: #5c6bc0; }
 .task-item:not(.done).urgency-border-1 { border-left-color: var(--accent-low); }
 .task-item:not(.done).urgency-border-2 { border-left-color: var(--accent-med); }
 .task-item:not(.done).urgency-border-3 { border-left-color: var(--accent-high); }
@@ -372,6 +373,7 @@ header { text-align: center; }
   flex-shrink: 0;
 }
 
+.urgency-0 { background: #1a1a2a; color: #7986cb; }
 .urgency-1 { background: #162a17; color: var(--accent-low); }
 .urgency-2 { background: #2e1f00; color: var(--accent-med); }
 .urgency-3 { background: #2e0e0e; color: #ef9a9a; }
