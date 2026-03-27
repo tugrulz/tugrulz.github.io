@@ -174,13 +174,15 @@ function loadTasks() {
 function saveTasks() { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); }
 
 // ── Score ────────────────────────────────────────────────────────────────────
+// Weighted by urgency. Calibrated so 10 High tasks = 100.
+// Low=3, Medium=6, High=10, Critical=20
+const SCORE_WEIGHTS = { 1: 3, 2: 6, 3: 10, 4: 20 };
+
 function computeScore() {
   const pending = tasks.filter(t => !t.done);
   if (!pending.length) return 0;
-  const sorted = [...pending].sort((a, b) => b.urgency - a.urgency);
-  let raw = 0;
-  sorted.forEach((t, i) => { raw += URGENCY_WEIGHTS[t.urgency] * (1 / (1 + i * 0.15)); });
-  return Math.min(100, Math.round(raw));
+  const raw = pending.reduce((sum, t) => sum + SCORE_WEIGHTS[t.urgency], 0);
+  return Math.min(100, raw);
 }
 
 function getLevel(score) {
