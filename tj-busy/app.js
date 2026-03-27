@@ -30,10 +30,11 @@ let isOwner     = sessionStorage.getItem(OWNER_SESSION_KEY) === 'true';
 
 // ── DOM refs ────────────────────────────────────────────────────────────────
 const signinWrap      = document.getElementById('signin-wrap');
+const signinFooter    = document.getElementById('signin-footer');
+const userBar         = document.getElementById('user-bar');
 const userNameEl      = document.getElementById('user-name');
 const ownerBtn        = document.getElementById('owner-btn');
 const signoutBtn      = document.getElementById('signout-btn');
-const guestNote       = document.getElementById('guest-note');
 const addTaskSection  = document.getElementById('add-task-section');
 const busyHeader      = document.getElementById('busy-header');
 const busyScore       = document.getElementById('busy-score');
@@ -110,15 +111,15 @@ function signOut() {
 function updateAuthUI() {
   const signedIn = !!currentUser;
 
-  signinWrap.classList.toggle('hidden', signedIn);
-  userNameEl.classList.toggle('hidden', !signedIn);
-  signoutBtn.classList.toggle('hidden', !signedIn);
+  // Footer sign-in: visible to guests only
+  signinFooter.classList.toggle('hidden', signedIn);
+  // User bar: visible when signed in
+  userBar.classList.toggle('hidden', !signedIn);
   addTaskSection.classList.toggle('hidden', !signedIn);
-  guestNote.classList.toggle('hidden', signedIn);
 
   if (signedIn) {
     userNameEl.textContent = currentUser.name;
-    // Show lock only for non-owner signed-in users (owner already unlocked)
+    // Show PIN lock only for non-owner accounts
     ownerBtn.classList.toggle('hidden', isOwnerEmail(currentUser.email));
   } else {
     ownerBtn.classList.add('hidden');
