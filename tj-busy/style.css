@@ -28,76 +28,6 @@ body {
 
 .hidden { display: none !important; }
 
-/* ── Auth overlay ─────────────────────────────────────────────────── */
-.auth-overlay {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--bg) 60%);
-}
-
-.auth-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  max-width: 380px;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-}
-
-.auth-logo {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #3a3a5c, #252540);
-  border: 1px solid #3a3a6a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
-  color: #a0a0d0;
-  margin-bottom: 0.25rem;
-}
-
-.auth-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.auth-subtitle {
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.6;
-  max-width: 280px;
-}
-
-#google-btn-wrap {
-  margin: 0.5rem 0;
-}
-
-.auth-error {
-  font-size: 0.82rem;
-  color: var(--accent-high);
-  min-height: 1.2em;
-}
-
-.auth-note {
-  font-size: 0.72rem;
-  color: var(--muted-2);
-  letter-spacing: 0.06em;
-}
-
 /* ── Main app ──────────────────────────────────────────────────────── */
 .container {
   max-width: 660px;
@@ -124,16 +54,29 @@ body.level-very-busy {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.25rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.75rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+  min-height: 42px;
+}
+
+#user-bar-left {
+  display: flex;
+  align-items: center;
 }
 
 #user-name {
   font-size: 0.82rem;
   color: var(--muted);
   letter-spacing: 0.02em;
+}
+
+.guest-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: -0.25rem;
 }
 
 .user-bar-actions {
