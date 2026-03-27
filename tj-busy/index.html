@@ -5,16 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Is Tj Busy?</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-  <div class="container">
+
+  <!-- ── Auth overlay ──────────────────────────────────────────── -->
+  <div id="auth-overlay" class="auth-overlay">
+    <div class="auth-card">
+      <div class="auth-logo">TJ</div>
+      <h1 class="auth-title">Is Tj Busy?</h1>
+      <p class="auth-subtitle">Sign in with your University of Edinburgh account to add tasks.</p>
+      <div id="google-btn-wrap"></div>
+      <p id="auth-error" class="auth-error"></p>
+      <p class="auth-note">@ed.ac.uk accounts only</p>
+    </div>
+  </div>
+
+  <!-- ── Main app ──────────────────────────────────────────────── -->
+  <div id="main-app" class="container hidden">
     <header>
+      <div id="user-bar">
+        <span id="user-name"></span>
+        <div class="user-bar-actions">
+          <button id="owner-btn" class="icon-btn" title="Owner mode">&#x1F512;</button>
+          <button id="signout-btn" class="text-btn">Sign out</button>
+        </div>
+      </div>
+
       <h1 id="busy-header">IS TJ BUSY?</h1>
+
       <div id="busy-score-wrapper">
-        <!-- Arc gauge -->
         <div class="gauge-wrap">
           <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
-            <!-- half-circle arc: r=60, center 70,75, from 180° to 0° -->
             <path id="gauge-track"
               d="M 10,75 A 60,60 0 0,1 130,75"
               stroke-dasharray="188.5"
@@ -31,7 +53,7 @@
       </div>
     </header>
 
-    <section class="card add-task">
+    <section class="card">
       <div class="add-task-label">Add Task</div>
       <div class="input-row">
         <input id="task-input" type="text" placeholder="What needs to be done?" autocomplete="off" />
@@ -51,7 +73,7 @@
           <span class="task-list-label">Tasks</span>
           <span id="task-count">0</span>
         </div>
-        <button id="clear-done-btn">Clear done</button>
+        <button id="clear-done-btn" class="hidden">Clear done</button>
       </div>
       <ul id="tasks"></ul>
       <p id="empty-msg" class="empty-msg">
@@ -59,6 +81,21 @@
         No tasks — Tj is free!
       </p>
     </section>
+  </div>
+
+  <!-- ── PIN modal ─────────────────────────────────────────────── -->
+  <div id="pin-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-icon">&#x1F511;</div>
+      <h3 class="modal-title">Owner Access</h3>
+      <p class="modal-subtitle">Enter your PIN to unlock delete and clear actions.</p>
+      <input id="pin-input" type="password" placeholder="PIN" maxlength="32" autocomplete="off" />
+      <p id="pin-error" class="pin-error hidden">Incorrect PIN. Try again.</p>
+      <div class="modal-actions">
+        <button id="pin-cancel-btn" class="btn-ghost">Cancel</button>
+        <button id="pin-submit-btn" class="btn-primary">Unlock</button>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
