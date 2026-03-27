@@ -381,6 +381,58 @@ header { text-align: center; }
 
 .task-name { flex: 1; font-size: 0.92rem; line-height: 1.4; }
 
+.deadline-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.deadline-badge.overdue {
+  color: #ef9a9a;
+  background: #2e0e0e;
+  border-color: #4a1a1a;
+}
+
+.deadline-row {
+  margin-top: 0.5rem;
+}
+
+#deadline-text {
+  flex: 1 1 180px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#deadline-text::placeholder { color: var(--muted-2); }
+#deadline-text:focus { border-color: var(--border-hover); }
+
+#deadline-picker {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  padding: 0.5rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+#deadline-picker:focus { border-color: var(--border-hover); }
+
 .done-btn, .delete-btn {
   background: none;
   border: none;
