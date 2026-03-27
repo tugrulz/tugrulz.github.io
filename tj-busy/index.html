@@ -9,26 +9,19 @@
 </head>
 <body>
 
-  <!-- ── Auth overlay ──────────────────────────────────────────── -->
-  <div id="auth-overlay" class="auth-overlay">
-    <div class="auth-card">
-      <div class="auth-logo">TJ</div>
-      <h1 class="auth-title">Is Tj Busy?</h1>
-      <p class="auth-subtitle">Sign in with your University of Edinburgh account to add tasks.</p>
-      <div id="google-btn-wrap"></div>
-      <p id="auth-error" class="auth-error"></p>
-      <p class="auth-note">@ed.ac.uk accounts only</p>
-    </div>
-  </div>
-
   <!-- ── Main app ──────────────────────────────────────────────── -->
-  <div id="main-app" class="container hidden">
+  <div class="container">
     <header>
       <div id="user-bar">
-        <span id="user-name"></span>
+        <div id="user-bar-left">
+          <!-- guest -->
+          <div id="signin-wrap"></div>
+          <!-- signed in -->
+          <span id="user-name" class="hidden"></span>
+        </div>
         <div class="user-bar-actions">
-          <button id="owner-btn" class="icon-btn" title="Owner mode">&#x1F512;</button>
-          <button id="signout-btn" class="text-btn">Sign out</button>
+          <button id="owner-btn" class="icon-btn hidden" title="Owner mode">&#x1F512;</button>
+          <button id="signout-btn" class="text-btn hidden">Sign out</button>
         </div>
       </div>
 
@@ -53,7 +46,8 @@
       </div>
     </header>
 
-    <section class="card">
+    <!-- Only visible when signed in as contributor or owner -->
+    <section id="add-task-section" class="card hidden">
       <div class="add-task-label">Add Task</div>
       <div class="input-row">
         <input id="task-input" type="text" placeholder="What needs to be done?" autocomplete="off" />
@@ -81,6 +75,10 @@
         No tasks — Tj is free!
       </p>
     </section>
+
+    <p id="guest-note" class="guest-note hidden">
+      Sign in with a University of Edinburgh account to add tasks.
+    </p>
   </div>
 
   <!-- ── PIN modal ─────────────────────────────────────────────── -->
@@ -88,7 +86,7 @@
     <div class="modal-card">
       <div class="modal-icon">&#x1F511;</div>
       <h3 class="modal-title">Owner Access</h3>
-      <p class="modal-subtitle">Enter your PIN to unlock delete and clear actions.</p>
+      <p class="modal-subtitle">Enter your PIN to unlock resolve and clear actions.</p>
       <input id="pin-input" type="password" placeholder="PIN" maxlength="32" autocomplete="off" />
       <p id="pin-error" class="pin-error hidden">Incorrect PIN. Try again.</p>
       <div class="modal-actions">
