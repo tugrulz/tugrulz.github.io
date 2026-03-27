@@ -12,16 +12,12 @@
   <!-- ── Main app ──────────────────────────────────────────────── -->
   <div class="container">
     <header>
-      <div id="user-bar">
-        <div id="user-bar-left">
-          <!-- guest -->
-          <div id="signin-wrap"></div>
-          <!-- signed in -->
-          <span id="user-name" class="hidden"></span>
-        </div>
+      <!-- signed-in user bar — hidden when guest -->
+      <div id="user-bar" class="hidden">
+        <span id="user-name"></span>
         <div class="user-bar-actions">
           <button id="owner-btn" class="icon-btn hidden" title="Owner mode">&#x1F512;</button>
-          <button id="signout-btn" class="text-btn hidden">Sign out</button>
+          <button id="signout-btn" class="text-btn">Sign out</button>
         </div>
       </div>
 
@@ -76,9 +72,11 @@
       </p>
     </section>
 
-    <p id="guest-note" class="guest-note hidden">
-      Sign in with a University of Edinburgh account to add tasks.
-    </p>
+    <!-- Sign-in footer — visible to guests only -->
+    <div id="signin-footer" class="signin-footer">
+      <p class="signin-footer-text">Have a UoE or owner account? Sign in to add tasks.</p>
+      <div id="signin-wrap"></div>
+    </div>
   </div>
 
   <!-- ── PIN modal ─────────────────────────────────────────────── -->
