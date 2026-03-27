@@ -1,14 +1,15 @@
 // ── Config ─────────────────────────────────────────────────────────────────
-const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';
-const ALLOWED_DOMAIN   = 'ed.ac.uk';
-const OWNER_PIN_HASH   = 'REDACTED_PIN_HASH';
-const STORAGE_KEY      = 'tj-busy-tasks';
+const GOOGLE_CLIENT_ID  = 'YOUR_GOOGLE_CLIENT_ID';
+const ALLOWED_DOMAIN    = 'ed.ac.uk';
+const OWNER_EMAIL       = 'tugrulcanelmas@gmail.com';
+const OWNER_PIN_HASH    = 'REDACTED_PIN_HASH';
+const STORAGE_KEY       = 'tj-busy-tasks';
 const OWNER_SESSION_KEY = 'tj-busy-owner';
 
 // ── Constants ───────────────────────────────────────────────────────────────
 const URGENCY_LABELS  = { 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
 const URGENCY_WEIGHTS = { 1: 5, 2: 15, 3: 30, 4: 60 };
-const ARC_LENGTH      = Math.PI * 60; // ≈ 188.5
+const ARC_LENGTH      = Math.PI * 60;
 
 const LEVELS = [
   { min: 0,  max: 10,       key: 'free',     label: 'Free',            header: 'IS TJ BUSY?' },
@@ -18,54 +19,55 @@ const LEVELS = [
   { min: 90, max: Infinity, key: 'very',     label: 'Very Busy',       header: 'VERY BUSY'   },
 ];
 
+// ── Auth helpers ────────────────────────────────────────────────────────────
+function canAdd(email)   { return email && (email.toLowerCase().endsWith('@' + ALLOWED_DOMAIN) || email.toLowerCase() === OWNER_EMAIL); }
+function isOwnerEmail(email) { return email && email.toLowerCase() === OWNER_EMAIL; }
+
 // ── State ───────────────────────────────────────────────────────────────────
 let tasks       = loadTasks();
 let currentUser = null; // { name, email }
 let isOwner     = sessionStorage.getItem(OWNER_SESSION_KEY) === 'true';
 
 // ── DOM refs ────────────────────────────────────────────────────────────────
-const authOverlay   = document.getElementById('auth-overlay');
-const mainApp       = document.getElementById('main-app');
-const googleBtnWrap = document.getElementById('google-btn-wrap');
-const authError     = document.getElementById('auth-error');
-const userNameEl    = document.getElementById('user-name');
-const ownerBtn      = document.getElementById('owner-btn');
-const signoutBtn    = document.getElementById('signout-btn');
-const busyHeader    = document.getElementById('busy-header');
-const busyScore     = document.getElementById('busy-score');
-const busyLevel     = document.getElementById('busy-level');
-const gaugeFill     = document.getElementById('gauge-fill');
-const taskInput     = document.getElementById('task-input');
-const urgencySelect = document.getElementById('urgency-select');
-const addBtn        = document.getElementById('add-btn');
-const tasksList     = document.getElementById('tasks');
-const taskCount     = document.getElementById('task-count');
-const emptyMsg      = document.getElementById('empty-msg');
-const clearDoneBtn  = document.getElementById('clear-done-btn');
-const pinModal      = document.getElementById('pin-modal');
-const pinInput      = document.getElementById('pin-input');
-const pinError      = document.getElementById('pin-error');
-const pinCancelBtn  = document.getElementById('pin-cancel-btn');
-const pinSubmitBtn  = document.getElementById('pin-submit-btn');
+const signinWrap      = document.getElementById('signin-wrap');
+const userNameEl      = document.getElementById('user-name');
+const ownerBtn        = document.getElementById('owner-btn');
+const signoutBtn      = document.getElementById('signout-btn');
+const guestNote       = document.getElementById('guest-note');
+const addTaskSection  = document.getElementById('add-task-section');
+const busyHeader      = document.getElementById('busy-header');
+const busyScore       = document.getElementById('busy-score');
+const busyLevel       = document.getElementById('busy-level');
+const gaugeFill       = document.getElementById('gauge-fill');
+const taskInput       = document.getElementById('task-input');
+const urgencySelect   = document.getElementById('urgency-select');
+const addBtn          = document.getElementById('add-btn');
+const tasksList       = document.getElementById('tasks');
+const taskCount       = document.getElementById('task-count');
+const emptyMsg        = document.getElementById('empty-msg');
+const clearDoneBtn    = document.getElementById('clear-done-btn');
+const pinModal        = document.getElementById('pin-modal');
+const pinInput        = document.getElementById('pin-input');
+const pinError        = document.getElementById('pin-error');
+const pinCancelBtn    = document.getElementById('pin-cancel-btn');
+const pinSubmitBtn    = document.getElementById('pin-submit-btn');
 
 // ── Google Sign-In ──────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
-  if (typeof google === 'undefined') {
-    authError.textContent = 'Could not load Google Sign-In. Check your connection.';
-    return;
-  }
+  if (typeof google === 'undefined') return;
   google.accounts.id.initialize({
     client_id: GOOGLE_CLIENT_ID,
     callback:  handleCredentialResponse,
-    hd:        ALLOWED_DOMAIN,
+    // No hd restriction — we accept gmail.com too, checked in callback
   });
-  google.accounts.id.renderButton(googleBtnWrap, {
+  google.accounts.id.renderButton(signinWrap, {
     theme:          'filled_black',
     size:           'large',
     shape:          'pill',
-    text:           'sign_in_with',
+    text:           'signin_with',
     logo_alignment: 'left',
   });
+  render(); // show tasks immediately for guests
 });
 
 function parseJwt(token) {
@@ -79,37 +81,63 @@ function handleCredentialResponse(response) {
   const email   = payload.email || '';
   const name    = payload.given_name || payload.name || email;
 
-  if (!email.toLowerCase().endsWith('@' + ALLOWED_DOMAIN)) {
-    authError.textContent = `Only @${ALLOWED_DOMAIN} accounts are allowed.`;
+  if (!canAdd(email)) {
+    alert(`Only @${ALLOWED_DOMAIN} or the site owner can add tasks.`);
     return;
   }
 
   currentUser = { name, email };
-  authError.textContent = '';
-  showApp();
-}
 
-function showApp() {
-  authOverlay.classList.add('hidden');
-  mainApp.classList.remove('hidden');
-  userNameEl.textContent = currentUser.name;
-  updateOwnerUI();
+  // Owner email gets owner mode automatically — no PIN needed
+  if (isOwnerEmail(email)) {
+    isOwner = true;
+    sessionStorage.setItem(OWNER_SESSION_KEY, 'true');
+  }
+
+  updateAuthUI();
   render();
 }
 
 function signOut() {
-  google.accounts.id.disableAutoSelect();
+  if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
   currentUser = null;
   isOwner     = false;
   sessionStorage.removeItem(OWNER_SESSION_KEY);
-  mainApp.classList.add('hidden');
-  authOverlay.classList.remove('hidden');
+  updateAuthUI();
+  render();
+}
+
+function updateAuthUI() {
+  const signedIn = !!currentUser;
+
+  signinWrap.classList.toggle('hidden', signedIn);
+  userNameEl.classList.toggle('hidden', !signedIn);
+  signoutBtn.classList.toggle('hidden', !signedIn);
+  addTaskSection.classList.toggle('hidden', !signedIn);
+  guestNote.classList.toggle('hidden', signedIn);
+
+  if (signedIn) {
+    userNameEl.textContent = currentUser.name;
+    // Show lock only for non-owner signed-in users (owner already unlocked)
+    ownerBtn.classList.toggle('hidden', isOwnerEmail(currentUser.email));
+  } else {
+    ownerBtn.classList.add('hidden');
+  }
+
+  updateOwnerBtn();
 }
 
 // ── Owner PIN ────────────────────────────────────────────────────────────────
 async function sha256(text) {
-  const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function updateOwnerBtn() {
+  if (ownerBtn.classList.contains('hidden')) return;
+  ownerBtn.textContent = isOwner ? '🔓' : '🔒';
+  ownerBtn.title       = isOwner ? 'Owner mode active (click to lock)' : 'Unlock owner mode';
+  ownerBtn.classList.toggle('owner-active', isOwner);
 }
 
 function openPinModal() {
@@ -119,9 +147,7 @@ function openPinModal() {
   pinInput.focus();
 }
 
-function closePinModal() {
-  pinModal.classList.add('hidden');
-}
+function closePinModal() { pinModal.classList.add('hidden'); }
 
 async function submitPin() {
   const hash = await sha256(pinInput.value);
@@ -129,24 +155,12 @@ async function submitPin() {
     isOwner = true;
     sessionStorage.setItem(OWNER_SESSION_KEY, 'true');
     closePinModal();
-    updateOwnerUI();
+    updateOwnerBtn();
     renderTasks();
   } else {
     pinError.classList.remove('hidden');
     pinInput.value = '';
     pinInput.focus();
-  }
-}
-
-function updateOwnerUI() {
-  if (isOwner) {
-    ownerBtn.textContent = '🔓';
-    ownerBtn.title = 'Owner mode active';
-    ownerBtn.classList.add('owner-active');
-  } else {
-    ownerBtn.textContent = '🔒';
-    ownerBtn.title = 'Unlock owner mode';
-    ownerBtn.classList.remove('owner-active');
   }
 }
 
@@ -156,9 +170,7 @@ function loadTasks() {
   catch { return []; }
 }
 
-function saveTasks() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-}
+function saveTasks() { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); }
 
 // ── Score ────────────────────────────────────────────────────────────────────
 function computeScore() {
@@ -186,8 +198,8 @@ function renderScore() {
   gaugeFill.style.strokeDashoffset = offset.toFixed(2);
   gaugeFill.style.stroke = getComputedStyle(busyScore).color;
 
-  busyLevel.textContent = level.label;
-  busyLevel.className   = `level-${level.key}`;
+  busyLevel.textContent  = level.label;
+  busyLevel.className    = `level-${level.key}`;
   busyHeader.textContent = level.header;
 
   if (level.key === 'very') {
@@ -211,16 +223,20 @@ function renderTasks() {
     li.className = `task-item urgency-border-${task.urgency}${task.done ? ' done' : ''}`;
     li.dataset.id = task.id;
 
-    // Owner-only controls rendered only when isOwner
-    const ownerControls = isOwner
+    // Resolve button: owner only
+    const resolveBtn = isOwner
+      ? `<button class="done-btn" title="${task.done ? 'Undo' : 'Resolve'}" data-id="${task.id}">${task.done ? '&#x21A9;' : '&#x2713;'}</button>`
+      : '';
+
+    // Delete button: owner only
+    const deleteBtn = isOwner
       ? `<button class="delete-btn" title="Delete" data-id="${task.id}">&#x2715;</button>`
       : '';
 
     li.innerHTML = `
       <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
       <span class="task-name">${escapeHtml(task.name)}</span>
-      <button class="done-btn" title="${task.done ? 'Undo' : 'Mark done'}" data-id="${task.id}">${task.done ? '&#x21A9;' : '&#x2713;'}</button>
-      ${ownerControls}
+      ${resolveBtn}${deleteBtn}
     `;
     tasksList.appendChild(li);
   });
@@ -229,11 +245,7 @@ function renderTasks() {
   emptyMsg.style.display = tasks.length === 0 ? 'block' : 'none';
 
   const hasDone = tasks.some(t => t.done);
-  if (hasDone && isOwner) {
-    clearDoneBtn.classList.remove('hidden');
-  } else {
-    clearDoneBtn.classList.add('hidden');
-  }
+  clearDoneBtn.classList.toggle('hidden', !(hasDone && isOwner));
 }
 
 function render() {
@@ -243,15 +255,16 @@ function render() {
 
 // ── Actions ──────────────────────────────────────────────────────────────────
 function addTask() {
+  if (!currentUser) return;
   const name = taskInput.value.trim();
   if (!name) return;
   tasks.push({
-    id: Date.now().toString(),
+    id:        Date.now().toString(),
     name,
     urgency:   parseInt(urgencySelect.value, 10),
     done:      false,
     createdAt: Date.now(),
-    addedBy:   currentUser?.email || 'unknown',
+    addedBy:   currentUser.email,
   });
   taskInput.value = '';
   saveTasks();
@@ -259,6 +272,7 @@ function addTask() {
 }
 
 function toggleDone(id) {
+  if (!isOwner) return;
   const t = tasks.find(t => t.id === id);
   if (t) { t.done = !t.done; saveTasks(); render(); }
 }
@@ -293,7 +307,7 @@ tasksList.addEventListener('click', e => {
   if (!btn) return;
   const id = btn.dataset.id;
   if (btn.classList.contains('done-btn'))   toggleDone(id);
-  if (btn.classList.contains('delete-btn') && isOwner) deleteTask(id);
+  if (btn.classList.contains('delete-btn')) deleteTask(id);
 });
 
 clearDoneBtn.addEventListener('click', clearDone);
@@ -301,10 +315,9 @@ signoutBtn.addEventListener('click', signOut);
 
 ownerBtn.addEventListener('click', () => {
   if (isOwner) {
-    // Toggle off
     isOwner = false;
     sessionStorage.removeItem(OWNER_SESSION_KEY);
-    updateOwnerUI();
+    updateOwnerBtn();
     renderTasks();
   } else {
     openPinModal();
