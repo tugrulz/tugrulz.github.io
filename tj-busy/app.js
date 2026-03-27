@@ -215,7 +215,10 @@ function renderScore() {
 }
 
 function renderTasks() {
-  const sorted = [...tasks].sort((a, b) => {
+  // Only owner sees resolved tasks
+  const visible = isOwner ? tasks : tasks.filter(t => !t.done);
+
+  const sorted = [...visible].sort((a, b) => {
     if (a.done !== b.done) return a.done ? 1 : -1;
     // Future (urgency 0) sinks below active tasks but above done
     const aFuture = !a.done && a.urgency === 0;
@@ -225,6 +228,7 @@ function renderTasks() {
   });
 
   tasksList.innerHTML = '';
+  emptyMsg.style.display = visible.length === 0 ? 'block' : 'none';
   sorted.forEach(task => {
     const li = document.createElement('li');
     li.className = `task-item urgency-border-${task.urgency}${task.done ? ' done' : ''}`;
@@ -248,8 +252,7 @@ function renderTasks() {
     tasksList.appendChild(li);
   });
 
-  taskCount.textContent = tasks.length;
-  emptyMsg.style.display = tasks.length === 0 ? 'block' : 'none';
+  taskCount.textContent = visible.length;
 
   const hasDone = tasks.some(t => t.done);
   clearDoneBtn.classList.toggle('hidden', !(hasDone && isOwner));
