@@ -7,7 +7,7 @@ const STORAGE_KEY       = 'tj-busy-tasks';
 const OWNER_SESSION_KEY = 'tj-busy-owner';
 
 // ── Constants ───────────────────────────────────────────────────────────────
-const URGENCY_LABELS  = { 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
+const URGENCY_LABELS  = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
 const URGENCY_WEIGHTS = { 1: 5, 2: 15, 3: 30, 4: 60 };
 const ARC_LENGTH      = Math.PI * 60;
 
@@ -176,7 +176,7 @@ function saveTasks() { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
 // ── Score ────────────────────────────────────────────────────────────────────
 // Weighted by urgency. Calibrated so 10 High tasks = 100.
 // Low=3, Medium=6, High=10, Critical=20
-const SCORE_WEIGHTS = { 1: 3, 2: 6, 3: 10, 4: 20 };
+const SCORE_WEIGHTS = { 0: 0, 1: 3, 2: 6, 3: 10, 4: 20 };
 
 function computeScore() {
   const pending = tasks.filter(t => !t.done);
@@ -217,6 +217,10 @@ function renderScore() {
 function renderTasks() {
   const sorted = [...tasks].sort((a, b) => {
     if (a.done !== b.done) return a.done ? 1 : -1;
+    // Future (urgency 0) sinks below active tasks but above done
+    const aFuture = !a.done && a.urgency === 0;
+    const bFuture = !b.done && b.urgency === 0;
+    if (aFuture !== bFuture) return aFuture ? 1 : -1;
     return b.urgency - a.urgency;
   });
 
