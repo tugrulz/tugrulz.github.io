@@ -16,7 +16,6 @@
       <div id="user-bar" class="hidden">
         <span id="user-name"></span>
         <div class="user-bar-actions">
-          <button id="owner-btn" class="icon-btn hidden" title="Owner mode">&#x1F512;</button>
           <button id="signout-btn" class="text-btn">Sign out</button>
         </div>
       </div>
@@ -94,22 +93,7 @@
     </div>
   </div>
 
-  <!-- ── PIN modal ─────────────────────────────────────────────── -->
-  <div id="pin-modal" class="modal-overlay hidden">
-    <div class="modal-card">
-      <div class="modal-icon">&#x1F511;</div>
-      <h3 class="modal-title">Owner Access</h3>
-      <p class="modal-subtitle">Enter your PIN to unlock resolve and clear actions.</p>
-      <input id="pin-input" type="password" placeholder="PIN" maxlength="32" autocomplete="off" />
-      <p id="pin-error" class="pin-error hidden">Incorrect PIN. Try again.</p>
-      <div class="modal-actions">
-        <button id="pin-cancel-btn" class="btn-ghost">Cancel</button>
-        <button id="pin-submit-btn" class="btn-primary">Unlock</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>

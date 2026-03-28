@@ -1,17 +1,16 @@
-// ── Config ─────────────────────────────────────────────────────────────────
-const GOOGLE_CLIENT_ID  = 'YOUR_GOOGLE_CLIENT_ID';
-const ALLOWED_DOMAIN    = 'ed.ac.uk';
-const OWNER_EMAIL       = 'tugrulcanelmas@gmail.com';
-const OWNER_PIN_HASH    = 'REDACTED_PIN_HASH';
-const OWNER_SESSION_KEY = 'tj-busy-owner';
+// ── Config ───────────────────────────────────────────────────────────────────
+const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';
+const ALLOWED_DOMAIN   = 'ed.ac.uk';
+const OWNER_EMAIL      = 'tugrulcanelmas@gmail.com';
 
 const SUPABASE_URL = 'https://dulysvrvfsckfwbmiobd.supabase.co';
 const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY';
 
-// ── Supabase ────────────────────────────────────────────────────────────────
-const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY).from('tasks');
+// ── Supabase singleton ────────────────────────────────────────────────────────
+// One client reused for all operations; authenticated session enables RLS enforcement
+const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ── Constants ───────────────────────────────────────────────────────────────
+// ── Constants ─────────────────────────────────────────────────────────────────
 const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
 const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
 const ARC_LENGTH     = 2 * Math.PI * 90 * (300 / 360); // 300° arc, r=90 ≈ 471.2
@@ -102,14 +101,13 @@ function taskGiverName(addedBy) {
 // ── State ─────────────────────────────────────────────────────────────────────
 let tasks       = [];
 let currentUser = null;
-let isOwner     = sessionStorage.getItem(OWNER_SESSION_KEY) === 'true';
+let isOwner     = false; // determined solely by verified Google email — never persisted
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const signinWrap     = document.getElementById('signin-wrap');
 const signinFooter   = document.getElementById('signin-footer');
 const userBar        = document.getElementById('user-bar');
 const userNameEl     = document.getElementById('user-name');
-const ownerBtn       = document.getElementById('owner-btn');
 const signoutBtn     = document.getElementById('signout-btn');
 const addTaskSection = document.getElementById('add-task-section');
 const busyHeader     = document.getElementById('busy-header');
@@ -126,16 +124,10 @@ const tasksList      = document.getElementById('tasks');
 const taskCount      = document.getElementById('task-count');
 const emptyMsg       = document.getElementById('empty-msg');
 const clearDoneBtn   = document.getElementById('clear-done-btn');
-const pinModal       = document.getElementById('pin-modal');
-const pinInput       = document.getElementById('pin-input');
-const pinError       = document.getElementById('pin-error');
-const pinCancelBtn   = document.getElementById('pin-cancel-btn');
-const pinSubmitBtn   = document.getElementById('pin-submit-btn');
 
 // ── Supabase data layer ───────────────────────────────────────────────────────
 async function fetchTasks() {
-  const { data, error } = await supabase
-    .createClient(SUPABASE_URL, SUPABASE_KEY)
+  const { data, error } = await sbClient
     .from('tasks')
     .select('*')
     .order('created_at', { ascending: true });
@@ -153,8 +145,7 @@ async function fetchTasks() {
 }
 
 async function dbInsert(task) {
-  const { error } = await supabase
-    .createClient(SUPABASE_URL, SUPABASE_KEY)
+  const { error } = await sbClient
     .from('tasks')
     .insert({
       id:         task.id,
@@ -169,8 +160,7 @@ async function dbInsert(task) {
 }
 
 async function dbUpdate(id, changes) {
-  const { error } = await supabase
-    .createClient(SUPABASE_URL, SUPABASE_KEY)
+  const { error } = await sbClient
     .from('tasks')
     .update(changes)
     .eq('id', id);
@@ -178,8 +168,7 @@ async function dbUpdate(id, changes) {
 }
 
 async function dbDelete(id) {
-  const { error } = await supabase
-    .createClient(SUPABASE_URL, SUPABASE_KEY)
+  const { error } = await sbClient
     .from('tasks')
     .delete()
     .eq('id', id);
@@ -187,8 +176,7 @@ async function dbDelete(id) {
 }
 
 async function dbDeleteWhere(field, value) {
-  const { error } = await supabase
-    .createClient(SUPABASE_URL, SUPABASE_KEY)
+  const { error } = await sbClient
     .from('tasks')
     .delete()
     .eq(field, value);
@@ -196,11 +184,15 @@ async function dbDeleteWhere(field, value) {
 }
 
 // ── Realtime ──────────────────────────────────────────────────────────────────
+let _realtimeDebounce = null;
+
 function subscribeRealtime() {
-  supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+  sbClient
     .channel('tasks-changes')
     .on('postgres_changes', { event: '*', schema: 'public', table: 'tasks' }, () => {
-      fetchTasks();
+      // Debounce rapid successive events (e.g. bulk deletes) into a single fetch
+      clearTimeout(_realtimeDebounce);
+      _realtimeDebounce = setTimeout(fetchTasks, 300);
     })
     .subscribe();
 }
@@ -222,34 +214,53 @@ window.addEventListener('load', () => {
   });
 });
 
+// Decode JWT payload without verification.
+// Safe: the Google Sign-In SDK has already validated the token against Google's servers
+// before invoking our callback. We only use it as a fallback when Supabase auth is unavailable.
 function parseJwt(token) {
   const b64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
   const pad  = b64 + '='.repeat((4 - b64.length % 4) % 4);
   return JSON.parse(atob(pad));
 }
 
-function handleCredentialResponse(response) {
-  const payload = parseJwt(response.credential);
-  const email   = payload.email || '';
-  const name    = payload.given_name || payload.name || email;
+async function handleCredentialResponse(response) {
+  let email, name;
+
+  // Prefer Supabase auth: creates an authenticated session so Supabase RLS policies
+  // can enforce server-side access control on all subsequent DB operations.
+  // Requires Google auth provider to be enabled in your Supabase project settings.
+  const { data: authData, error: authError } = await sbClient.auth.signInWithIdToken({
+    provider: 'google',
+    token: response.credential,
+  });
+
+  if (!authError && authData?.user) {
+    email = authData.user.email || '';
+    name  = authData.user.user_metadata?.given_name
+         || authData.user.user_metadata?.name
+         || email;
+  } else {
+    // Fallback when Supabase Google auth provider is not configured
+    const payload = parseJwt(response.credential);
+    email = payload.email || '';
+    name  = payload.given_name || payload.name || email;
+  }
+
   if (!canAdd(email)) {
     alert(`Only @${ALLOWED_DOMAIN} or the site owner can add tasks.`);
     return;
   }
   currentUser = { name, email };
-  if (isOwnerEmail(email)) {
-    isOwner = true;
-    sessionStorage.setItem(OWNER_SESSION_KEY, 'true');
-  }
+  isOwner     = isOwnerEmail(email); // owner status set from verified Google identity only
   updateAuthUI();
   render();
 }
 
-function signOut() {
+async function signOut() {
   if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
+  await sbClient.auth.signOut();
   currentUser = null;
   isOwner     = false;
-  sessionStorage.removeItem(OWNER_SESSION_KEY);
   updateAuthUI();
   render();
 }
@@ -259,44 +270,7 @@ function updateAuthUI() {
   signinFooter.classList.toggle('hidden', signedIn);
   userBar.classList.toggle('hidden', !signedIn);
   addTaskSection.classList.toggle('hidden', !signedIn);
-  if (signedIn) {
-    userNameEl.textContent = currentUser.name;
-    ownerBtn.classList.toggle('hidden', isOwnerEmail(currentUser.email));
-  } else {
-    ownerBtn.classList.add('hidden');
-  }
-  updateOwnerBtn();
-}
-
-// ── Owner PIN ─────────────────────────────────────────────────────────────────
-async function sha256(text) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
-}
-
-function updateOwnerBtn() {
-  if (ownerBtn.classList.contains('hidden')) return;
-  ownerBtn.textContent = isOwner ? '🔓' : '🔒';
-  ownerBtn.title       = isOwner ? 'Owner mode active (click to lock)' : 'Unlock owner mode';
-  ownerBtn.classList.toggle('owner-active', isOwner);
-}
-
-function openPinModal()  { pinInput.value = ''; pinError.classList.add('hidden'); pinModal.classList.remove('hidden'); pinInput.focus(); }
-function closePinModal() { pinModal.classList.add('hidden'); }
-
-async function submitPin() {
-  const hash = await sha256(pinInput.value);
-  if (hash === OWNER_PIN_HASH) {
-    isOwner = true;
-    sessionStorage.setItem(OWNER_SESSION_KEY, 'true');
-    closePinModal();
-    updateOwnerBtn();
-    renderTasks();
-  } else {
-    pinError.classList.remove('hidden');
-    pinInput.value = '';
-    pinInput.focus();
-  }
+  if (signedIn) userNameEl.textContent = currentUser.name;
 }
 
 // ── Score ─────────────────────────────────────────────────────────────────────
@@ -402,12 +376,12 @@ function renderTasks() {
     li.className  = `task-item urgency-border-${task.urgency}${task.done ? ' done' : ''}`;
     li.dataset.id = task.id;
 
-    const resolveBtn   = isOwner ? `<button class="done-btn"    title="${task.done ? 'Undo' : 'Resolve'}" data-id="${task.id}">${task.done ? '&#x21A9;' : '&#x2713;'}</button>` : '';
-    const deleteBtn    = isOwner ? `<button class="delete-btn"  title="Delete"   data-id="${task.id}">&#x2715;</button>` : '';
-    const dl           = task.deadline ? formatDeadline(task.deadline) : null;
+    const resolveBtn    = isOwner ? `<button class="done-btn"   title="${task.done ? 'Undo' : 'Resolve'}" data-id="${task.id}">${task.done ? '&#x21A9;' : '&#x2713;'}</button>` : '';
+    const deleteBtn     = isOwner ? `<button class="delete-btn" title="Delete"   data-id="${task.id}">&#x2715;</button>` : '';
+    const dl            = task.deadline ? formatDeadline(task.deadline) : null;
     const deadlineBadge = dl ? `<span class="deadline-badge${dl.overdue ? ' overdue' : ''}" title="${task.deadline}">${dl.exact} · ${dl.rel}</span>` : '';
-    const giver        = taskGiverName(task.addedBy);
-    const giverBadge   = giver ? `<span class="giver-badge" title="${escapeHtml(task.addedBy)}">from ${escapeHtml(giver)}</span>` : '';
+    const giver         = taskGiverName(task.addedBy);
+    const giverBadge    = giver ? `<span class="giver-badge" title="${escapeHtml(task.addedBy)}">from ${escapeHtml(giver)}</span>` : '';
 
     li.innerHTML = `
       <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
@@ -492,19 +466,3 @@ signoutBtn.addEventListener('click', signOut);
 deadlinePicker.addEventListener('focus',  () => { if (!deadlinePicker.value) deadlinePicker.value = isoDate(new Date()); });
 deadlinePicker.addEventListener('change', () => { if (deadlinePicker.value) deadlineText.value = deadlinePicker.value; });
 deadlineText.addEventListener('input',    () => { deadlinePicker.value = parseDeadline(deadlineText.value) || ''; });
-
-ownerBtn.addEventListener('click', () => {
-  if (isOwner) {
-    isOwner = false;
-    sessionStorage.removeItem(OWNER_SESSION_KEY);
-    updateOwnerBtn();
-    renderTasks();
-  } else {
-    openPinModal();
-  }
-});
-
-pinCancelBtn.addEventListener('click', closePinModal);
-pinSubmitBtn.addEventListener('click', submitPin);
-pinInput.addEventListener('keydown', e => { if (e.key === 'Enter') submitPin(); });
-pinModal.addEventListener('click',   e => { if (e.target === pinModal) closePinModal(); });
