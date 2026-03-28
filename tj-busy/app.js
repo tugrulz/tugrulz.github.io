@@ -15,10 +15,10 @@ const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Crit
 
 const CATEGORIES = [
   // Grant is first so it wins over Research when "grant" keyword ties the score
-  { key: 'grant',       label: 'Grant',       color: '#ffca28', bg: '#2a2000',
+  { key: 'grant',       label: 'Grant',       color: '#ffd54f', bg: '#1a1500',
     keywords: ['grant:','grant ','funding','epsrc','ahrc','ukri','horizon','fellowship',
       'proposal','bid','pathways to impact'] },
-  { key: 'research',    label: 'Research',    color: '#26c6da', bg: '#051e20',
+  { key: 'research',    label: 'Research',    color: '#00bcd4', bg: '#001e22',
     keywords: ['paper','literature','experiment','data','analysis','survey','publication',
       'journal','conference','poster','abstract','methodology','results','findings',
       'hypothesis','research','questionnaire','writeup','write up','draft',
@@ -26,7 +26,7 @@ const CATEGORIES = [
       'arr','arxiv','acl','naacl','coling','submission','censorship','nlp',
       'llm','dataset','corpus','model','baseline','evaluation','image manipulation',
       'real or ai','rebuttal','camera ready','yusuf','angry men'] },
-  { key: 'teaching',    label: 'Teaching',    color: '#42a5f5', bg: '#0d1f35',
+  { key: 'teaching',    label: 'Teaching',    color: '#7e57c2', bg: '#130a30',
     keywords: ['grading','grade','marking','mark','lab','labs','textbook','lecture',
       'tutorial','seminar','course material','module','assignment','homework','exam',
       'quiz','coursework','practical','teaching','curriculum','syllabus','lesson',
@@ -35,12 +35,12 @@ const CATEGORIES = [
     keywords: ['feedback','supervision','supervise','student','msc','phd','ug',
       'undergraduate','postgraduate','dissertation','thesis','progress','check in',
       'meeting with','catch up','advisee','intern'] },
-  { key: 'admin',       label: 'Admin',       color: '#ffa726', bg: '#2a1a00',
+  { key: 'admin',       label: 'Admin',       color: '#ff7043', bg: '#250800',
     keywords: ['email','meeting','form','apply','application','register','enrol',
       'appointment','schedule','book','arrange','contact','reply','renew','pay',
       'invoice','visa','passport','document','sign','admin','paperwork','spreadsheet',
       'budget','tax','bank','hr','finance','committee','report to','expense'] },
-  { key: 'personal',    label: 'Personal',    color: '#ec407a', bg: '#2a0a18',
+  { key: 'personal',    label: 'Personal',    color: '#f06292', bg: '#250010',
     keywords: ['birthday','gift','call','visit','dinner','lunch','coffee','gym',
       'exercise','health','doctor','dentist','shop','buy','clean','organise','organize',
       'family','friend','social','party','celebrate','travel','holiday','vacation',
@@ -451,6 +451,9 @@ function renderTasks() {
   const sorted  = [...visible].sort((a, b) => {
     // 1. Done sink to bottom
     if (a.done !== b.done) return a.done ? 1 : -1;
+    // 2. Recurring tasks sink below regular tasks
+    const aRec = !a.addedBy, bRec = !b.addedBy;
+    if (aRec !== bRec) return aRec ? 1 : -1;
     // 2. Future sink below active
     const aFuture = !a.done && a.urgency === 0;
     const bFuture = !b.done && b.urgency === 0;
