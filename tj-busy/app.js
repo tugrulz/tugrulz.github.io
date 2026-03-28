@@ -14,14 +14,14 @@ const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY).from('tasks');
 // ── Constants ───────────────────────────────────────────────────────────────
 const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
 const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
-const ARC_LENGTH     = Math.PI * 60;
+const ARC_LENGTH     = 2 * Math.PI * 90 * (300 / 360); // 300° arc, r=90 ≈ 471.2
 
 const LEVELS = [
-  { min: 0,  max: 10,       key: 'free',     label: 'Free',            header: 'IS TJ BUSY?', img: 'notbusy.png'  },
-  { min: 10, max: 30,       key: 'light',    label: 'A Little Busy',   header: 'IS TJ BUSY?', img: 'lessbusy.png' },
-  { min: 30, max: 60,       key: 'moderate', label: 'Moderately Busy', header: 'IS TJ BUSY?', img: 'busy.png'     },
-  { min: 60, max: 90,       key: 'busy',     label: 'Busy',            header: 'IS TJ BUSY?', img: 'verybusy.png' },
-  { min: 90, max: Infinity, key: 'very',     label: 'Very Busy',       header: 'VERY BUSY',   img: 'fullbusy.png' },
+  { min: 0,  max: 10,       key: 'free',     label: 'Free',            header: 'IS TJ BUSY?', img: 'notbusy.png',  color: '#4caf50' },
+  { min: 10, max: 30,       key: 'light',    label: 'A Little Busy',   header: 'IS TJ BUSY?', img: 'lessbusy.png', color: '#8bc34a' },
+  { min: 30, max: 60,       key: 'moderate', label: 'Moderately Busy', header: 'IS TJ BUSY?', img: 'busy.png',     color: '#ff9800' },
+  { min: 60, max: 90,       key: 'busy',     label: 'Busy',            header: 'IS TJ BUSY?', img: 'verybusy.png', color: '#ff5722' },
+  { min: 90, max: Infinity, key: 'very',     label: 'Very Busy',       header: 'VERY BUSY',   img: 'fullbusy.png', color: '#ff1744' },
 ];
 
 // ── Date helpers ─────────────────────────────────────────────────────────────
@@ -113,10 +113,11 @@ const ownerBtn       = document.getElementById('owner-btn');
 const signoutBtn     = document.getElementById('signout-btn');
 const addTaskSection = document.getElementById('add-task-section');
 const busyHeader     = document.getElementById('busy-header');
-const busyPortrait   = document.getElementById('busy-portrait');
-const busyScore      = document.getElementById('busy-score');
+const busyPortrait   = document.getElementById('busy-portrait');   // SVG <image>
+const busyScore      = document.getElementById('busy-score');      // SVG <text>
 const busyLevel      = document.getElementById('busy-level');
 const gaugeFill      = document.getElementById('gauge-fill');
+const gaugePortrait  = document.getElementById('gauge-portrait');
 const taskInput      = document.getElementById('task-input');
 const urgencySelect  = document.getElementById('urgency-select');
 const deadlineText   = document.getElementById('deadline-text');
@@ -329,16 +330,27 @@ function getLevel(score) {
 function renderScore() {
   const score = computeScore();
   const level = getLevel(score);
+
+  // SVG text score
   busyScore.textContent = score;
-  busyScore.className   = `score-${level.key}`;
+  busyScore.setAttribute('fill', level.color);
+
+  // Arc gauge
   const offset = ARC_LENGTH * (1 - score / 100);
   gaugeFill.style.strokeDashoffset = offset.toFixed(2);
-  gaugeFill.style.stroke = getComputedStyle(busyScore).color;
+  gaugeFill.setAttribute('stroke', level.color);
+
+  // Portrait image (SVG <image> uses href)
+  busyPortrait.setAttribute('href', `busy-images/${level.img}`);
+
+  // Level + header
   busyLevel.textContent  = level.label;
   busyLevel.className    = `level-${level.key}`;
   busyHeader.textContent = level.header;
-  busyPortrait.src       = `busy-images/${level.img}`;
-  busyPortrait.className = `portrait-${level.key}`;
+
+  // Portrait glow via container class
+  gaugePortrait.className = `portrait-${level.key}`;
+
   if (level.key === 'very') {
     busyHeader.classList.add('very');
     document.body.classList.add('level-very-busy');
