@@ -17,11 +17,11 @@ const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
 const ARC_LENGTH     = Math.PI * 60;
 
 const LEVELS = [
-  { min: 0,  max: 10,       key: 'free',     label: 'Free',            header: 'IS TJ BUSY?' },
-  { min: 10, max: 30,       key: 'light',    label: 'A Little Busy',   header: 'IS TJ BUSY?' },
-  { min: 30, max: 60,       key: 'moderate', label: 'Moderately Busy', header: 'IS TJ BUSY?' },
-  { min: 60, max: 90,       key: 'busy',     label: 'Busy',            header: 'IS TJ BUSY?' },
-  { min: 90, max: Infinity, key: 'very',     label: 'Very Busy',       header: 'VERY BUSY'   },
+  { min: 0,  max: 10,       key: 'free',     label: 'Free',            header: 'IS TJ BUSY?', img: 'notbusy.png'  },
+  { min: 10, max: 30,       key: 'light',    label: 'A Little Busy',   header: 'IS TJ BUSY?', img: 'lessbusy.png' },
+  { min: 30, max: 60,       key: 'moderate', label: 'Moderately Busy', header: 'IS TJ BUSY?', img: 'busy.png'     },
+  { min: 60, max: 90,       key: 'busy',     label: 'Busy',            header: 'IS TJ BUSY?', img: 'verybusy.png' },
+  { min: 90, max: Infinity, key: 'very',     label: 'Very Busy',       header: 'VERY BUSY',   img: 'fullbusy.png' },
 ];
 
 // ── Date helpers ─────────────────────────────────────────────────────────────
@@ -113,6 +113,7 @@ const ownerBtn       = document.getElementById('owner-btn');
 const signoutBtn     = document.getElementById('signout-btn');
 const addTaskSection = document.getElementById('add-task-section');
 const busyHeader     = document.getElementById('busy-header');
+const busyPortrait   = document.getElementById('busy-portrait');
 const busyScore      = document.getElementById('busy-score');
 const busyLevel      = document.getElementById('busy-level');
 const gaugeFill      = document.getElementById('gauge-fill');
@@ -336,6 +337,8 @@ function renderScore() {
   busyLevel.textContent  = level.label;
   busyLevel.className    = `level-${level.key}`;
   busyHeader.textContent = level.header;
+  busyPortrait.src       = `busy-images/${level.img}`;
+  busyPortrait.className = `portrait-${level.key}`;
   if (level.key === 'very') {
     busyHeader.classList.add('very');
     document.body.classList.add('level-very-busy');
