@@ -147,89 +147,38 @@ header { text-align: center; }
   48%       { opacity: 1; }
 }
 
-/* ── Portrait ──────────────────────────────────────────────────────── */
-#busy-portrait-wrap {
+/* ── Unified gauge + portrait ──────────────────────────────────────── */
+#gauge-portrait {
   margin: 1.25rem auto 0;
-  display: flex;
-  justify-content: center;
-}
-
-#busy-portrait {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 50%;
-  border: 3px solid var(--border);
-  transition: border-color 0.5s, box-shadow 0.5s, transform 0.4s;
-  background: var(--surface);
-}
-
-#busy-portrait.portrait-free     { border-color: var(--accent-low);  box-shadow: 0 0 20px rgba(76,175,80,0.2); }
-#busy-portrait.portrait-light    { border-color: var(--accent-light); box-shadow: 0 0 20px rgba(139,195,74,0.2); }
-#busy-portrait.portrait-moderate { border-color: var(--accent-med);  box-shadow: 0 0 20px rgba(255,152,0,0.25); }
-#busy-portrait.portrait-busy     { border-color: #ff5722;            box-shadow: 0 0 24px rgba(255,87,34,0.3); }
-#busy-portrait.portrait-very     {
-  border-color: #ff1744;
-  box-shadow: 0 0 32px rgba(255,23,68,0.5);
-  animation: portrait-shake 0.5s ease-in-out infinite;
-}
-
-@keyframes portrait-shake {
-  0%, 100% { transform: rotate(-1deg); }
-  50%       { transform: rotate(1deg); }
-}
-
-/* ── Gauge ─────────────────────────────────────────────────────────── */
-#busy-score-wrapper {
-  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
 }
 
-.gauge-wrap {
-  position: relative;
-  width: 140px;
-  height: 80px;
+#gauge-portrait svg {
+  width: 200px;
+  height: 200px;
+  overflow: visible;
+  transition: filter 0.5s;
 }
 
-.gauge-wrap svg { width: 140px; height: 80px; overflow: visible; }
+#gauge-track { stroke: var(--surface-2); }
+#gauge-fill  { transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1), stroke 0.5s; }
+#busy-score  { font-family: 'Segoe UI', system-ui, sans-serif; transition: fill 0.5s; }
 
-#gauge-track {
-  fill: none;
-  stroke: var(--surface-2);
-  stroke-width: 10;
-  stroke-linecap: round;
+#gauge-portrait.portrait-free     { filter: drop-shadow(0 0 10px rgba(76,175,80,0.35)); }
+#gauge-portrait.portrait-light    { filter: drop-shadow(0 0 10px rgba(139,195,74,0.35)); }
+#gauge-portrait.portrait-moderate { filter: drop-shadow(0 0 12px rgba(255,152,0,0.4)); }
+#gauge-portrait.portrait-busy     { filter: drop-shadow(0 0 14px rgba(255,87,34,0.45)); }
+#gauge-portrait.portrait-very     {
+  filter: drop-shadow(0 0 20px rgba(255,23,68,0.6));
+  animation: portrait-shake 0.5s ease-in-out infinite;
 }
 
-#gauge-fill {
-  fill: none;
-  stroke: var(--accent-low);
-  stroke-width: 10;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1), stroke 0.6s;
-}
-
-#busy-score {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  transition: color 0.5s;
-  white-space: nowrap;
-}
-
-#busy-score-label {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
+@keyframes portrait-shake {
+  0%, 100% { transform: rotate(-1.2deg); }
+  50%       { transform: rotate(1.2deg); }
 }
 
 #busy-level {
