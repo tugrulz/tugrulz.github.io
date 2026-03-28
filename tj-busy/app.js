@@ -454,23 +454,19 @@ function renderTasks() {
   const sorted  = [...visible].sort((a, b) => {
     // 1. Done sink to bottom
     if (a.done !== b.done) return a.done ? 1 : -1;
-    // 2. Future sink below active
+    // 2. Future (urgency 0) sink below active
     const aFuture = !a.done && a.urgency === 0;
     const bFuture = !b.done && b.urgency === 0;
     if (aFuture !== bFuture) return aFuture ? 1 : -1;
     if (aFuture && bFuture) return 0;
-    // 3. Hot (deadline ≤7 days) float above normal
+    // 3. Urgency DESC — always takes priority
+    if (a.urgency !== b.urgency) return b.urgency - a.urgency;
+    // 4. Within same urgency: hot (deadline ≤7 days) first
     const aHot = isHot(a), bHot = isHot(b);
     if (aHot !== bHot) return aHot ? -1 : 1;
-    if (aHot) {
-      // Both hot: priority desc, then deadline asc
-      if (a.urgency !== b.urgency) return b.urgency - a.urgency;
-      return a.deadline < b.deadline ? -1 : 1;
-    }
-    // 4. Both normal: priority desc, then no-deadline before far-deadline, then deadline asc
-    if (a.urgency !== b.urgency) return b.urgency - a.urgency;
+    // 5. Both hot or both normal: deadline asc, no-deadline last
     const aDl = daysUntil(a.deadline), bDl = daysUntil(b.deadline);
-    if ((aDl === null) !== (bDl === null)) return aDl === null ? -1 : 1;
+    if ((aDl === null) !== (bDl === null)) return aDl === null ? 1 : -1;
     if (aDl !== null && bDl !== null) return aDl - bDl;
     return 0;
   });
@@ -493,10 +489,15 @@ function renderTasks() {
     const cat           = catKey ? CATEGORIES.find(c => c.key === catKey) : null;
     const categoryBadge = cat ? `<span class="category-badge" style="color:${cat.color};background:${cat.bg}">${cat.label}</span>` : '';
 
+    const metaRow = giverBadge || deadlineBadge || categoryBadge
+      ? `<div class="task-meta">${giverBadge}${deadlineBadge}${categoryBadge}</div>` : '';
     li.innerHTML = `
-      <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
-      <span class="task-name">${escapeHtml(task.name)}</span>
-      ${giverBadge}${deadlineBadge}${resolveBtn}${deleteBtn}${categoryBadge}
+      <div class="task-main">
+        <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
+        <span class="task-name">${escapeHtml(task.name)}</span>
+        ${resolveBtn}${deleteBtn}
+      </div>
+      ${metaRow}
     `;
     tasksList.appendChild(li);
   });

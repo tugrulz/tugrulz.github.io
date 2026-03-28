@@ -319,8 +319,8 @@ header { text-align: center; }
 /* ── Task item ─────────────────────────────────────────────────────── */
 .task-item {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.35rem;
   background: var(--bg);
   border: 1px solid var(--border);
   border-left: 3px solid transparent;
@@ -328,6 +328,20 @@ header { text-align: center; }
   padding: 0.7rem 0.9rem;
   animation: slide-in 0.2s ease;
   transition: opacity 0.3s;
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-left: 0.1rem;
 }
 
 @keyframes slide-in {
