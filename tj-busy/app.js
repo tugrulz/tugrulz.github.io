@@ -21,7 +21,7 @@ const CATEGORIES = [
       'chapter','bibliography','citation','grant','annotation','annotate','emnlp',
       'arr','arxiv','acl','naacl','emnlp','coling','submission','censorship','nlp',
       'llm','dataset','corpus','model','baseline','evaluation','image manipulation',
-      'real or ai','rebuttal','camera ready'] },
+      'real or ai','rebuttal','camera ready','yusuf','gail','nia','angry men'] },
   { key: 'teaching',    label: 'Teaching',    color: '#42a5f5', bg: '#0d1f35',
     keywords: ['grading','grade','marking','mark','lab','labs','textbook','lecture',
       'tutorial','seminar','course material','module','assignment','homework','exam',
