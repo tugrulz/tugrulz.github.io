@@ -12,6 +12,34 @@ const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
+
+const CATEGORIES = [
+  { key: 'academic', label: 'Academic', color: '#42a5f5', bg: '#0d1f35',
+    keywords: ['essay','assignment','homework','exam','quiz','test','lecture','tutorial',
+      'seminar','reading','submit','submission','grade','mark','report','dissertation',
+      'thesis','coursework','lab','practical','module','course','class','study',
+      'revision','revise','notes','presentation','viva','resit','formative','summative','cw'] },
+  { key: 'research', label: 'Research', color: '#26c6da', bg: '#051e20',
+    keywords: ['paper','literature','review','experiment','data','analysis','survey',
+      'publication','journal','conference','poster','abstract','methodology','results',
+      'findings','hypothesis','research','interview','questionnaire','ethics','writeup',
+      'write up','draft','chapter','bibliography','citation','reference','phd','msc'] },
+  { key: 'admin',    label: 'Admin',    color: '#ffa726', bg: '#2a1a00',
+    keywords: ['email','meeting','form','apply','application','register','enrol','enroll',
+      'appointment','schedule','book','arrange','contact','reply','renew','pay','invoice',
+      'visa','passport','document','sign','fill','admin','paperwork','hr','finance',
+      'budget','tax','insurance','bank','accommodation','housing','council','prescription'] },
+  { key: 'personal', label: 'Personal', color: '#ec407a', bg: '#2a0a18',
+    keywords: ['birthday','gift','call','visit','dinner','lunch','coffee','gym','exercise',
+      'health','doctor','dentist','shop','buy','clean','organise','organize','personal',
+      'family','friend','social','party','celebrate','travel','holiday','vacation',
+      'cook','laundry','haircut','sport','run','walk','yoga','sleep','rest','hobby'] },
+  { key: 'work',     label: 'Work',     color: '#ab47bc', bg: '#1a0a20',
+    keywords: ['code','develop','build','deploy','fix','bug','feature','pr','pull request',
+      'commit','push','merge','branch','client','sprint','ticket','standup','internship',
+      'supervisor','job','interview','cv','resume','portfolio','freelance','contract',
+      'proposal','prototype','design','ui','ux','debug','refactor','test'] },
+];
 const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
 const ARC_LENGTH     = 2 * Math.PI * 90 * (300 / 360); // 300° arc, r=90 ≈ 471.2
 
@@ -88,6 +116,18 @@ function formatDeadline(iso) {
   return { exact, rel, overdue };
 }
 
+// ── Category detection ────────────────────────────────────────────────────────
+function detectCategory(name) {
+  if (!name || !name.trim()) return null;
+  const lower = name.toLowerCase();
+  let best = null, bestScore = 0;
+  for (const cat of CATEGORIES) {
+    const score = cat.keywords.reduce((n, kw) => n + (lower.includes(kw) ? 1 : 0), 0);
+    if (score > bestScore) { bestScore = score; best = cat; }
+  }
+  return bestScore > 0 ? best : null;
+}
+
 // ── Auth helpers ─────────────────────────────────────────────────────────────
 function canAdd(email)       { return email && (email.toLowerCase().endsWith('.ac.uk') || email.toLowerCase() === OWNER_EMAIL); }
 function isOwnerEmail(email) { return email && email.toLowerCase() === OWNER_EMAIL; }
@@ -119,6 +159,7 @@ const taskInput      = document.getElementById('task-input');
 const urgencySelect  = document.getElementById('urgency-select');
 const deadlineText   = document.getElementById('deadline-text');
 const deadlinePicker = document.getElementById('deadline-picker');
+const categoryHint   = document.getElementById('category-hint');
 const addBtn         = document.getElementById('add-btn');
 const tasksList      = document.getElementById('tasks');
 const taskCount      = document.getElementById('task-count');
@@ -382,9 +423,12 @@ function renderTasks() {
     const deadlineBadge = dl ? `<span class="deadline-badge${dl.overdue ? ' overdue' : ''}" title="${task.deadline}">${dl.exact} · ${dl.rel}</span>` : '';
     const giver         = taskGiverName(task.addedBy);
     const giverBadge    = giver ? `<span class="giver-badge" title="${escapeHtml(task.addedBy)}">from ${escapeHtml(giver)}</span>` : '';
+    const cat           = detectCategory(task.name);
+    const categoryBadge = cat ? `<span class="category-badge" style="color:${cat.color};background:${cat.bg}">${cat.label}</span>` : '';
 
     li.innerHTML = `
       <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
+      ${categoryBadge}
       <span class="task-name">${escapeHtml(task.name)}</span>
       ${giverBadge}${deadlineBadge}${resolveBtn}${deleteBtn}
     `;
@@ -462,6 +506,18 @@ tasksList.addEventListener('click', e => {
 
 clearDoneBtn.addEventListener('click', clearDone);
 signoutBtn.addEventListener('click', signOut);
+
+taskInput.addEventListener('input', () => {
+  const cat = detectCategory(taskInput.value);
+  if (cat) {
+    categoryHint.textContent   = cat.label;
+    categoryHint.style.color   = cat.color;
+    categoryHint.style.background = cat.bg;
+    categoryHint.style.display = 'inline-block';
+  } else {
+    categoryHint.style.display = 'none';
+  }
+});
 
 deadlinePicker.addEventListener('focus',  () => { if (!deadlinePicker.value) deadlinePicker.value = isoDate(new Date()); });
 deadlinePicker.addEventListener('change', () => { if (deadlinePicker.value) deadlineText.value = deadlinePicker.value; });

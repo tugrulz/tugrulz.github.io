@@ -362,6 +362,28 @@ header { text-align: center; }
 
 .task-name { flex: 1; font-size: 0.92rem; line-height: 1.4; }
 
+.category-badge {
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.category-hint {
+  display: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin-top: 0.4rem;
+  transition: opacity 0.2s;
+}
+
 .giver-badge {
   font-size: 0.64rem;
   font-weight: 600;
