@@ -13,7 +13,7 @@ const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY).from('tasks');
 
 // ── Constants ───────────────────────────────────────────────────────────────
 const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
-const SCORE_WEIGHTS  = { 0: 0, 1: 3, 2: 6, 3: 10, 4: 20 };
+const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
 const ARC_LENGTH     = Math.PI * 60;
 
 const LEVELS = [
@@ -298,13 +298,18 @@ async function submitPin() {
 }
 
 // ── Score ─────────────────────────────────────────────────────────────────────
-// Deadline multiplier: overdue=2.5×, today=2×, fades to 0.8× beyond 2 weeks
+// Deadline multiplier:
+//   today/overdue: 2.5×  |  ≤2 days: 2.0×  |  3–29 days: linear 2.0→0.5  |  30+: 0.5×  |  no deadline: 1.0×
 function deadlineMultiplier(deadline) {
   if (!deadline) return 1.0;
   const today = new Date(); today.setHours(0,0,0,0);
   const [y,m,d] = deadline.split('-').map(Number);
   const diff = Math.round((new Date(y,m-1,d) - today) / 86400000);
-  return Math.min(2.5, Math.max(0.8, 2.0 - diff * 0.1));
+  if (diff <= 0)  return 2.5;
+  if (diff <= 2)  return 2.0;
+  if (diff >= 30) return 0.5;
+  // Linear interpolation between 2.0 (diff=2) and 0.5 (diff=30)
+  return 2.0 - (diff - 2) * (1.5 / 28);
 }
 
 function computeScore() {
