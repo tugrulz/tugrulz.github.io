@@ -319,8 +319,8 @@ header { text-align: center; }
 /* ── Task item ─────────────────────────────────────────────────────── */
 .task-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.75rem;
   background: var(--bg);
   border: 1px solid var(--border);
   border-left: 3px solid transparent;
@@ -334,14 +334,27 @@ header { text-align: center; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .task-meta {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-shrink: 0;
   gap: 0.4rem;
-  padding-left: 0.1rem;
+}
+
+@media (max-width: 540px) {
+  .task-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+  .task-meta {
+    flex-wrap: wrap;
+    padding-left: 0.1rem;
+  }
 }
 
 @keyframes slide-in {
