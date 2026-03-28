@@ -1,10 +1,10 @@
 // ── Config ───────────────────────────────────────────────────────────────────
-const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';
+const GOOGLE_CLIENT_ID = '581031450933-ui4hdl4ul3ucgqnf8mnu7ncmpc5dki1m.apps.googleusercontent.com';
 const ALLOWED_DOMAIN   = 'ed.ac.uk';
 const OWNER_EMAIL      = 'tugrulcanelmas@gmail.com';
 
 const SUPABASE_URL = 'https://dulysvrvfsckfwbmiobd.supabase.co';
-const SUPABASE_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_KEY = 'sb_publishable_K5NwbLILG5SxdVyuGmAY-w_aL1ul9sg';
 
 // ── Supabase singleton ────────────────────────────────────────────────────────
 // One client reused for all operations; authenticated session enables RLS enforcement
