@@ -90,8 +90,14 @@ function formatDeadline(iso) {
 }
 
 // ── Auth helpers ─────────────────────────────────────────────────────────────
-function canAdd(email)       { return email && (email.toLowerCase().endsWith('@' + ALLOWED_DOMAIN) || email.toLowerCase() === OWNER_EMAIL); }
+function canAdd(email)       { return email && (email.toLowerCase().endsWith('.ac.uk') || email.toLowerCase() === OWNER_EMAIL); }
 function isOwnerEmail(email) { return email && email.toLowerCase() === OWNER_EMAIL; }
+
+function taskGiverName(addedBy) {
+  if (!addedBy || addedBy.toLowerCase() === OWNER_EMAIL) return null;
+  // Extract name from email: "j.smith@ed.ac.uk" → "j.smith"
+  return addedBy.split('@')[0];
+}
 
 // ── State ─────────────────────────────────────────────────────────────────────
 let tasks       = [];
@@ -345,11 +351,13 @@ function renderTasks() {
     const deleteBtn    = isOwner ? `<button class="delete-btn"  title="Delete"   data-id="${task.id}">&#x2715;</button>` : '';
     const dl           = task.deadline ? formatDeadline(task.deadline) : null;
     const deadlineBadge = dl ? `<span class="deadline-badge${dl.overdue ? ' overdue' : ''}" title="${task.deadline}">${dl.exact} · ${dl.rel}</span>` : '';
+    const giver        = taskGiverName(task.addedBy);
+    const giverBadge   = giver ? `<span class="giver-badge" title="${escapeHtml(task.addedBy)}">from ${escapeHtml(giver)}</span>` : '';
 
     li.innerHTML = `
       <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
       <span class="task-name">${escapeHtml(task.name)}</span>
-      ${deadlineBadge}${resolveBtn}${deleteBtn}
+      ${giverBadge}${deadlineBadge}${resolveBtn}${deleteBtn}
     `;
     tasksList.appendChild(li);
   });
