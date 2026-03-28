@@ -147,6 +147,39 @@ header { text-align: center; }
   48%       { opacity: 1; }
 }
 
+/* ── Portrait ──────────────────────────────────────────────────────── */
+#busy-portrait-wrap {
+  margin: 1.25rem auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+#busy-portrait {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  transition: border-color 0.5s, box-shadow 0.5s, transform 0.4s;
+  background: var(--surface);
+}
+
+#busy-portrait.portrait-free     { border-color: var(--accent-low);  box-shadow: 0 0 20px rgba(76,175,80,0.2); }
+#busy-portrait.portrait-light    { border-color: var(--accent-light); box-shadow: 0 0 20px rgba(139,195,74,0.2); }
+#busy-portrait.portrait-moderate { border-color: var(--accent-med);  box-shadow: 0 0 20px rgba(255,152,0,0.25); }
+#busy-portrait.portrait-busy     { border-color: #ff5722;            box-shadow: 0 0 24px rgba(255,87,34,0.3); }
+#busy-portrait.portrait-very     {
+  border-color: #ff1744;
+  box-shadow: 0 0 32px rgba(255,23,68,0.5);
+  animation: portrait-shake 0.5s ease-in-out infinite;
+}
+
+@keyframes portrait-shake {
+  0%, 100% { transform: rotate(-1deg); }
+  50%       { transform: rotate(1deg); }
+}
+
 /* ── Gauge ─────────────────────────────────────────────────────────── */
 #busy-score-wrapper {
   margin-top: 1.5rem;
