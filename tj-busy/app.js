@@ -206,6 +206,7 @@ function subscribeRealtime() {
 
 // ── Google Sign-In ────────────────────────────────────────────────────────────
 window.addEventListener('load', () => {
+  deadlinePicker.min = isoDate(new Date());
   fetchTasks();
   subscribeRealtime();
 
@@ -459,6 +460,7 @@ tasksList.addEventListener('click', e => {
 clearDoneBtn.addEventListener('click', clearDone);
 signoutBtn.addEventListener('click', signOut);
 
+deadlinePicker.addEventListener('focus',  () => { if (!deadlinePicker.value) deadlinePicker.value = isoDate(new Date()); });
 deadlinePicker.addEventListener('change', () => { if (deadlinePicker.value) deadlineText.value = deadlinePicker.value; });
 deadlineText.addEventListener('input',    () => { deadlinePicker.value = parseDeadline(deadlineText.value) || ''; });
 
