@@ -14,14 +14,18 @@ const sbClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Critical' };
 
 const CATEGORIES = [
+  // Grant is first so it wins over Research when "grant" keyword ties the score
+  { key: 'grant',       label: 'Grant',       color: '#ffca28', bg: '#2a2000',
+    keywords: ['grant:','grant ','funding','epsrc','ahrc','ukri','horizon','fellowship',
+      'proposal','bid','pathways to impact'] },
   { key: 'research',    label: 'Research',    color: '#26c6da', bg: '#051e20',
     keywords: ['paper','literature','experiment','data','analysis','survey','publication',
       'journal','conference','poster','abstract','methodology','results','findings',
-      'hypothesis','research','questionnaire','ethics','writeup','write up','draft',
-      'chapter','bibliography','citation','grant','annotation','annotate','emnlp',
-      'arr','arxiv','acl','naacl','emnlp','coling','submission','censorship','nlp',
+      'hypothesis','research','questionnaire','writeup','write up','draft',
+      'chapter','bibliography','citation','annotation','annotate','emnlp',
+      'arr','arxiv','acl','naacl','coling','submission','censorship','nlp',
       'llm','dataset','corpus','model','baseline','evaluation','image manipulation',
-      'real or ai','rebuttal','camera ready','yusuf','gail','nia','angry men'] },
+      'real or ai','rebuttal','camera ready','yusuf','angry men'] },
   { key: 'teaching',    label: 'Teaching',    color: '#42a5f5', bg: '#0d1f35',
     keywords: ['grading','grade','marking','mark','lab','labs','textbook','lecture',
       'tutorial','seminar','course material','module','assignment','homework','exam',
@@ -162,6 +166,9 @@ const urgencySelect  = document.getElementById('urgency-select');
 const deadlineText   = document.getElementById('deadline-text');
 const deadlinePicker = document.getElementById('deadline-picker');
 const categoryHint   = document.getElementById('category-hint');
+const categoryRow    = document.getElementById('category-row');
+const categorySelect = document.getElementById('category-select');
+const freeDateEl     = document.getElementById('free-date');
 const addBtn         = document.getElementById('add-btn');
 const tasksList      = document.getElementById('tasks');
 const taskCount      = document.getElementById('task-count');
@@ -183,7 +190,9 @@ async function fetchTasks() {
     deadline:  row.deadline,
     createdAt: row.created_at,
     addedBy:   row.added_by,
+    category:  row.category || null,
   }));
+  await ensureRecurringTasks();
   render();
 }
 
@@ -198,6 +207,7 @@ async function dbInsert(task) {
       deadline:   task.deadline,
       created_at: new Date(task.createdAt).toISOString(),
       added_by:   task.addedBy,
+      category:   task.category || null,
     });
   if (error) console.error('insert error', error);
 }
@@ -224,6 +234,30 @@ async function dbDeleteWhere(field, value) {
     .delete()
     .eq(field, value);
   if (error) console.error('delete error', error);
+}
+
+// ── Recurring tasks ───────────────────────────────────────────────────────────
+async function ensureRecurringTasks() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  // Ethics Review: every 2 weeks on Friday, anchored to 3 Apr 2026
+  const anchor = new Date(2026, 3, 3);
+  let target = new Date(anchor);
+  while (target < today) target.setDate(target.getDate() + 14);
+  const deadline = isoDate(target);
+  if (!tasks.some(t => t.name === 'Ethics Review' && t.deadline === deadline)) {
+    const task = {
+      id:        `ethics-${deadline}`,
+      name:      'Ethics Review',
+      urgency:   2,
+      done:      false,
+      deadline,
+      createdAt: Date.now(),
+      addedBy:   null,
+      category:  'admin',
+    };
+    tasks.push(task);
+    await dbInsert(task);
+  }
 }
 
 // ── Realtime ──────────────────────────────────────────────────────────────────
@@ -313,7 +347,13 @@ function updateAuthUI() {
   signinFooter.classList.toggle('hidden', signedIn);
   userBar.classList.toggle('hidden', !signedIn);
   addTaskSection.classList.toggle('hidden', !signedIn);
-  if (signedIn) userNameEl.textContent = currentUser.name;
+  if (signedIn) {
+    userNameEl.textContent = currentUser.name;
+    categoryRow.classList.toggle('hidden', !isOwner);
+    categoryHint.style.display = 'none';
+  } else {
+    categoryRow.classList.add('hidden');
+  }
 }
 
 // ── Score ─────────────────────────────────────────────────────────────────────
@@ -340,6 +380,23 @@ function computeScore() {
 
 function getLevel(score) {
   return LEVELS.find(l => score >= l.min && score < l.max) || LEVELS[LEVELS.length - 1];
+}
+
+// Show estimated free date only when 3+ deadlines fall within the next 14 days
+function computeFreeDate() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const soon = tasks.filter(t => {
+    if (t.done || !t.deadline) return false;
+    const [y,m,d] = t.deadline.split('-').map(Number);
+    const diff = Math.round((new Date(y,m-1,d) - today) / 86400000);
+    return diff >= 0 && diff <= 14;
+  });
+  if (soon.length < 3) return null;
+  const last = soon.reduce((max, t) => t.deadline > max ? t.deadline : max, '');
+  const [y,m,d] = last.split('-').map(Number);
+  const free = new Date(y,m-1,d);
+  free.setDate(free.getDate() + 1);
+  return free.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 }
 
 // ── Render ────────────────────────────────────────────────────────────────────
@@ -370,6 +427,10 @@ function renderScore() {
     busyHeader.classList.remove('very');
     document.body.classList.remove('level-very-busy');
   }
+
+  const freeDate = computeFreeDate();
+  freeDateEl.textContent = freeDate ? `free from ${freeDate}` : '';
+  freeDateEl.classList.toggle('hidden', !freeDate);
 }
 
 function renderTasks() {
@@ -425,7 +486,8 @@ function renderTasks() {
     const deadlineBadge = dl ? `<span class="deadline-badge${dl.overdue ? ' overdue' : ''}" title="${task.deadline}">${dl.exact} · ${dl.rel}</span>` : '';
     const giver         = taskGiverName(task.addedBy);
     const giverBadge    = giver ? `<span class="giver-badge" title="${escapeHtml(task.addedBy)}">from ${escapeHtml(giver)}</span>` : '';
-    const cat           = detectCategory(task.name);
+    const catKey        = task.category || detectCategory(task.name)?.key || null;
+    const cat           = catKey ? CATEGORIES.find(c => c.key === catKey) : null;
     const categoryBadge = cat ? `<span class="category-badge" style="color:${cat.color};background:${cat.bg}">${cat.label}</span>` : '';
 
     li.innerHTML = `
@@ -449,6 +511,9 @@ async function addTask() {
   const name = taskInput.value.trim();
   if (!name) return;
   const rawDeadline = deadlinePicker.value || deadlineText.value;
+  const category = isOwner
+    ? (categorySelect.value || detectCategory(name)?.key || null)
+    : (detectCategory(name)?.key || null);
   const task = {
     id:        Date.now().toString(),
     name,
@@ -457,10 +522,12 @@ async function addTask() {
     deadline:  parseDeadline(rawDeadline),
     createdAt: Date.now(),
     addedBy:   currentUser.email,
+    category,
   };
   taskInput.value      = '';
   deadlineText.value   = '';
   deadlinePicker.value = '';
+  if (isOwner) categorySelect.value = '';
   tasks.push(task);
   render();
   await dbInsert(task);
@@ -511,13 +578,19 @@ signoutBtn.addEventListener('click', signOut);
 
 taskInput.addEventListener('input', () => {
   const cat = detectCategory(taskInput.value);
-  if (cat) {
-    categoryHint.textContent   = cat.label;
-    categoryHint.style.color   = cat.color;
-    categoryHint.style.background = cat.bg;
-    categoryHint.style.display = 'inline-block';
+  if (isOwner) {
+    // Auto-fill select; owner can override manually
+    if (!taskInput.value.trim()) categorySelect.value = '';
+    else if (cat) categorySelect.value = cat.key;
   } else {
-    categoryHint.style.display = 'none';
+    if (cat) {
+      categoryHint.textContent      = cat.label;
+      categoryHint.style.color      = cat.color;
+      categoryHint.style.background = cat.bg;
+      categoryHint.style.display    = 'inline-block';
+    } else {
+      categoryHint.style.display = 'none';
+    }
   }
 });
 

@@ -48,6 +48,7 @@
 
         </svg>
         <div id="busy-level">Calculating...</div>
+        <div id="free-date" class="free-date hidden"></div>
       </div>
     </header>
 
@@ -64,6 +65,17 @@
           <option value="4">Critical</option>
         </select>
         <button id="add-btn">Add</button>
+      </div>
+      <div id="category-row" class="category-row hidden">
+        <select id="category-select">
+          <option value="">No category</option>
+          <option value="grant">Grant</option>
+          <option value="research">Research</option>
+          <option value="teaching">Teaching</option>
+          <option value="supervision">Supervision</option>
+          <option value="admin">Admin</option>
+          <option value="personal">Personal</option>
+        </select>
       </div>
       <div id="category-hint" class="category-hint"></div>
       <div class="input-row deadline-row">

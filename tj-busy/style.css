@@ -384,6 +384,37 @@ header { text-align: center; }
   transition: opacity 0.2s;
 }
 
+.category-row {
+  margin-top: 0.4rem;
+}
+
+#category-select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#category-select:focus { border-color: var(--border-hover); }
+
+.free-date {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.2rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  margin-top: 0.3rem;
+}
+
 .giver-badge {
   font-size: 0.64rem;
   font-weight: 600;
