@@ -332,10 +332,20 @@ function renderScore() {
 function renderTasks() {
   const visible = isOwner ? tasks : tasks.filter(t => !t.done);
   const sorted  = [...visible].sort((a, b) => {
+    // 1. Done tasks sink to the bottom
     if (a.done !== b.done) return a.done ? 1 : -1;
+    // 2. Future tasks sink below active tasks
     const aFuture = !a.done && a.urgency === 0;
     const bFuture = !b.done && b.urgency === 0;
     if (aFuture !== bFuture) return aFuture ? 1 : -1;
+    if (aFuture && bFuture) return 0;
+    // 3. Among active tasks: earliest deadline first (no deadline goes last)
+    if (a.deadline || b.deadline) {
+      if (!a.deadline) return 1;
+      if (!b.deadline) return -1;
+      if (a.deadline !== b.deadline) return a.deadline < b.deadline ? -1 : 1;
+    }
+    // 4. Tiebreak by urgency descending
     return b.urgency - a.urgency;
   });
 
