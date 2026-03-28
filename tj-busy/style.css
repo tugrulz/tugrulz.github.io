@@ -165,7 +165,6 @@ header { text-align: center; }
 
 #gauge-track { stroke: var(--surface-2); }
 #gauge-fill  { transition: stroke-dashoffset 0.6s cubic-bezier(.4,0,.2,1), stroke 0.5s; }
-#busy-score  { font-family: 'Segoe UI', system-ui, sans-serif; transition: fill 0.5s; }
 
 #gauge-portrait.portrait-free     { filter: drop-shadow(0 0 10px rgba(76,175,80,0.35)); }
 #gauge-portrait.portrait-light    { filter: drop-shadow(0 0 10px rgba(139,195,74,0.35)); }

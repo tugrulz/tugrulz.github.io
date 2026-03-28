@@ -113,8 +113,7 @@ const ownerBtn       = document.getElementById('owner-btn');
 const signoutBtn     = document.getElementById('signout-btn');
 const addTaskSection = document.getElementById('add-task-section');
 const busyHeader     = document.getElementById('busy-header');
-const busyPortrait   = document.getElementById('busy-portrait');   // SVG <image>
-const busyScore      = document.getElementById('busy-score');      // SVG <text>
+const busyPortrait   = document.getElementById('busy-portrait');
 const busyLevel      = document.getElementById('busy-level');
 const gaugeFill      = document.getElementById('gauge-fill');
 const gaugePortrait  = document.getElementById('gauge-portrait');
@@ -330,10 +329,6 @@ function getLevel(score) {
 function renderScore() {
   const score = computeScore();
   const level = getLevel(score);
-
-  // SVG text score
-  busyScore.textContent = score;
-  busyScore.setAttribute('fill', level.color);
 
   // Arc gauge
   const offset = ARC_LENGTH * (1 - score / 100);
