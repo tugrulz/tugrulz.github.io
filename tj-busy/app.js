@@ -149,8 +149,10 @@ function taskGiverName(addedBy) {
 // ── State ─────────────────────────────────────────────────────────────────────
 let tasks              = [];
 let currentUser        = null;
-let isOwner            = false; // determined solely by verified Google email — never persisted
-let categoryManualSet  = false; // true when owner has manually changed the category select
+let isOwner            = false;
+let categoryManualSet  = false;
+let lastAddedTaskId    = null;
+let editingTaskId      = null;
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const signinWrap     = document.getElementById('signin-wrap');
@@ -168,11 +170,20 @@ const taskInput      = document.getElementById('task-input');
 const urgencySelect  = document.getElementById('urgency-select');
 const deadlineText   = document.getElementById('deadline-text');
 const deadlinePicker = document.getElementById('deadline-picker');
-const categoryHint   = document.getElementById('category-hint');
-const categoryRow    = document.getElementById('category-row');
-const categorySelect = document.getElementById('category-select');
-const freeDateEl     = document.getElementById('free-date');
-const addBtn         = document.getElementById('add-btn');
+const categoryHint        = document.getElementById('category-hint');
+const categoryRow         = document.getElementById('category-row');
+const categorySelect      = document.getElementById('category-select');
+const freeDateEl          = document.getElementById('free-date');
+const sparklineEl         = document.getElementById('sparkline');
+const addBtn              = document.getElementById('add-btn');
+const editModal           = document.getElementById('edit-modal');
+const editNameInput       = document.getElementById('edit-name');
+const editUrgencySelect   = document.getElementById('edit-urgency');
+const editCategorySelect  = document.getElementById('edit-category');
+const editDeadlineText    = document.getElementById('edit-deadline-text');
+const editDeadlinePicker  = document.getElementById('edit-deadline-picker');
+const editCancelBtn       = document.getElementById('edit-cancel-btn');
+const editSaveBtn         = document.getElementById('edit-save-btn');
 const tasksList      = document.getElementById('tasks');
 const taskCount      = document.getElementById('task-count');
 const emptyMsg       = document.getElementById('empty-msg');
@@ -434,6 +445,9 @@ function renderScore() {
   const freeDate = computeFreeDate();
   freeDateEl.textContent = freeDate ? `free from ${freeDate}` : '';
   freeDateEl.classList.toggle('hidden', !freeDate);
+
+  saveScoreHistory(score);
+  renderSparkline();
 }
 
 function renderTasks() {
@@ -479,6 +493,7 @@ function renderTasks() {
     li.className  = `task-item urgency-border-${task.urgency}${task.done ? ' done' : ''}`;
     li.dataset.id = task.id;
 
+    const editBtn       = isOwner && !task.done ? `<button class="edit-btn" title="Edit" data-id="${task.id}">&#x270E;</button>` : '';
     const resolveBtn    = isOwner ? `<button class="done-btn"   title="${task.done ? 'Undo' : 'Resolve'}" data-id="${task.id}">${task.done ? '&#x21A9;' : '&#x2713;'}</button>` : '';
     const deleteBtn     = isOwner ? `<button class="delete-btn" title="Delete"   data-id="${task.id}">&#x2715;</button>` : '';
     const dl            = task.deadline ? formatDeadline(task.deadline) : null;
@@ -488,17 +503,21 @@ function renderTasks() {
     const catKey        = task.category || detectCategory(task.name)?.key || null;
     const cat           = catKey ? CATEGORIES.find(c => c.key === catKey) : null;
     const categoryBadge = cat ? `<span class="category-badge" style="color:${cat.color};background:${cat.bg}">${cat.label}</span>` : '';
+    const ageDays       = !task.deadline && task.createdAt
+      ? Math.floor((Date.now() - new Date(task.createdAt).getTime()) / 86400000) : 0;
+    const ageBadge      = ageDays >= 7 ? `<span class="age-badge">${ageDays}d old</span>` : '';
 
-    const metaRow = giverBadge || deadlineBadge || categoryBadge
-      ? `<div class="task-meta">${giverBadge}${deadlineBadge}${categoryBadge}</div>` : '';
+    const metaRow = giverBadge || deadlineBadge || ageBadge || categoryBadge
+      ? `<div class="task-meta">${giverBadge}${deadlineBadge}${ageBadge}${categoryBadge}</div>` : '';
     li.innerHTML = `
       <div class="task-main">
         <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
         <span class="task-name">${escapeHtml(task.name)}</span>
-        ${resolveBtn}${deleteBtn}
+        ${editBtn}${resolveBtn}${deleteBtn}
       </div>
       ${metaRow}
     `;
+    if (task.id === lastAddedTaskId) li.classList.add('task-new');
     tasksList.appendChild(li);
   });
 
@@ -531,6 +550,7 @@ async function addTask() {
   deadlineText.value   = '';
   deadlinePicker.value = '';
   if (isOwner) { categorySelect.value = ''; categoryManualSet = false; }
+  lastAddedTaskId = task.id;
   tasks.push(task);
   render();
   await dbInsert(task);
@@ -540,6 +560,10 @@ async function toggleDone(id) {
   if (!isOwner) return;
   const t = tasks.find(t => t.id === id);
   if (!t) return;
+  if (!t.done) {
+    const li = tasksList.querySelector(`[data-id="${id}"]`);
+    if (li) { li.classList.add('task-resolving'); await new Promise(r => setTimeout(r, 420)); }
+  }
   t.done = !t.done;
   render();
   await dbUpdate(id, { done: t.done });
@@ -559,6 +583,82 @@ async function clearDone() {
   await dbDeleteWhere('done', true);
 }
 
+// ── Edit task ─────────────────────────────────────────────────────────────────
+function openEditModal(id) {
+  const task = tasks.find(t => t.id === id);
+  if (!task) return;
+  editingTaskId = id;
+  editNameInput.value      = task.name;
+  editUrgencySelect.value  = String(task.urgency);
+  editCategorySelect.value = task.category || '';
+  editDeadlineText.value   = task.deadline || '';
+  editDeadlinePicker.value = task.deadline || '';
+  editModal.classList.remove('hidden');
+  editNameInput.focus();
+}
+
+function closeEditModal() { editModal.classList.add('hidden'); editingTaskId = null; }
+
+async function saveEdit() {
+  const task = tasks.find(t => t.id === editingTaskId);
+  if (!task) return;
+  const name = editNameInput.value.trim();
+  if (!name) return;
+  const deadline = editDeadlinePicker.value || parseDeadline(editDeadlineText.value) || null;
+  const category = editCategorySelect.value || null;
+  const urgency  = parseInt(editUrgencySelect.value, 10);
+  Object.assign(task, { name, urgency, deadline, category });
+  closeEditModal();
+  render();
+  await dbUpdate(editingTaskId, { name, urgency, deadline, category });
+}
+
+// ── Busyness history ──────────────────────────────────────────────────────────
+function saveScoreHistory(score) {
+  const today = isoDate(new Date());
+  let h = {};
+  try { h = JSON.parse(localStorage.getItem('tj-busy-history') || '{}'); } catch(e) {}
+  h[today] = score;
+  const cutoff = isoDate(new Date(Date.now() - 30 * 86400000));
+  Object.keys(h).forEach(k => { if (k < cutoff) delete h[k]; });
+  localStorage.setItem('tj-busy-history', JSON.stringify(h));
+}
+
+function renderSparkline() {
+  let h = {};
+  try { h = JSON.parse(localStorage.getItem('tj-busy-history') || '{}'); } catch(e) {}
+  const days = 14;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const data = Array.from({ length: days }, (_, i) => {
+    const d = new Date(today); d.setDate(d.getDate() - (days - 1 - i));
+    return h[isoDate(d)] ?? null;
+  });
+  const known = data.filter(p => p !== null);
+  if (known.length < 2) { sparklineEl.classList.add('hidden'); return; }
+
+  const W = 220, H = 38, px = 4, py = 5;
+  const xStep = (W - px * 2) / (days - 1);
+  let path = '';
+  data.forEach((p, i) => {
+    if (p === null) return;
+    const x = (px + i * xStep).toFixed(1);
+    const y = (H - py - (p / 100) * (H - py * 2)).toFixed(1);
+    path += path ? ` L${x},${y}` : `M${x},${y}`;
+  });
+  const lastIdx = data.map((p, i) => p !== null ? i : -1).filter(i => i >= 0).pop();
+  const dotX = (px + lastIdx * xStep).toFixed(1);
+  const dotY = (H - py - (data[lastIdx] / 100) * (H - py * 2)).toFixed(1);
+
+  sparklineEl.innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" class="sparkline-svg">
+      <path d="${path}" fill="none" stroke="#3a3a3a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${dotX}" cy="${dotY}" r="2.5" fill="#555"/>
+    </svg>
+    <span class="sparkline-label">14d</span>
+  `;
+  sparklineEl.classList.remove('hidden');
+}
+
 // ── Utilities ─────────────────────────────────────────────────────────────────
 function escapeHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -572,9 +672,17 @@ tasksList.addEventListener('click', e => {
   const btn = e.target.closest('button');
   if (!btn) return;
   const id = btn.dataset.id;
+  if (btn.classList.contains('edit-btn'))   openEditModal(id);
   if (btn.classList.contains('done-btn'))   toggleDone(id);
   if (btn.classList.contains('delete-btn')) deleteTask(id);
 });
+
+editSaveBtn.addEventListener('click', saveEdit);
+editCancelBtn.addEventListener('click', closeEditModal);
+editNameInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveEdit(); });
+editModal.addEventListener('click', e => { if (e.target === editModal) closeEditModal(); });
+editDeadlinePicker.addEventListener('change', () => { if (editDeadlinePicker.value) editDeadlineText.value = editDeadlinePicker.value; });
+editDeadlineText.addEventListener('input', () => { editDeadlinePicker.value = parseDeadline(editDeadlineText.value) || ''; });
 
 clearDoneBtn.addEventListener('click', clearDone);
 signoutBtn.addEventListener('click', signOut);

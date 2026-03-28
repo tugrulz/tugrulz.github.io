@@ -49,6 +49,7 @@
         </svg>
         <div id="busy-level">Calculating...</div>
         <div id="free-date" class="free-date hidden"></div>
+        <div id="sparkline" class="sparkline-wrap hidden"></div>
       </div>
     </header>
 
@@ -106,7 +107,41 @@
     </div>
   </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- ── Edit modal ───────────────────────────────────────────────── -->
+  <div id="edit-modal" class="modal-overlay hidden">
+    <div class="modal-card edit-modal-card">
+      <h3 class="modal-title">Edit Task</h3>
+      <input id="edit-name" type="text" class="edit-field" placeholder="Task name" autocomplete="off" />
+      <div class="edit-row">
+        <select id="edit-urgency" class="edit-select">
+          <option value="0">Future</option>
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
+          <option value="4">Critical</option>
+        </select>
+        <select id="edit-category" class="edit-select">
+          <option value="">No category</option>
+          <option value="grant">Grant</option>
+          <option value="research">Research</option>
+          <option value="teaching">Teaching</option>
+          <option value="supervision">Supervision</option>
+          <option value="admin">Admin</option>
+          <option value="personal">Personal</option>
+        </select>
+      </div>
+      <div class="edit-row">
+        <input id="edit-deadline-text" type="text" class="edit-field" placeholder="Deadline (optional)" autocomplete="off" />
+        <input id="edit-deadline-picker" type="date" class="edit-date" />
+      </div>
+      <div class="modal-actions">
+        <button id="edit-cancel-btn" class="btn-ghost">Cancel</button>
+        <button id="edit-save-btn" class="btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>

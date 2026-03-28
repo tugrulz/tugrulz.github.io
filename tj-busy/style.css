@@ -362,6 +362,19 @@ header { text-align: center; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes task-flash-add {
+  0%   { box-shadow: inset 0 0 0 1px rgba(102,187,106,0.5), 0 0 12px rgba(102,187,106,0.15); }
+  100% { box-shadow: none; }
+}
+
+@keyframes task-flash-resolve {
+  0%   { box-shadow: inset 0 0 0 1px rgba(102,187,106,0.4), 0 0 10px rgba(102,187,106,0.1); }
+  100% { box-shadow: none; opacity: 0.35; }
+}
+
+.task-item.task-new      { animation: slide-in 0.22s ease, task-flash-add 0.9s ease 0.1s forwards; }
+.task-item.task-resolving { animation: task-flash-resolve 0.42s ease forwards; }
+
 .task-item:not(.done).urgency-border-0 { border-left-color: #5c6bc0; }
 .task-item:not(.done).urgency-border-1 { border-left-color: var(--accent-low); }
 .task-item:not(.done).urgency-border-2 { border-left-color: var(--accent-med); }
@@ -521,6 +534,98 @@ header { text-align: center; }
 
 .done-btn:hover   { background: #1a2e1a; color: var(--accent-low); }
 .delete-btn:hover { background: #2e1414; color: var(--accent-high); }
+
+.edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 5px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+  color: var(--muted-2);
+}
+.edit-btn:hover { background: #1a1f30; color: #7986cb; }
+
+.age-badge {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: #484848;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Sparkline ─────────────────────────────────────────────────────── */
+.sparkline-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  opacity: 0.5;
+}
+.sparkline-svg { display: block; }
+.sparkline-label {
+  font-size: 0.6rem;
+  color: var(--muted-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Edit modal ────────────────────────────────────────────────────── */
+.edit-modal-card {
+  max-width: 400px;
+  width: 100%;
+  text-align: left;
+  gap: 0.65rem;
+}
+.edit-field {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.edit-field:focus { border-color: var(--border-hover); }
+.edit-row {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+.edit-select {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.55rem 0.7rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.edit-select:focus { border-color: var(--border-hover); }
+.edit-date {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+  padding: 0.55rem 0.6rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
 
 /* ── Empty state ───────────────────────────────────────────────────── */
 .empty-msg {
