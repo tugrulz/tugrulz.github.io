@@ -347,22 +347,41 @@ function renderScore() {
 
 function renderTasks() {
   const visible = isOwner ? tasks : tasks.filter(t => !t.done);
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  function daysUntil(deadline) {
+    if (!deadline) return null;
+    const [y,m,d] = deadline.split('-').map(Number);
+    return Math.round((new Date(y,m-1,d) - today) / 86400000);
+  }
+
+  function isHot(task) {
+    const diff = daysUntil(task.deadline);
+    return diff !== null && diff <= 7;
+  }
+
   const sorted  = [...visible].sort((a, b) => {
-    // 1. Done tasks sink to the bottom
+    // 1. Done sink to bottom
     if (a.done !== b.done) return a.done ? 1 : -1;
-    // 2. Future tasks sink below active tasks
+    // 2. Future sink below active
     const aFuture = !a.done && a.urgency === 0;
     const bFuture = !b.done && b.urgency === 0;
     if (aFuture !== bFuture) return aFuture ? 1 : -1;
     if (aFuture && bFuture) return 0;
-    // 3. Among active tasks: earliest deadline first (no deadline goes last)
-    if (a.deadline || b.deadline) {
-      if (!a.deadline) return 1;
-      if (!b.deadline) return -1;
-      if (a.deadline !== b.deadline) return a.deadline < b.deadline ? -1 : 1;
+    // 3. Hot (deadline ≤7 days) float above normal
+    const aHot = isHot(a), bHot = isHot(b);
+    if (aHot !== bHot) return aHot ? -1 : 1;
+    if (aHot) {
+      // Both hot: priority desc, then deadline asc
+      if (a.urgency !== b.urgency) return b.urgency - a.urgency;
+      return a.deadline < b.deadline ? -1 : 1;
     }
-    // 4. Tiebreak by urgency descending
-    return b.urgency - a.urgency;
+    // 4. Both normal: priority desc, then no-deadline before far-deadline, then deadline asc
+    if (a.urgency !== b.urgency) return b.urgency - a.urgency;
+    const aDl = daysUntil(a.deadline), bDl = daysUntil(b.deadline);
+    if ((aDl === null) !== (bDl === null)) return aDl === null ? -1 : 1;
+    if (aDl !== null && bDl !== null) return aDl - bDl;
+    return 0;
   });
 
   tasksList.innerHTML = '';
