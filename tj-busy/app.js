@@ -161,7 +161,7 @@ async function dbInsert(task) {
       urgency:    task.urgency,
       done:       task.done,
       deadline:   task.deadline,
-      created_at: task.createdAt,
+      created_at: new Date(task.createdAt).toISOString(),
       added_by:   task.addedBy,
     });
   if (error) console.error('insert error', error);
