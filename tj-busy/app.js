@@ -451,9 +451,6 @@ function renderTasks() {
   const sorted  = [...visible].sort((a, b) => {
     // 1. Done sink to bottom
     if (a.done !== b.done) return a.done ? 1 : -1;
-    // 2. Recurring tasks sink below regular tasks
-    const aRec = !a.addedBy, bRec = !b.addedBy;
-    if (aRec !== bRec) return aRec ? 1 : -1;
     // 2. Future sink below active
     const aFuture = !a.done && a.urgency === 0;
     const bFuture = !b.done && b.urgency === 0;
