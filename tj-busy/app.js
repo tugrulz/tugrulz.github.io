@@ -147,9 +147,10 @@ function taskGiverName(addedBy) {
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let tasks       = [];
-let currentUser = null;
-let isOwner     = false; // determined solely by verified Google email — never persisted
+let tasks              = [];
+let currentUser        = null;
+let isOwner            = false; // determined solely by verified Google email — never persisted
+let categoryManualSet  = false; // true when owner has manually changed the category select
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const signinWrap     = document.getElementById('signin-wrap');
@@ -528,7 +529,7 @@ async function addTask() {
   taskInput.value      = '';
   deadlineText.value   = '';
   deadlinePicker.value = '';
-  if (isOwner) categorySelect.value = '';
+  if (isOwner) { categorySelect.value = ''; categoryManualSet = false; }
   tasks.push(task);
   render();
   await dbInsert(task);
@@ -580,9 +581,12 @@ signoutBtn.addEventListener('click', signOut);
 taskInput.addEventListener('input', () => {
   const cat = detectCategory(taskInput.value);
   if (isOwner) {
-    // Auto-fill select; owner can override manually
-    if (!taskInput.value.trim()) categorySelect.value = '';
-    else if (cat) categorySelect.value = cat.key;
+    if (!taskInput.value.trim()) {
+      categorySelect.value = '';
+      categoryManualSet = false;
+    } else if (cat && !categoryManualSet) {
+      categorySelect.value = cat.key;
+    }
   } else {
     if (cat) {
       categoryHint.textContent      = cat.label;
@@ -594,6 +598,8 @@ taskInput.addEventListener('input', () => {
     }
   }
 });
+
+categorySelect.addEventListener('change', () => { categoryManualSet = true; });
 
 deadlinePicker.addEventListener('focus',  () => { if (!deadlinePicker.value) deadlinePicker.value = isoDate(new Date()); });
 deadlinePicker.addEventListener('change', () => { if (deadlinePicker.value) deadlineText.value = deadlinePicker.value; });
