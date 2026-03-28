@@ -23,25 +23,35 @@
 
       <h1 id="busy-header">IS TJ BUSY?</h1>
 
-      <div id="busy-portrait-wrap">
-        <img id="busy-portrait" src="busy-images/notbusy.png" alt="Tj busyness" />
-      </div>
-
-      <div id="busy-score-wrapper">
-        <div class="gauge-wrap">
-          <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg">
-            <path id="gauge-track"
-              d="M 10,75 A 60,60 0 0,1 130,75"
-              stroke-dasharray="188.5"
-              stroke-dashoffset="0" />
-            <path id="gauge-fill"
-              d="M 10,75 A 60,60 0 0,1 130,75"
-              stroke-dasharray="188.5"
-              stroke-dashoffset="188.5" />
-          </svg>
-          <div id="busy-score">0</div>
-        </div>
-        <div id="busy-score-label">Busyness Score</div>
+      <!-- Unified portrait + circular gauge -->
+      <div id="gauge-portrait">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="portrait-clip">
+              <circle cx="100" cy="100" r="76"/>
+            </clipPath>
+          </defs>
+          <!-- Track: 300° arc, gap at bottom -->
+          <path id="gauge-track"
+            d="M 55,177.9 A 90,90 0 1,1 145,177.9"
+            fill="none" stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="471.2" stroke-dashoffset="0"/>
+          <!-- Fill -->
+          <path id="gauge-fill"
+            d="M 55,177.9 A 90,90 0 1,1 145,177.9"
+            fill="none" stroke-width="8" stroke-linecap="round"
+            stroke-dasharray="471.2" stroke-dashoffset="471.2"/>
+          <!-- Portrait -->
+          <image id="busy-portrait" href="busy-images/notbusy.png"
+            x="24" y="24" width="152" height="152"
+            clip-path="url(#portrait-clip)"
+            preserveAspectRatio="xMidYMin slice"/>
+          <!-- Score — bottom-left of portrait -->
+          <text id="busy-score"
+            x="46" y="158"
+            font-size="18" font-weight="800"
+            text-anchor="middle" dominant-baseline="middle">0</text>
+        </svg>
         <div id="busy-level">Calculating...</div>
       </div>
     </header>
