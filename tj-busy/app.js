@@ -298,10 +298,20 @@ async function submitPin() {
 }
 
 // ── Score ─────────────────────────────────────────────────────────────────────
+// Deadline multiplier: overdue=2.5×, today=2×, fades to 0.8× beyond 2 weeks
+function deadlineMultiplier(deadline) {
+  if (!deadline) return 1.0;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const [y,m,d] = deadline.split('-').map(Number);
+  const diff = Math.round((new Date(y,m-1,d) - today) / 86400000);
+  return Math.min(2.5, Math.max(0.8, 2.0 - diff * 0.1));
+}
+
 function computeScore() {
-  const pending = tasks.filter(t => !t.done);
+  const pending = tasks.filter(t => !t.done && t.urgency > 0);
   if (!pending.length) return 0;
-  return Math.min(100, pending.reduce((sum, t) => sum + SCORE_WEIGHTS[t.urgency], 0));
+  const raw = pending.reduce((sum, t) => sum + SCORE_WEIGHTS[t.urgency] * deadlineMultiplier(t.deadline), 0);
+  return Math.min(100, Math.round(raw));
 }
 
 function getLevel(score) {
