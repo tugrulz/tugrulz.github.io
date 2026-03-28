@@ -492,9 +492,8 @@ function renderTasks() {
 
     li.innerHTML = `
       <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
-      ${categoryBadge}
       <span class="task-name">${escapeHtml(task.name)}</span>
-      ${giverBadge}${deadlineBadge}${resolveBtn}${deleteBtn}
+      ${giverBadge}${deadlineBadge}${resolveBtn}${deleteBtn}${categoryBadge}
     `;
     tasksList.appendChild(li);
   });
