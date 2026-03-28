@@ -16,8 +16,10 @@ const URGENCY_LABELS = { 0: 'Future', 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Crit
 const CATEGORIES = [
   // Grant is first so it wins over Research when "grant" keyword ties the score
   { key: 'grant',       label: 'Grant',       color: '#ffd54f', bg: '#1a1500',
-    keywords: ['grant:','grant ','funding','epsrc','ahrc','ukri','horizon','fellowship',
-      'proposal','bid','pathways to impact'] },
+    keywords: ['grant:','grant ','funding','epsrc','ahrc','ukri','horizon','leverhulme',
+      'wellcome','bbsrc','esrc','mrc','nerc','innovate uk','royal society',
+      'british academy','jisc','aria','nia','fellowship','proposal','bid',
+      'pathways to impact'] },
   { key: 'research',    label: 'Research',    color: '#00bcd4', bg: '#001e22',
     keywords: ['paper','literature','experiment','data','analysis','survey','publication',
       'journal','conference','poster','abstract','methodology','results','findings',
@@ -30,7 +32,7 @@ const CATEGORIES = [
     keywords: ['grading','grade','marking','mark','lab','labs','textbook','lecture',
       'tutorial','seminar','course material','module','assignment','homework','exam',
       'quiz','coursework','practical','teaching','curriculum','syllabus','lesson',
-      'project grading','new labs','office hour','office hours'] },
+      'project grading','new labs','office hour','office hours','css'] },
   { key: 'supervision', label: 'Supervision', color: '#66bb6a', bg: '#0d2010',
     keywords: ['feedback','supervision','supervise','student','msc','phd','ug',
       'undergraduate','postgraduate','dissertation','thesis','progress','check in',
