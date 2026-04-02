@@ -289,21 +289,49 @@ function subscribeRealtime() {
 }
 
 // ── Google Sign-In ────────────────────────────────────────────────────────────
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   deadlinePicker.min = isoDate(new Date());
   fetchTasks();
   subscribeRealtime();
 
+  // Restore a persisted Supabase session so the user stays signed in across
+  // page loads without having to click the Google button again.
+  await restoreSession();
+
   if (typeof google === 'undefined') return;
   google.accounts.id.initialize({
-    client_id: GOOGLE_CLIENT_ID,
-    callback:  handleCredentialResponse,
+    client_id:   GOOGLE_CLIENT_ID,
+    callback:    handleCredentialResponse,
+    auto_select: true,   // silently re-authenticate when a Google session exists
   });
   google.accounts.id.renderButton(signinWrap, {
     theme: 'filled_black', size: 'large', shape: 'pill',
     text: 'signin_with', logo_alignment: 'left',
   });
+  // Show the One Tap prompt; it will auto-dismiss if the user is already
+  // restored from Supabase or if they previously dismissed it.
+  if (!currentUser) google.accounts.id.prompt();
 });
+
+// Attempt to resume an existing Supabase session from localStorage.
+// If a valid session exists, populate currentUser without requiring a new
+// Google credential round-trip.
+async function restoreSession() {
+  const { data: { session } } = await sbClient.auth.getSession();
+  if (!session?.user) return;
+
+  const email = session.user.email || '';
+  if (!canAdd(email)) return;
+
+  const name = session.user.user_metadata?.given_name
+            || session.user.user_metadata?.name
+            || email;
+
+  currentUser = { name, email };
+  isOwner     = isOwnerEmail(email);
+  updateAuthUI();
+  render();
+}
 
 // Decode JWT payload without verification.
 // Safe: the Google Sign-In SDK has already validated the token against Google's servers
