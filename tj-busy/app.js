@@ -316,19 +316,53 @@ window.addEventListener('load', async () => {
 // Attempt to resume an existing Supabase session from localStorage.
 // If a valid session exists, populate currentUser without requiring a new
 // Google credential round-trip.
+// Falls back to a lightweight localStorage cache for when Supabase auth
+// is not configured (JWT-only path) — expires after 30 days.
+const USER_CACHE_KEY = 'tj_user';
+const USER_CACHE_TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
+
+function saveUserCache(user) {
+  localStorage.setItem(USER_CACHE_KEY, JSON.stringify({ ...user, savedAt: Date.now() }));
+}
+
+function clearUserCache() {
+  localStorage.removeItem(USER_CACHE_KEY);
+}
+
+function loadUserCache() {
+  try {
+    const raw = localStorage.getItem(USER_CACHE_KEY);
+    if (!raw) return null;
+    const cached = JSON.parse(raw);
+    if (!cached?.email || Date.now() - cached.savedAt > USER_CACHE_TTL) {
+      clearUserCache();
+      return null;
+    }
+    return { name: cached.name, email: cached.email };
+  } catch { return null; }
+}
+
 async function restoreSession() {
+  // 1. Try Supabase session (works when Google auth provider is configured)
   const { data: { session } } = await sbClient.auth.getSession();
-  if (!session?.user) return;
+  if (session?.user) {
+    const email = session.user.email || '';
+    if (!canAdd(email)) return;
+    const name = session.user.user_metadata?.given_name
+              || session.user.user_metadata?.name
+              || email;
+    currentUser = { name, email };
+    isOwner     = isOwnerEmail(email);
+    updateAuthUI();
+    render();
+    return;
+  }
 
-  const email = session.user.email || '';
-  if (!canAdd(email)) return;
-
-  const name = session.user.user_metadata?.given_name
-            || session.user.user_metadata?.name
-            || email;
-
-  currentUser = { name, email };
-  isOwner     = isOwnerEmail(email);
+  // 2. Fall back to localStorage cache (JWT-only path)
+  const cached = loadUserCache();
+  if (!cached || !canAdd(cached.email)) return;
+  currentUser = cached;
+  isOwner     = isOwnerEmail(cached.email);
   updateAuthUI();
   render();
 }
@@ -371,6 +405,7 @@ async function handleCredentialResponse(response) {
   }
   currentUser = { name, email };
   isOwner     = isOwnerEmail(email); // owner status set from verified Google identity only
+  saveUserCache(currentUser);        // persist so the session survives page refreshes
   updateAuthUI();
   render();
 }
@@ -378,6 +413,7 @@ async function handleCredentialResponse(response) {
 async function signOut() {
   if (typeof google !== 'undefined') google.accounts.id.disableAutoSelect();
   await sbClient.auth.signOut();
+  clearUserCache();
   currentUser = null;
   isOwner     = false;
   updateAuthUI();
