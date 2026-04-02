@@ -413,10 +413,30 @@ function deadlineMultiplier(deadline) {
   return 2.0 - (diff - 2) * (1.5 / 28);
 }
 
+// ── Deadline escalation ───────────────────────────────────────────────────────
+// Returns the urgency that should be *displayed* and used for scoring/sorting.
+// Lower-priority tasks escalate automatically as their deadline approaches so
+// nothing slips under the radar. Future tasks (urgency=0) are never escalated.
+//
+// Thresholds:
+//   overdue / 0–2 days  →  at least Critical (4)
+//   3–5 days            →  at least High     (3)
+//   6–10 days           →  at least Medium   (2)
+function effectiveUrgency(task) {
+  if (task.done || task.urgency === 0 || !task.deadline) return task.urgency;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const [y,m,d] = task.deadline.split('-').map(Number);
+  const diff = Math.round((new Date(y,m-1,d) - today) / 86400000);
+  if (diff <= 2)  return Math.max(task.urgency, 4);
+  if (diff <= 5)  return Math.max(task.urgency, 3);
+  if (diff <= 10) return Math.max(task.urgency, 2);
+  return task.urgency;
+}
+
 function computeScore() {
   const pending = tasks.filter(t => !t.done && t.urgency > 0);
   if (!pending.length) return 0;
-  const raw = pending.reduce((sum, t) => sum + SCORE_WEIGHTS[t.urgency] * deadlineMultiplier(t.deadline), 0);
+  const raw = pending.reduce((sum, t) => sum + SCORE_WEIGHTS[effectiveUrgency(t)] * deadlineMultiplier(t.deadline), 0);
   return Math.min(100, Math.round(raw));
 }
 
@@ -501,8 +521,9 @@ function renderTasks() {
     const bFuture = !b.done && b.urgency === 0;
     if (aFuture !== bFuture) return aFuture ? 1 : -1;
     if (aFuture && bFuture) return 0;
-    // 3. Urgency DESC — always takes priority
-    if (a.urgency !== b.urgency) return b.urgency - a.urgency;
+    // 3. Effective urgency DESC — escalated tasks bubble up automatically
+    const aEff = effectiveUrgency(a), bEff = effectiveUrgency(b);
+    if (aEff !== bEff) return bEff - aEff;
     // 4. Within same urgency: hot (deadline ≤7 days) first
     const aHot = isHot(a), bHot = isHot(b);
     if (aHot !== bHot) return aHot ? -1 : 1;
@@ -518,7 +539,8 @@ function renderTasks() {
 
   sorted.forEach(task => {
     const li = document.createElement('li');
-    li.className  = `task-item urgency-border-${task.urgency}${task.done ? ' done' : ''}`;
+    const effUrgency = effectiveUrgency(task);
+    li.className  = `task-item urgency-border-${effUrgency}${task.done ? ' done' : ''}`;
     li.dataset.id = task.id;
 
     const editBtn       = isOwner && !task.done ? `<button class="edit-btn" title="Edit" data-id="${task.id}">&#x270E;</button>` : '';
@@ -534,12 +556,14 @@ function renderTasks() {
     const ageDays       = !task.deadline && task.createdAt
       ? Math.floor((Date.now() - new Date(task.createdAt).getTime()) / 86400000) : 0;
     const ageBadge      = ageDays >= 7 ? `<span class="age-badge">${ageDays}d old</span>` : '';
+    const escalated     = !task.done && effUrgency > task.urgency;
+    const urgencyLabel  = URGENCY_LABELS[effUrgency] + (escalated ? ' ↑' : '');
 
     const metaRow = giverBadge || deadlineBadge || ageBadge || categoryBadge
       ? `<div class="task-meta">${giverBadge}${deadlineBadge}${ageBadge}${categoryBadge}</div>` : '';
     li.innerHTML = `
       <div class="task-main">
-        <span class="urgency-badge urgency-${task.urgency}">${URGENCY_LABELS[task.urgency]}</span>
+        <span class="urgency-badge urgency-${effUrgency}${escalated ? ' urgency-escalated' : ''}" title="${escalated ? `Auto-escalated from ${URGENCY_LABELS[task.urgency]}` : ''}">${urgencyLabel}</span>
         <span class="task-name">${escapeHtml(task.name)}</span>
         ${editBtn}${resolveBtn}${deleteBtn}
       </div>

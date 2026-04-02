@@ -400,6 +400,9 @@ header { text-align: center; }
 .urgency-3 { background: #2e0e0e; color: #ef9a9a; }
 .urgency-4 { background: #250a30; color: var(--accent-crit); }
 
+/* Badge was auto-escalated due to approaching deadline */
+.urgency-escalated { outline: 1px solid currentColor; outline-offset: -2px; }
+
 .task-name { flex: 1; font-size: 0.92rem; line-height: 1.4; }
 
 .category-badge {
