@@ -26,9 +26,26 @@
   </head>
   <body>
 
-    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
+    <header class="mobile-header" id="mobile-header">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="mobile-header-identity">
+        {% if site.avatar %}
+        <img class="mobile-avatar" src="{{ site.avatar }}" alt="Photo of {{ site.title }}" onContextMenu="return false" />
+        {% endif %}
+        <div class="mobile-header-text">
+          <span class="mobile-header-name">{{ site.title }}</span>
+          {% if site.position %}<span class="mobile-header-role">{{ site.position }}</span>{% endif %}
+        </div>
+      </div>
+      <div class="mobile-header-socials">
+        {% if site.linkedin %}<a href="{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>{% endif %}
+        {% if site.google_scholar %}<a href="{{ site.google_scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>{% endif %}
+        {% if site.twitter %}<a href="{{ site.twitter }}" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>{% endif %}
+        {% if site.github_link %}<a href="{{ site.github_link }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>{% endif %}
+      </div>
+    </header>
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <div class="layout">
