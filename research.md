@@ -4,17 +4,19 @@ layout: research
 
 <div class="research-page">
 
-<h2>Research</h2>
+<h2>Turullab</h2>
 
-<p>My work sits at the intersection of <strong>Computational Social Science</strong> and <strong>Natural Language Processing</strong>, with a focus on understanding and mitigating harmful dynamics on online platforms. Below are the four main research themes pursued by the <a href="https://smash.inf.ed.ac.uk">SMASH</a> group.</p>
+<ol class="turullab-rules">
+  <li>Turullab is not Trollab</li>
+  <li>Turullab is <strong>NOT</strong> Trollab</li>
+  <li>Turullab does not exist. We are a subset of the <a href="https://smash.inf.ed.ac.uk">SMASH</a> group</li>
+</ol>
+
 
 <div class="team-photo-section" style="margin-top:2rem;">
 <h2>The Team</h2>
 <div class="team-photo-wrap">
-  <div class="team-photo-placeholder">
-    <i class="fas fa-users"></i>
-    <span>Team photo coming soon — add assets/img/team.jpg to replace this</span>
-  </div>
+  <img src="./assets/img/lab.jpeg" alt="Turullab team photo" class="team-photo-img">
 </div>
 </div>
 
@@ -44,14 +46,10 @@ layout: research
 </div>
 <div class="project-card__title">Human–AI Interaction</div>
 <div class="project-card__desc">
-  We investigate how people interact with AI systems — including LLM-driven agents, social bots, and generative tools — and the downstream effects on epistemic authority, trust, and online behaviour. This includes detection of bot networks and analysis of AI-mediated influence.
+  We study how people interact with AI assistants in high-stakes and sensitive domains — from romantic relationships and mental health support to legal and medical advice. A central question is how LLMs handle disagreement: when they defer, push back, or subtly steer a user's views. This connects to broader questions of epistemic authority — how AI systems shape what people believe, how they reason, and whom they trust.
 </div>
-<ul class="project-card__papers">
-  <li><a href="https://arxiv.org/abs/2410.19272">Coordinated Reply Attacks in Influence Operations — ICWSM 2025</a></li>
-  <li><a href="https://arxiv.org/abs/2403.15856">#TeamFollowBack: Follow Back Account Detection — ICWSM 2024</a></li>
-  <li><a href="https://arxiv.org/abs/2112.02366">Characterizing Retweet Bots — ICWSM 2022</a></li>
-  <li><a href="https://arxiv.org/abs/2404.08110">Toxic Synergy Between Hate Speech and Fake News — CySoc 2024</a></li>
-</ul>
+<p class="project-card__funding">🏆 Awarded UoE Generative AI Lab Funding: £2,500</p>
+<p class="project-card__coming-soon">Papers coming soon</p>
 </div>
 
 <div class="project-card">
@@ -76,11 +74,12 @@ layout: research
 </div>
 <div class="project-card__title">Automating Science &amp; Education</div>
 <div class="project-card__desc">
-  We explore how LLMs and AI tools can support or transform scientific workflows and education — from automated opinion mining and election analysis to AI-assisted teaching. We are also interested in the epistemic implications of delegating reasoning to generative models.
+  We explore how LLMs and multi-agent AI systems can accelerate scientific workflows and transform education — from automated opinion mining and structured election analysis to orchestrating agent collaborations that produce full data science research papers end-to-end. We are also building AI-assisted teaching tools and studying the epistemic implications of delegating scientific reasoning to generative models.
 </div>
 <ul class="project-card__papers">
   <li><a href="https://arxiv.org/abs/2304.03434">Opinion Mining from YouTube Captions Using ChatGPT — arXiv 2023</a></li>
 </ul>
+<p class="project-card__coming-soon">More papers coming soon</p>
 </div>
 
 </div>

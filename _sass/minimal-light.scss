@@ -710,9 +710,9 @@ papertitle { font-weight: 600; color: var(--heading); }
 .nav-link--page {
   font-weight: 600;
   color: var(--accent) !important;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 0.25rem;
-  padding-bottom: 0.6rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+  padding-top: 0.6rem;
 }
 
 .nav-link--active {
@@ -840,6 +840,47 @@ papertitle { font-weight: 600; color: var(--heading); }
       &:hover { color: var(--accent); }
     }
   }
+}
+
+.turullab-rules {
+  list-style: decimal;
+  padding-left: 1.3rem;
+  margin: 0.6rem 0 1.4rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+
+  li strong { color: var(--text); }
+  a { color: var(--accent); text-decoration: none; &:hover { text-decoration: underline; } }
+}
+
+.team-photo-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.project-card__funding {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: #eab308;
+  background: rgba(234,179,8,0.08);
+  border: 1px solid rgba(234,179,8,0.25);
+  border-radius: 5px;
+  padding: 0.25rem 0.6rem;
+  margin: 0.5rem 0 0;
+  display: inline-block;
+}
+
+.project-card__coming-soon {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  opacity: 0.7;
+  margin: 0.5rem 0 0;
+  padding-left: 0.9rem;
 }
 
 @media (max-width: 700px) {
