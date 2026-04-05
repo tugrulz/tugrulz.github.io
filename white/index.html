@@ -367,6 +367,11 @@
       peakInfo.textContent   = '';
 
     } else if (state === 'gradual') {
+      // Auto-transition to peak once 7 AM has arrived
+      if (secondsUntilPeak() <= 1) {
+        transitionTo(STATES.indexOf('peak'));
+        return;
+      }
       document.body.className = 'active';
       btnIcon.textContent  = '◉';
       btnText.textContent  = 'Peak';
@@ -408,6 +413,13 @@
       stopGradualRamp();
       startNoise();
       fadeGainTo(PEAK_VOLUME, RAMP_DURATION);
+      // Hold gain at peak indefinitely — no scheduled end
+      setTimeout(function () {
+        if (gainNode && STATES[stateIdx] === 'peak') {
+          gainNode.gain.cancelScheduledValues(ctx.currentTime);
+          gainNode.gain.setValueAtTime(PEAK_VOLUME, ctx.currentTime);
+        }
+      }, (RAMP_DURATION + 0.1) * 1000);
       updateUI();
     }
   }
