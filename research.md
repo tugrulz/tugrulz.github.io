@@ -6,6 +6,7 @@ layout: research
 
 <h2>Turullab</h2>
 
+<p class="turullab-rules-label">Rules:</p>
 <ol class="turullab-rules">
   <li>Turullab is not Trollab</li>
   <li>Turullab is <strong>NOT</strong> Trollab</li>
@@ -14,7 +15,6 @@ layout: research
 
 
 <div class="team-photo-section" style="margin-top:2rem;">
-<h2>The Team</h2>
 <div class="team-photo-wrap">
   <img src="./assets/img/lab.jpeg" alt="Turullab team photo" class="team-photo-img">
 </div>
