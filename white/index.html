@@ -355,17 +355,25 @@
     startNoise();
   }
 
+  // ── Gain ↔ slider conversion (squared curve for perceptual linearity) ──
+  // slider pos 0-100 → gain 0-1:  gain = (pos/100)²
+  // gain 0-1 → slider pos 0-100: pos  = sqrt(gain) * 100
+  function sliderToGain(pos) { return Math.pow(pos / 100, 2); }
+  function gainToSlider(g)   { return Math.round(Math.sqrt(Math.max(0, g)) * 100); }
+
   function fadeGainTo(target, duration) {
     if (!gainNode) return;
+    const from = Math.max(0.0001, gainNode.gain.value);
+    const to   = Math.max(0.0001, target);
     gainNode.gain.cancelScheduledValues(ctx.currentTime);
-    gainNode.gain.setValueAtTime(gainNode.gain.value, ctx.currentTime);
-    gainNode.gain.linearRampToValueAtTime(target, ctx.currentTime + duration);
+    gainNode.gain.setValueAtTime(from, ctx.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(to, ctx.currentTime + duration);
   }
 
   function pinGain(value) {
     if (!gainNode) return;
     gainNode.gain.cancelScheduledValues(ctx.currentTime);
-    gainNode.gain.setValueAtTime(value, ctx.currentTime);
+    gainNode.gain.setValueAtTime(Math.max(0.0001, value), ctx.currentTime);
   }
 
   // ── Time helpers ───────────────────────────────────────────────
@@ -390,14 +398,14 @@
 
   function startGradualRamp() {
     const secs = secondsUntilPeak();
-    const vol  = targetGradualVolume();
 
-    fadeGainTo(vol, RAMP_DURATION);
-    // Schedule ramp to peak at 07:00 (only if no manual override)
+    // Always start from 1% so the onset is whisper-quiet
+    gainNode.gain.cancelScheduledValues(ctx.currentTime);
+    gainNode.gain.setValueAtTime(0.01, ctx.currentTime);
+
     if (!gradualOverride) {
-      gainNode.gain.cancelScheduledValues(ctx.currentTime);
-      gainNode.gain.setValueAtTime(gainNode.gain.value, ctx.currentTime);
-      gainNode.gain.linearRampToValueAtTime(PEAK_VOLUME, ctx.currentTime + secs);
+      // Exponential ramp: perceptually constant rate of change (dB linear)
+      gainNode.gain.exponentialRampToValueAtTime(PEAK_VOLUME, ctx.currentTime + secs);
     }
 
     updateUI();
@@ -449,10 +457,10 @@
       btnText.textContent = 'Peak';
       volControl.classList.add('visible');
 
-      const displayVol = gradualOverride ? userVolume : targetGradualVolume();
-      const pct = Math.round(displayVol * 100);
-      volSlider.value    = pct;
-      volPct.textContent = pct + '%';
+      const currentGain = gradualOverride ? userVolume : (gainNode ? Math.max(0, gainNode.gain.value) : 0.01);
+      const sliderPos = gainToSlider(currentGain);
+      volSlider.value    = sliderPos;
+      volPct.textContent = sliderPos + '%';
       updateSliderTrack();
 
       statusLine.textContent = gradualOverride
@@ -467,8 +475,9 @@
       btnIcon.textContent = '●';
       btnText.textContent = 'Stop';
       volControl.classList.add('visible');
-      volSlider.value    = 100;
-      volPct.textContent = '100%';
+      const peakSlider = gainNode ? gainToSlider(gainNode.gain.value) : 100;
+      volSlider.value    = peakSlider;
+      volPct.textContent = peakSlider + '%';
       updateSliderTrack();
       statusLine.textContent = 'Peak — playing until you stop';
       peakInfo.textContent   = '';
@@ -526,7 +535,7 @@
 
   // Manual volume slider
   volSlider.addEventListener('input', function () {
-    userVolume = volSlider.value / 100;
+    userVolume = sliderToGain(volSlider.value); // squared curve
     volPct.textContent = volSlider.value + '%';
     updateSliderTrack();
 
