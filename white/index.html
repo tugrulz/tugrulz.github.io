@@ -274,6 +274,59 @@
   const peakInfo   = document.getElementById('peakInfo');
   const typeBtns   = document.querySelectorAll('.type-btn');
 
+  // ── Background audio keep-alive ───────────────────────────────
+  // iOS Safari suspends AudioContext when the tab is backgrounded.
+  // A silent looping <audio> element registers this page as an audio
+  // player, preventing suspension. Started on first user interaction.
+  let silentAudio = null;
+
+  function buildSilentWav() {
+    // Minimal 1-sample silent WAV as a Blob URL
+    const buf  = new ArrayBuffer(46);
+    const view = new DataView(buf);
+    const str  = (o, s) => { for (let i = 0; i < s.length; i++) view.setUint8(o + i, s.charCodeAt(i)); };
+    str(0, 'RIFF'); view.setUint32(4, 38, true);
+    str(8, 'WAVE'); str(12, 'fmt '); view.setUint32(16, 16, true);
+    view.setUint16(20, 1, true);  // PCM
+    view.setUint16(22, 1, true);  // mono
+    view.setUint32(24, 44100, true); view.setUint32(28, 88200, true);
+    view.setUint16(32, 2, true);  view.setUint16(34, 16, true);
+    str(36, 'data'); view.setUint32(40, 2, true); // 1 silent sample
+    return URL.createObjectURL(new Blob([buf], { type: 'audio/wav' }));
+  }
+
+  function ensureSilentAudio() {
+    if (silentAudio) return;
+    silentAudio = document.createElement('audio');
+    silentAudio.src    = buildSilentWav();
+    silentAudio.loop   = true;
+    silentAudio.volume = 0;
+    silentAudio.setAttribute('playsinline', '');
+    silentAudio.play().catch(function () {}); // best-effort
+  }
+
+  function registerMediaSession(playing) {
+    if (!('mediaSession' in navigator)) return;
+    if (playing) {
+      navigator.mediaSession.metadata = new MediaMetadata({ title: 'White Noise' });
+      navigator.mediaSession.playbackState = 'playing';
+    } else {
+      navigator.mediaSession.playbackState = 'paused';
+    }
+  }
+
+  // Resume AudioContext whenever the tab becomes visible again
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible' && ctx && ctx.state === 'suspended') {
+      ctx.resume();
+    }
+  });
+
+  // Also handle iOS "page restored from back/forward cache"
+  window.addEventListener('pageshow', function () {
+    if (ctx && ctx.state === 'suspended') ctx.resume();
+  });
+
   // ── Audio ──────────────────────────────────────────────────────
   let ctx        = null;
   let gainNode   = null;
@@ -295,6 +348,7 @@
       gainNode.connect(ctx.destination);
     }
     if (ctx.state === 'suspended') ctx.resume();
+    ensureSilentAudio(); // keep iOS audio session alive
   }
 
   function resetNoiseState() {
@@ -492,6 +546,7 @@
     if (state === 'off') {
       stopGradualRamp();
       gradualOverride = false;
+      registerMediaSession(false);
       if (gainNode) {
         gainNode.gain.cancelScheduledValues(ctx.currentTime);
         gainNode.gain.setValueAtTime(gainNode.gain.value, ctx.currentTime);
@@ -503,11 +558,13 @@
     } else if (state === 'gradual') {
       gradualOverride = false;
       startNoise();
+      registerMediaSession(true);
       startGradualRamp();
 
     } else if (state === 'peak') {
       stopGradualRamp();
       startNoise();
+      registerMediaSession(true);
       fadeGainTo(PEAK_VOLUME, RAMP_DURATION);
       setTimeout(function () {
         if (STATES[stateIdx] === 'peak') pinGain(PEAK_VOLUME);
