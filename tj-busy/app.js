@@ -227,11 +227,16 @@ async function dbInsert(task) {
 }
 
 async function dbUpdate(id, changes) {
-  const { error } = await sbClient
+  const { data, error } = await sbClient
     .from('tasks')
     .update(changes)
-    .eq('id', id);
+    .eq('id', id)
+    .select();
   if (error) console.error('update error', error);
+  // Returns true only when at least one row was actually updated.
+  // Supabase silently returns [] (no error) when RLS blocks the operation,
+  // so we must check data length to detect those failures.
+  return !error && Array.isArray(data) && data.length > 0;
 }
 
 async function dbDelete(id) {
@@ -652,9 +657,16 @@ async function toggleDone(id) {
     const li = tasksList.querySelector(`[data-id="${id}"]`);
     if (li) { li.classList.add('task-resolving'); await new Promise(r => setTimeout(r, 420)); }
   }
+  const prev = t.done;
   t.done = !t.done;
   render();
-  await dbUpdate(id, { done: t.done });
+  const ok = await dbUpdate(id, { done: t.done });
+  if (!ok) {
+    // DB update was blocked (e.g. RLS / expired session) — revert local state
+    // so the UI matches reality instead of silently lying until the next refresh.
+    t.done = prev;
+    render();
+  }
 }
 
 async function deleteTask(id) {
