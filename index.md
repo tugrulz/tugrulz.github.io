@@ -4,11 +4,9 @@ layout: homepage
 
 I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on Truth & Trust Online, using computational approaches to understand and counter social media manipulation, deepfakes, online Human-Human & Human-AI interactions and the epistemic authority of LLMs. I am broadly interested in Computational Social Science and Natural Language Processing.
 
-Previously, I was a Postdoctoral Scholar at Indiana University at Bloomington's Observatory on Social Media (OSOME). I received my Ph.D. from EPFL in 2022, and my B.S. from Bilkent University in 2017, with a major in Computer Science and a minor in Philosophy.
+Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's Observatory on Social Media (OSOME)](https://osome.iu.edu). I received my Ph.D. from [EPFL](https://www.epfl.ch) in 2022, and my B.S. from [Bilkent University](https://www.bilkent.edu.tr) in 2017, with a major in Computer Science and a minor in Philosophy. I also spent a semester at the [National University of Singapore](https://www.nus.edu.sg).
 
 I currently teach [Understanding Society with Big Data: Computational Social Science (CSS)](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm), [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm), and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm).
-
-**A fully funded PhD position to work at the intersection of LLMs and social media / misinformation is available! Please contact me directly.**
 
 I welcome self-sponsored in-person visitors to the University of Edinburgh and our lab. University of Edinburgh students with an interest in our research are also welcome. Contact me if you are interested
 

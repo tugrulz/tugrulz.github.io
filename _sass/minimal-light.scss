@@ -414,18 +414,16 @@ th {
   }
 }
 
-// Paper type badges — override inline red style
+// Paper type labels — plain text, not interactive
 .main-content strong > i[style*="color:#e74d3c"],
 .main-content i[style*="color:#e74d3c"] {
-  font-style: normal;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  background: var(--badge-full);
-  color: var(--badge-full-txt) !important;
+  font-style: italic;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-muted) !important;
   vertical-align: middle;
-  letter-spacing: 0.02em;
+  cursor: default;
+  user-select: none;
 }
 
 // Paper link pills [PDF] [Code] [Data]
@@ -831,6 +829,7 @@ papertitle { font-weight: 600; color: var(--heading); }
       content: '→';
       position: absolute;
       left: 0;
+      top: 0.05em;
       color: var(--accent);
     }
 
@@ -840,6 +839,52 @@ papertitle { font-weight: 600; color: var(--heading); }
       &:hover { color: var(--accent); }
     }
   }
+}
+
+// TL;DR injected by abstract-expand.js
+.paper-tldr {
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.75;
+  margin: 0.2rem 0 0.15rem;
+  line-height: 1.45;
+}
+
+// Toggle button
+.paper-abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  i {
+    font-size: 0.6rem;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover { opacity: 0.75; }
+}
+
+// Expanded abstract panel
+.paper-abstract {
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0.1rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--bg);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 4px 4px 0;
 }
 
 .turullab-rules {
