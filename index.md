@@ -8,7 +8,6 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 I currently teach [Understanding Society with Big Data: Computational Social Science (CSS)](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm), [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm), and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm).
 
-I welcome self-sponsored in-person visitors to the University of Edinburgh and our lab. University of Edinburgh students with an interest in our research are also welcome. Contact me if you are interested
 
 ## Team
 - [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
