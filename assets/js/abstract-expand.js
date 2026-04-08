@@ -4,10 +4,15 @@
  * Depends on window.__PAPERS__ loaded from papers-data.js.
  *
  * Per publication, the final rendered order is:
- *   Title / Authors / Conference  Full Paper      ← from markdown
- *   [PDF] [Code] [Abstract ↓]                     ← toggle injected after last link
+ *   Title (linked to arXiv) / Authors / Conference  Full Paper
+ *   [PDF] [Code] [Abstract ↓]
  *   Abstract text (expands inline)
  *   TL;DR: …
+ *
+ * Interactions:
+ *   - Click title          → open arXiv page
+ *   - Click card body      → toggle abstract (skip if target is a/button)
+ *   - Click Abstract button → toggle abstract
  */
 (function () {
   const ARXIV_ID_RE = /arxiv\.org\/(?:abs|pdf)\/([\d]{4}\.[\d]{4,5})/;
@@ -17,54 +22,78 @@
     return m ? m[1].replace(/v\d+$/, '') : null;
   }
 
+  function toggleAbstract(toggle, panel) {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    panel.hidden = expanded;
+    toggle.querySelector('i').style.transform = expanded ? '' : 'rotate(180deg)';
+  }
+
   function enhance() {
     const papers = window.__PAPERS__;
     if (!papers) return;
 
     document.querySelectorAll('#publications + ul > li').forEach(li => {
-      // Guard: already enhanced
       if (li.querySelector('.paper-abstract-toggle')) return;
 
-      // Find arXiv ID
+      // Find arXiv ID from first arXiv link
       let id = null;
-      let lastLink = null;
+      let arxivLink = null;
       for (const a of li.querySelectorAll('a')) {
         const aid = arxivIdFromUrl(a.href);
-        if (aid) { id = aid; lastLink = a; break; }
+        if (aid) { id = aid; arxivLink = a; break; }
       }
-      if (!id || !lastLink) return;
+      if (!id || !arxivLink) return;
 
       const data = papers[id];
       if (!data) return;
 
+      // --- Make the title a link to arXiv ---
+      const titleStrong = li.querySelector('strong:first-of-type');
+      if (titleStrong && !titleStrong.closest('a')) {
+        const titleLink = document.createElement('a');
+        titleLink.href = arxivLink.href;
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener';
+        titleLink.className = 'paper-title-link';
+        titleStrong.parentNode.insertBefore(titleLink, titleStrong);
+        titleLink.appendChild(titleStrong);
+      }
+
+      let toggle, panel;
+
       if (data.abstract) {
-        const toggle = document.createElement('button');
+        toggle = document.createElement('button');
         toggle.className = 'paper-abstract-toggle';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down"></i>';
 
-        const panel = document.createElement('div');
+        panel = document.createElement('div');
         panel.className = 'paper-abstract';
         panel.textContent = data.abstract;
         panel.hidden = true;
 
         toggle.addEventListener('click', function (e) {
           e.preventDefault();
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          panel.hidden = expanded;
-          toggle.querySelector('i').style.transform = expanded ? '' : 'rotate(180deg)';
+          e.stopPropagation();
+          toggleAbstract(toggle, panel);
         });
 
-        // Insert toggle inline right after the arXiv link
-        lastLink.insertAdjacentElement('afterend', toggle);
+        arxivLink.insertAdjacentElement('afterend', toggle);
 
-        // Abstract panel: find the direct li-child that contains the toggle, insert after it
         let anchor = toggle;
         while (anchor.parentNode && anchor.parentNode !== li) {
           anchor = anchor.parentNode;
         }
         anchor.insertAdjacentElement('afterend', panel);
+
+        // --- Card-level click → toggle abstract ---
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', function (e) {
+          // Ignore clicks on links or buttons
+          if (e.target.closest('a') || e.target.closest('button')) return;
+          toggleAbstract(toggle, panel);
+        });
       }
 
       if (data.tldr) {
