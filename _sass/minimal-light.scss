@@ -400,9 +400,11 @@ th {
     cursor: pointer;                          // needed for iOS tap events
     -webkit-tap-highlight-color: transparent; // suppress iOS tap flash
 
-    &:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--accent);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+      }
     }
 
     // Venue/conference bold text
@@ -431,7 +433,7 @@ th {
   font-size: 0.72rem;
   font-weight: 600;
   padding: 0.12rem 0.55rem;
-  border-radius: 3px;
+  border-radius: 999px;
   background: var(--accent-dim);
   color: var(--accent);
   text-decoration: none;
@@ -845,7 +847,9 @@ a.paper-title-link {
   color: inherit;
   margin-bottom: 0.1rem;
 
-  &:hover strong.paper-title { opacity: 0.75; }
+  @media (hover: hover) {
+    &:hover strong.paper-title { opacity: 0.75; }
+  }
 }
 
 strong.paper-title {
@@ -874,7 +878,7 @@ strong.paper-title {
   padding: 0.12rem 0.55rem;
   background: none;
   border: 1px solid var(--accent);
-  border-radius: 3px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.72rem;
   font-weight: 600;
