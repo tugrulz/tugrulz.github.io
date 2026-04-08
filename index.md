@@ -195,7 +195,7 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
 
 - **Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  İlker Gül, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
   <br>
   [PDF](https://arxiv.org/abs/2304.03434)
 
