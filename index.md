@@ -28,135 +28,135 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
   <br>
   Tom Bidewell, Artemis Deligianni, **Tuğrulcan Elmas**, Clare Llewellyn, Bjorn Ross
   <br>
-  18th ACM Web Science Conference **WebSci 2026**.
+  18th ACM Web Science Conference **WebSci 2026**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2603.23027) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2603.23027)
 
 - **Grievance Politics vs. Policy Debates: A Cross-Platform Analysis of Conservative Discourse on Truth Social and Reddit**
   <br>
   Yining Wang, Alhasan Abdellatif, Artemis Deligianni, Hannah Hok, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  20th International Conference On Web And Social Media **ICWSM 2026**.
+  20th International Conference On Web And Social Media **ICWSM 2026**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2603.17901) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2603.17901)
 
 - **State & Geopolitical Censorship on Twitter (X): Detection & Impact Analysis of Withheld Content**
   <br>
   Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  The Conference on Information and Knowledge Management **CIKM 2025**.
+  The Conference on Information and Knowledge Management **CIKM 2025**. <strong><i style="color:#e74d3c">Short Paper</i></strong>
   <br>
-  [PDF](https://www.arxiv.org/abs/2508.13375) <strong><i style="color:#e74d3c">Short Paper</i></strong>
+  [PDF](https://www.arxiv.org/abs/2508.13375)
 
 - **Density-aware Walks for Coordinated Campaign Detection**
   <br>
   Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
   <br>
-  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**.
+  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2506.13912) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2506.13912)
 
 - **Cross-Partisan Interactions on Social Media**
   <br>
   Yusuf Mücahit Çetinkaya, Vahid Ghafouri, Jose Such, Guillermo Suarez Tangil, **Tuğrulcan Elmas**
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**.
+  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2504.09376) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2504.09376)
 
 - **Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends**
   <br>
   Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**.
+  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2503.00599) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2503.00599)
 
 - **Coordinated Reply Attacks in Influence Operations: Characterization and Detection**
   <br>
   Manita Pote, **Tuğrulcan Elmas**, Alessandro Flammini, Fil Menczer
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**.
+  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2410.19272) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2410.19272)
 
 - **Toxic Synergy Between Hate Speech and Fake News Exposure**
   <br>
   Munjung Kim, **Tuğrulcan Elmas**, Filippo Menczer
   <br>
-  International Workshop on Cyber Social Threats **CySoc 2024** (colocated with ICWSM 2024).
+  International Workshop on Cyber Social Threats **CySoc 2024** (colocated with ICWSM 2024). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2404.08110) <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2404.08110)
 
 - **#TeamFollowBack - Detection and Analysis of Follow Back Accounts**
   <br>
   **Tuğrulcan Elmas**, Mathis Randl, Youssef Attia
   <br>
-  18th International Conference On Web And Social Media **ICWSM 2024**.
+  18th International Conference On Web And Social Media **ICWSM 2024**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2403.15856) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2403.15856)
 
 - **Shorts vs. Regular Videos on YouTube: A Comparative Analysis of User Engagement and Content Creation Trends**
   <br>
   Caroline Violot, **Tuğrulcan Elmas**, Igor Bilogrevic, Mathias Humbert
   <br>
-  16th ACM Web Science Conference **WebSci 2024**.
+  16th ACM Web Science Conference **WebSci 2024**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2403.00454) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2403.00454)
 
 - **Measuring and Detecting Virality on Social Media: The Case of Twitter's Viral Tweets Topic**
   <br>
   **Tuğrulcan Elmas**, Selim Stephane, Célia Houssiaux
   <br>
-  ACM Web Conference 2023 **WebConf 2023**.
+  ACM Web Conference 2023 **WebConf 2023**. <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2303.06120) [Data](https://github.com/tugrulz/ViralTweets) <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2303.06120) [Data](https://github.com/tugrulz/ViralTweets)
 
 - **Analyzing Activity and Suspension Patterns of Twitter Bots Attacking Turkish Twitter Trends by a Longitudinal Dataset**
   <br>
   **Tuğrulcan Elmas**
   <br>
-  International Workshop on Cyber Social Threats **CySoc 2023** (colocated with WebConf 2023).
+  International Workshop on Cyber Social Threats **CySoc 2023** (colocated with WebConf 2023). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2304.07907) [Data](https://github.com/tugrulz/EphemeralAstroturfing) <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2304.07907) [Data](https://github.com/tugrulz/EphemeralAstroturfing)
 
 - **The Impact of Data Persistence Bias on Social Media Studies**
   <br>
   **Tuğrulcan Elmas**
   <br>
-  15th ACM Web Science Conference **WebSci 2023**.
+  15th ACM Web Science Conference **WebSci 2023**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/pdf/2303.00902) [Data](https://github.com/tugrulz/DataPersistenceBias) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/pdf/2303.00902) [Data](https://github.com/tugrulz/DataPersistenceBias)
 
 - **The Role of Compromised Accounts in Social Media Manipulation**
   <br>
-  **Tuğrulcan Elmas**
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
   <br>
-  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf) <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
+  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)
 
 - **Misleading Repurposing on Twitter**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  17th International Conference On Web And Social Media **ICWSM 2023**.
+  17th International Conference On Web And Social Media **ICWSM 2023**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2010.10600) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2010.10600)
 
 - **Characterizing Retweet Bots: The Case of Black Market Accounts**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  16th International Conference On Web And Social Media **ICWSM 2022**.
+  16th International Conference On Web And Social Media **ICWSM 2022**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2112.02366) [Data](https://github.com/tugrulz/RetweetBots) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2112.02366) [Data](https://github.com/tugrulz/RetweetBots)
 
 - **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Ahmed Furkan Özkalay, Karl Aberer
   <br>
-  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**.
+  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/pdf/1910.07783.pdf) [Code](https://github.com/tugrulz/EphemeralAstroturfing) <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  [PDF](https://arxiv.org/pdf/1910.07783.pdf) [Code](https://github.com/tugrulz/EphemeralAstroturfing)
   <br>
   Featured in [The Next Web](https://thenextweb.com/news/twitter-trending-topics-algorithm-has-vulnerability-hackers-using-ephemeral-astroturfing-attacks), [ACM Technews](https://technews.acm.org/archives.cfm?fo=2021-06-jun/jun-04-2021.html), [Le Temps](https://www.letemps.ch/societe/une-etude-lepfl-indique-20-tendances-twitter-faussees-contenus-ephemeres), [Mashable ME](https://me.mashable.com/tech/14085/turkish-twitter-being-flooded-with-fake-trends-created-by-bots-that-manipulate-algorithms), [Atlantic](https://www.theatlantic.com/technology/archive/2021/09/twitter-should-abolish-trending-topics/620026/), [Anadolu Agency](https://www.aa.com.tr/en/world/half-of-twitter-trending-topics-in-turkey-found-to-be-fake/2269405), [Milliyet](https://www.milliyet.com.tr/yazarlar/savas-onemli/epfl-arastirmasina-gore-turkiye-twitter-gundeminde-yer-alan-trendlerin-yarisi-sahte-6525080), [Hacker News](https://news.ycombinator.com/item?id=27368214), [Ekşi Sözlük](https://eksisozluk.com/2-haziran-2021-twitter-manipulasyon-ifsasi--6937655), Countless Others
 
@@ -164,25 +164,24 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
   <br>
   **Tuğrulcan Elmas**, Thomas Romain Ibanez, Alexandre Hutter, Rebekah Overdorf, Karl Aberer
   <br>
-  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022** (colocated with ASONAM 2022).
+  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022** (colocated with ASONAM 2022). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
 
 - **A Dataset of State-Censored Tweets**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  15th International Conference On Web And Social Media **ICWSM 2021**.
+  15th International Conference On Web And Social Media **ICWSM 2021**. <strong><i style="color:#e74d3c">Dataset Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/pdf/2101.05919.pdf) [Data](https://zenodo.org/record/4439509) <strong><i style="color:#e74d3c">Dataset Paper</i></strong>
+  [PDF](https://arxiv.org/pdf/2101.05919.pdf) [Data](https://zenodo.org/record/4439509)
 
 - **Tactical Reframing of Disinformation Campaigns Against the Istanbul Convention**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  Data for the Welbeing of Most Vulnerable **colocated with ICWSM 2021**.
+  Data for the Welbeing of Most Vulnerable **colocated with ICWSM 2021**. <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/abs/2105.13398) <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  [PDF](https://arxiv.org/abs/2105.13398)
 
 - **Can Celebrities Burst Your Bubble**
   <br>
@@ -190,18 +189,21 @@ I welcome self-sponsored in-person visitors to the University of Edinburgh and o
   <br>
   Innovative Ideas in Data Science (colocated with **WebConf 2020**).
   <br>
-  MISINFO (colocated with **WebConf 2021**).
+  MISINFO (colocated with **WebConf 2021**). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
   <br>
-  [PDF](https://arxiv.org/pdf/2003.06857.pdf) <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  [PDF](https://arxiv.org/pdf/2003.06857.pdf)
+
+- **Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  <br>
+  [PDF](https://arxiv.org/abs/2304.03434)
 
 ## Talks
 - Invited Teaching Seminar at John Hopkins SAIS Conflicts and Cultures in Contemporary Turkey course by Lisel Hintz
 - Panelist at AMLD 2025, Lausanne, Switzerland
 - Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
-
-## Preprints
-- Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections
 
 ## Teaching
 - Computational Social Science 2026-

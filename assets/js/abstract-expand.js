@@ -1,7 +1,13 @@
 /**
  * abstract-expand.js
- * Injects TL;DR + click-to-expand abstract into project card paper lists.
+ * Adds Abstract toggle + TL;DR to homepage publication list items.
  * Depends on window.__PAPERS__ loaded from papers-data.js.
+ *
+ * Per publication, the final rendered order is:
+ *   Title / Authors / Conference  Full Paper      ← from markdown
+ *   [PDF] [Code] [Abstract ↓]                     ← toggle injected after last link
+ *   Abstract text (expands inline)
+ *   TL;DR: …
  */
 (function () {
   const ARXIV_ID_RE = /arxiv\.org\/(?:abs|pdf)\/([\d]{4}\.[\d]{4,5})/;
@@ -15,38 +21,29 @@
     const papers = window.__PAPERS__;
     if (!papers) return;
 
-    const selector = [
-      '.project-card__papers li',
-      '#publications + ul > li',
-      '#preprints + ul > li',
-    ].join(', ');
+    document.querySelectorAll('#publications + ul > li').forEach(li => {
+      // Guard: already enhanced
+      if (li.querySelector('.paper-abstract-toggle')) return;
 
-    document.querySelectorAll(selector).forEach(li => {
-      // Find the first arXiv link anywhere in the li (handles [PDF] links on homepage)
+      // Find arXiv ID
       let id = null;
+      let lastLink = null;
       for (const a of li.querySelectorAll('a')) {
-        id = arxivIdFromUrl(a.href);
-        if (id) break;
+        const aid = arxivIdFromUrl(a.href);
+        if (aid) { id = aid; lastLink = a; break; }
       }
-      const data = id && papers[id];
+      if (!id || !lastLink) return;
+
+      const data = papers[id];
       if (!data) return;
 
-      // --- TL;DR line ---
-      if (data.tldr) {
-        const tldr = document.createElement('p');
-        tldr.className = 'paper-tldr';
-        tldr.textContent = 'TL;DR: ' + data.tldr;
-        li.appendChild(tldr);
-      }
-
-      // --- Expandable abstract ---
       if (data.abstract) {
         const toggle = document.createElement('button');
         toggle.className = 'paper-abstract-toggle';
         toggle.setAttribute('aria-expanded', 'false');
         toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down"></i>';
 
-        const panel = document.createElement('p');
+        const panel = document.createElement('div');
         panel.className = 'paper-abstract';
         panel.textContent = data.abstract;
         panel.hidden = true;
@@ -59,8 +56,22 @@
           toggle.querySelector('i').style.transform = expanded ? '' : 'rotate(180deg)';
         });
 
-        li.appendChild(toggle);
-        li.appendChild(panel);
+        // Insert toggle inline right after the arXiv link
+        lastLink.insertAdjacentElement('afterend', toggle);
+
+        // Abstract panel: find the direct li-child that contains the toggle, insert after it
+        let anchor = toggle;
+        while (anchor.parentNode && anchor.parentNode !== li) {
+          anchor = anchor.parentNode;
+        }
+        anchor.insertAdjacentElement('afterend', panel);
+      }
+
+      if (data.tldr) {
+        const tldr = document.createElement('p');
+        tldr.className = 'paper-tldr';
+        tldr.textContent = 'TL;DR: ' + data.tldr;
+        li.appendChild(tldr);
       }
     });
   }
