@@ -397,16 +397,19 @@ th {
     transition: border-color var(--ease), box-shadow var(--ease);
     font-size: 0.9rem;
     line-height: 1.6;
+    cursor: pointer;                          // needed for iOS tap events
+    -webkit-tap-highlight-color: transparent; // suppress iOS tap flash
 
     &:hover {
       border-color: var(--accent);
       box-shadow: 0 4px 14px rgba(0,0,0,0.07);
     }
 
-    // Paper title (first strong in li)
-    > strong:first-child,
-    strong[style*="font-weight"] {
-      font-size: 0.93rem;
+    // Paper title — must not be smaller than body text in the card
+    a.paper-title-link strong,
+    > strong:first-child {
+      font-size: inherit;
+      font-weight: 600;
     }
 
     // Venue/conference bold text
