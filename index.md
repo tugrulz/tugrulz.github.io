@@ -10,17 +10,10 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 
 
 ## Team
-- [Yusuf Mücahit Çetinkaya (Postdoc)](https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/)
-- [Riyadh Alnasser (PhDc)](https://www.linkedin.com/in/riyadh-alnasser-89793799)
-- [Onat Özdemir (PhDc)](https://www.linkedin.com/in/onat-ozdemir/)
-- [Dhyey Mehta (Undergrad)](https://www.linkedin.com/in/dhyeym/)
+{% for member in site.data.team.members -%}
+- [{{ member.name }} ({{ member.role }})]({{ member.url }})
+{% endfor %}
 
-## Alumni
-- Ömer Bıçakçıoğlu (Undergrad)
-- Basem Mohammed (Undergrad)
-- Erencem Özbey (Undergrad)
-- Kaho Suzuki (MSc)
-  
 ## Publications
 
 - **Gendered Communication Patterns of Political Elites on Truth Social**

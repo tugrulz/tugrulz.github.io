@@ -20,6 +20,22 @@ layout: research
 </div>
 </div>
 
+<h2 id="team">Team</h2>
+
+<ul>
+{% for member in site.data.team.members %}
+  <li><a href="{{ member.url }}">{{ member.name }}</a> ({{ member.role }})</li>
+{% endfor %}
+</ul>
+
+<h2 id="alumni">Alumni</h2>
+
+<ul>
+{% for person in site.data.team.alumni %}
+  <li>{{ person.name }} ({{ person.role }})</li>
+{% endfor %}
+</ul>
+
 <h2>Projects</h2>
 
 <div class="research-grid">

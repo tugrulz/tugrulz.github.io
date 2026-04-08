@@ -1,0 +1,23 @@
+members:
+  - name: "Yusuf Mücahit Çetinkaya"
+    role: "Postdoc"
+    url: "https://www.linkedin.com/in/yusuf-mücahit-çetinkaya-767b2774/"
+  - name: "Riyadh Alnasser"
+    role: "PhDc"
+    url: "https://www.linkedin.com/in/riyadh-alnasser-89793799"
+  - name: "Onat Özdemir"
+    role: "PhDc"
+    url: "https://www.linkedin.com/in/onat-ozdemir/"
+  - name: "Dhyey Mehta"
+    role: "Undergrad"
+    url: "https://www.linkedin.com/in/dhyeym/"
+
+alumni:
+  - name: "Ömer Bıçakçıoğlu"
+    role: "Undergrad"
+  - name: "Basem Mohammed"
+    role: "Undergrad"
+  - name: "Erencem Özbey"
+    role: "Undergrad"
+  - name: "Kaho Suzuki"
+    role: "MSc"
