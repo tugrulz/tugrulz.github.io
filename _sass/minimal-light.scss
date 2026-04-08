@@ -837,13 +837,21 @@ papertitle { font-weight: 600; color: var(--heading); }
   }
 }
 
-// Publication title
-strong.paper-title {
+// Publication title link — looks like a heading, not a hyperlink
+a.paper-title-link {
   display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 0.1rem;
+
+  &:hover strong.paper-title { opacity: 0.75; }
+}
+
+strong.paper-title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--heading);
-  margin-bottom: 0.1rem;
+  transition: opacity 0.15s ease;
 }
 
 // TL;DR injected by abstract-expand.js
