@@ -48,17 +48,9 @@
       const data = papers[id];
       if (!data) return;
 
-      // --- Make the title a link to arXiv ---
+      // Mark the title strong for CSS sizing
       const titleStrong = li.querySelector('strong:first-of-type');
-      if (titleStrong && !titleStrong.closest('a')) {
-        const titleLink = document.createElement('a');
-        titleLink.href = arxivLink.href;
-        titleLink.target = '_blank';
-        titleLink.rel = 'noopener';
-        titleLink.className = 'paper-title-link';
-        titleStrong.parentNode.insertBefore(titleLink, titleStrong);
-        titleLink.appendChild(titleStrong);
-      }
+      if (titleStrong) titleStrong.classList.add('paper-title');
 
       let toggle, panel;
 
