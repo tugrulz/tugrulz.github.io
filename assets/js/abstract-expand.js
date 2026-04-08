@@ -15,11 +15,19 @@
     const papers = window.__PAPERS__;
     if (!papers) return;
 
-    document.querySelectorAll('.project-card__papers li').forEach(li => {
-      const a = li.querySelector('a');
-      if (!a) return;
+    const selector = [
+      '.project-card__papers li',
+      '#publications + ul > li',
+      '#preprints + ul > li',
+    ].join(', ');
 
-      const id   = arxivIdFromUrl(a.href);
+    document.querySelectorAll(selector).forEach(li => {
+      // Find the first arXiv link anywhere in the li (handles [PDF] links on homepage)
+      let id = null;
+      for (const a of li.querySelectorAll('a')) {
+        id = arxivIdFromUrl(a.href);
+        if (id) break;
+      }
       const data = id && papers[id];
       if (!data) return;
 
