@@ -213,10 +213,12 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - Applied Data Science 2018
 - Introduction à la Programmation 2019
 
+<!--
 ## Services
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ, OSNEM
+-->
 
 ## Media
 - Interviewed by [Ali Tarakçı](https://www.youtube.com/watch?v=UDcsgBqcQQ0)
