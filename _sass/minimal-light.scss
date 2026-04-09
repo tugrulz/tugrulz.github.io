@@ -636,10 +636,12 @@ th {
   background: rgba(0,0,0,0.35);
   z-index: 90;
   opacity: 0;
+  pointer-events: none;
   transition: opacity var(--ease);
 
   &.visible {
     opacity: 1;
+    pointer-events: auto;
   }
 }
 
