@@ -295,6 +295,22 @@ window.addEventListener('load', async () => {
   fetchTasks();
   subscribeRealtime();
 
+  // When the owner clicks the email OTP link they are redirected back here.
+  // Supabase detects the token in the URL and fires SIGNED_IN — pick it up so
+  // write operations (resolve/edit/delete) start working immediately.
+  sbClient.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_IN' && session?.user && isOwnerEmail(session.user.email)) {
+      currentUser = {
+        name:  session.user.user_metadata?.given_name || session.user.user_metadata?.name || session.user.email,
+        email: session.user.email,
+      };
+      isOwner = true;
+      saveUserCache(currentUser);
+      updateAuthUI();
+      render();
+    }
+  });
+
   // Restore a persisted Supabase session so the user stays signed in across
   // page loads without having to click the Google button again.
   await restoreSession();
@@ -394,10 +410,22 @@ async function handleCredentialResponse(response) {
          || authData.user.user_metadata?.name
          || email;
   } else {
-    // Fallback when Supabase Google auth provider is not configured
+    // Fallback when Supabase Google auth provider is not configured.
+    // Decode the Google JWT locally to get identity — no Supabase session yet.
     const payload = parseJwt(response.credential);
     email = payload.email || '';
     name  = payload.given_name || payload.name || email;
+
+    // For the owner, send an email OTP so they can get a real Supabase session.
+    // Without it, RLS blocks all write operations (resolve, edit, delete).
+    // The owner clicks the link once per browser; Supabase auto-refreshes after that.
+    if (isOwnerEmail(email)) {
+      const { error: otpErr } = await sbClient.auth.signInWithOtp({
+        email,
+        options: { shouldCreateUser: true, emailRedirectTo: window.location.href },
+      });
+      if (!otpErr) showToast('Check your email for a sign-in link to enable task editing.');
+    }
   }
 
   if (!canAdd(email)) {
@@ -409,6 +437,15 @@ async function handleCredentialResponse(response) {
   saveUserCache(currentUser);        // persist so the session survives page refreshes
   updateAuthUI();
   render();
+}
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  requestAnimationFrame(() => t.classList.add('toast-show'));
+  setTimeout(() => { t.classList.remove('toast-show'); setTimeout(() => t.remove(), 400); }, 5000);
 }
 
 async function signOut() {
