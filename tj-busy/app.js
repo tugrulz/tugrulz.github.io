@@ -422,7 +422,7 @@ async function handleCredentialResponse(response) {
     if (isOwnerEmail(email)) {
       const { error: otpErr } = await sbClient.auth.signInWithOtp({
         email,
-        options: { shouldCreateUser: true, emailRedirectTo: 'https://tugrulz.github.io/tj-busy/' },
+        options: { shouldCreateUser: true },
       });
       if (!otpErr) showToast('Check your email for a sign-in link to enable task editing.');
     }
