@@ -12,7 +12,7 @@ layout: work-with-me
 
 <p>I occasionally have opportunities for masters and undergraduate research assistantships. If you are a University of Edinburgh student interested in getting hands-on research experience, feel free to contact me with a brief note about your background and interests.</p>
 
-<p>I welcome self-sponsored in-person visitor students to the University of Edinburgh and our lab. <strong>We do not have funded internships for non University of Edinburgh students.</strong></p>
+<p>I welcome self-sponsored in-person visitor students to the University of Edinburgh and our lab. <strong>We do not have funded internships for non University of Edinburgh students due to employment laws. We do not accommodate online internships.</strong></p>
 
 <h2>PhD</h2>
 
