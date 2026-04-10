@@ -4,8 +4,6 @@ layout: work-with-me
 
 <div class="research-page">
 
-<h2>Work With Me</h2>
-
 <p>I am always looking for curious and motivated people to join our research at the intersection of computational social science, NLP, and online safety. If our work resonates with you, please reach out.</p>
 
 <h2>Research Assistants</h2>
