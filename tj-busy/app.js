@@ -422,7 +422,11 @@ async function handleCredentialResponse(response) {
     if (isOwnerEmail(email)) {
       const { error: otpErr } = await sbClient.auth.signInWithOtp({
         email,
-        options: { shouldCreateUser: true },
+        options: {
+          shouldCreateUser: true,
+          // Must be whitelisted in Supabase: Auth → URL Configuration → Redirect URLs
+          emailRedirectTo: 'https://tugrulcan.com/tj-busy/',
+        },
       });
       if (!otpErr) showToast('Check your email for a sign-in link to enable task editing.');
     }
