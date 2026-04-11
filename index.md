@@ -198,12 +198,12 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Teaching
-- Computational Social Science 2026-
-- Evidence, Argument and Persuasion in Digital Age 2025-
-- Text Technologies in Data Science 2024-
-- Introduction to Object Oriented Programming 2025-
+- [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026-
+- [Evidence, Argument and Persuasion in Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025-
+- [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024-
+- [Introduction to Object Oriented Programming](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08029.htm) 2025
 - Distributed Information Systems 2018-2021
-- Applied Data Science 2018
+- Applied Data Analysis 2018
 - Introduction à la Programmation 2019
 
 <!--
@@ -218,6 +218,7 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - Interviewed by [Cüneyt Özdemir](https://www.youtube.com/watch?v=mxb-6Vbzz-I)
 - Guest at [Dijital Hayat / TRT Radyo](https://www.youtube.com/watch?v=enAC3C_Q-44)
 - Interviews while being the president of [Turquia1912](https://www.youtube.com/watch?v=GyJOCltA1Ak&list=PLrrZ8PX0n3IxYN9PcEGmJnGn4nvZypC2-)
+- Prompted the Short Film [This AI Makes You Think 2X Faster](https://www.youtube.com/watch?v=S4CSIiUr3a0&t=1s)
 - Directed the Short Film [Lemongrass](https://www.youtube.com/watch?v=_vbw9gL60gA)
 - Turkish Youtube Channel [Dr. Tuğrulcan Elmas](https://www.youtube.com/@tugrulcan)
 
@@ -225,4 +226,4 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - Deanonimized author of the popular Turkish blog [azimliyazar.blogspot.com](https://azimliyazar.blogspot.com) (4+ million views)
 - President of Switzerland Turkish Student Association (2019-2021)
 - Bilkent University Ultimate Frisbee Team (2015-2017) - Fencing Team (2017) - Orienteering Team (2015)
-- Developer of @DisinfoNews - A Twitter Bot to share disinformation related tweets (https://twitter.com/DisinfoNews)
+<!-- - Developer of @DisinfoNews - A Twitter Bot to share disinformation related tweets (https://twitter.com/DisinfoNews) -->
