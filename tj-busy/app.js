@@ -48,7 +48,7 @@ const CATEGORIES = [
       'family','friend','social','party','celebrate','travel','holiday','vacation',
       'cook','laundry','haircut','youtube','video','podcast','personal','hobby'] },
 ];
-const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 4, 3: 8, 4: 16 };
+const SCORE_WEIGHTS  = { 0: 0, 1: 1, 2: 2, 3: 5, 4: 8 };
 const ARC_LENGTH     = 2 * Math.PI * 90 * (300 / 360); // 300° arc, r=90 ≈ 471.2
 
 const LEVELS = [
@@ -478,17 +478,17 @@ function updateAuthUI() {
 
 // ── Score ─────────────────────────────────────────────────────────────────────
 // Deadline multiplier:
-//   today/overdue: 2.5×  |  ≤2 days: 2.0×  |  3–29 days: linear 2.0→0.5  |  30+: 0.5×  |  no deadline: 1.0×
+//   today/overdue: 1.6×  |  ≤2 days: 1.3×  |  3–29 days: linear 1.3→0.5  |  30+: 0.5×  |  no deadline: 1.0×
 function deadlineMultiplier(deadline) {
   if (!deadline) return 1.0;
   const today = new Date(); today.setHours(0,0,0,0);
   const [y,m,d] = deadline.split('-').map(Number);
   const diff = Math.round((new Date(y,m-1,d) - today) / 86400000);
-  if (diff <= 0)  return 2.5;
-  if (diff <= 2)  return 2.0;
+  if (diff <= 0)  return 1.6;
+  if (diff <= 2)  return 1.3;
   if (diff >= 30) return 0.5;
-  // Linear interpolation between 2.0 (diff=2) and 0.5 (diff=30)
-  return 2.0 - (diff - 2) * (1.5 / 28);
+  // Linear interpolation between 1.3 (diff=2) and 0.5 (diff=30)
+  return 1.3 - (diff - 2) * (0.8 / 28);
 }
 
 // ── Deadline escalation ───────────────────────────────────────────────────────
@@ -512,7 +512,8 @@ function effectiveUrgency(task) {
 }
 
 function computeScore() {
-  const pending = tasks.filter(t => !t.done && t.urgency > 0);
+  const pending = tasks.filter(t => !t.done && t.urgency > 0 &&
+    (t.category || detectCategory(t.name)?.key) !== 'personal');
   if (!pending.length) return 0;
   const raw = pending.reduce((sum, t) => sum + SCORE_WEIGHTS[effectiveUrgency(t)] * deadlineMultiplier(t.deadline), 0);
   return Math.min(100, Math.round(raw));
@@ -740,10 +741,13 @@ async function saveEdit() {
   const deadline = editDeadlinePicker.value || parseDeadline(editDeadlineText.value) || null;
   const category = editCategorySelect.value || null;
   const urgency  = parseInt(editUrgencySelect.value, 10);
+  const id = editingTaskId;
   Object.assign(task, { name, urgency, deadline, category });
   closeEditModal();
   render();
-  await dbUpdate(editingTaskId, { name, urgency, deadline, category });
+  const ok = await dbUpdate(id, { name, urgency, deadline, category });
+  if (!ok) showToast('Edit failed — changes may not have saved.');
+  await fetchTasks();
 }
 
 // ── Busyness history ──────────────────────────────────────────────────────────
