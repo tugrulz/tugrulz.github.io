@@ -258,6 +258,9 @@ async function ensureRecurringTasks() {
   const anchor = new Date(2026, 3, 3);
   let target = new Date(anchor);
   while (target < today) target.setDate(target.getDate() + 14);
+  // If this occurrence was manually cleared, advance to the next one
+  const skip = localStorage.getItem('ethics_review_skip');
+  if (skip && skip === isoDate(target)) target.setDate(target.getDate() + 14);
   const deadline = isoDate(target);
   if (!tasks.some(t => t.name === 'Ethics Review' && t.deadline === deadline)) {
     const task = {
@@ -712,9 +715,17 @@ async function deleteTask(id) {
 
 async function clearDone() {
   if (!isOwner) return;
+  // If a recurring task is being cleared, record its deadline so the next
+  // occurrence is inserted instead of the same one being re-added.
+  const clearedEthics = tasks.find(t => t.done && t.name === 'Ethics Review');
+  if (clearedEthics?.deadline) {
+    localStorage.setItem('ethics_review_skip', clearedEthics.deadline);
+  }
   tasks = tasks.filter(t => !t.done);
   render();
   await dbDeleteWhere('done', true);
+  await ensureRecurringTasks();
+  render();
 }
 
 // ── Edit task ─────────────────────────────────────────────────────────────────
