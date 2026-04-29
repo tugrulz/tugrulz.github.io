@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebecca Market</title>
+  <style>
+    :root {
+      --bg: #0e1117;
+      --surface: #161b27;
+      --surface2: #1e2535;
+      --border: #2a3350;
+      --yes: #22c55e;
+      --no: #ef4444;
+      --accent: #6366f1;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --muted2: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .logo { font-weight: 800; font-size: 1.2rem; color: var(--accent); letter-spacing: -0.02em; }
+    .logo span { color: var(--text); }
+    nav .links { display: flex; gap: 1.5rem; font-size: 0.85rem; color: var(--muted2); }
+    nav .links a { color: inherit; text-decoration: none; cursor: pointer; }
+    nav .links a:hover { color: var(--text); }
+    .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+    .btn-outline {
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted2);
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--text); }
+    .btn-fill {
+      padding: 0.4rem 1rem;
+      border: none;
+      border-radius: 6px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn-fill:hover { background: #4f46e5; }
+
+    /* LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+    .grid { display: grid; grid-template-columns: 1fr 340px; gap: 1.5rem; }
+
+    /* MARKET HEADER */
+    .market-header { margin-bottom: 1.5rem; }
+    .market-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(99,102,241,0.12);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+    .market-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .market-meta {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--muted2);
+    }
+    .market-meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yes); display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    /* CARD */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card-body { padding: 1.25rem; }
+
+    /* PRICE BAR */
+    .price-display {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .price-box {
+      flex: 1;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .price-box.yes { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.25); }
+    .price-box.no  { background: rgba(239,68,68,0.08);  border: 1px solid rgba(239,68,68,0.25); }
+    .price-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .price-box.yes .price-label { color: var(--yes); }
+    .price-box.no  .price-label { color: var(--no); }
+    .price-value { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em; }
+    .price-box.yes .price-value { color: var(--yes); }
+    .price-box.no  .price-value { color: var(--no); }
+    .price-change { font-size: 0.75rem; color: var(--muted); }
+
+    /* PROGRESS BAR */
+    .prob-bar { height: 6px; border-radius: 3px; background: var(--surface2); overflow: hidden; margin-bottom: 1.25rem; }
+    .prob-fill { height: 100%; background: linear-gradient(90deg, var(--yes) 0%, var(--yes) var(--yes-pct), var(--no) var(--yes-pct), var(--no) 100%); transition: width 0.4s ease; }
+
+    /* CHART */
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem 0.5rem;
+      font-size: 0.82rem;
+    }
+    .chart-title { font-weight: 600; color: var(--muted2); }
+    .chart-tabs { display: flex; gap: 0.25rem; }
+    .chart-tab {
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+    }
+    .chart-tab.active { background: var(--surface2); color: var(--text); }
+    canvas { display: block; }
+
+    /* STATS ROW */
+    .stats-row {
+      display: flex;
+      border-top: 1px solid var(--border);
+    }
+    .stat {
+      flex: 1;
+      padding: 0.9rem 1.25rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.3rem; }
+    .stat-value { font-size: 1rem; font-weight: 700; }
+
+    /* BET PANEL */
+    .bet-panel { display: flex; flex-direction: column; gap: 1rem; }
+    .bet-toggle { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .bet-side {
+      flex: 1;
+      padding: 0.65rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: var(--muted2);
+      transition: background 0.15s, color 0.15s;
+    }
+    .bet-side.yes.active { background: rgba(34,197,94,0.15); color: var(--yes); }
+    .bet-side.no.active  { background: rgba(239,68,68,0.15);  color: var(--no); }
+    .bet-side:hover { opacity: 0.85; }
+
+    .input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .input-label { font-size: 0.78rem; color: var(--muted2); }
+    .input-row {
+      display: flex;
+      align-items: center;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .input-prefix { padding: 0 0.75rem; color: var(--muted); font-size: 0.9rem; }
+    .input-row input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1rem;
+      padding: 0.6rem 0;
+    }
+    .quick-amounts { display: flex; gap: 0.5rem; }
+    .quick-btn {
+      flex: 1;
+      padding: 0.35rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted2);
+      font-size: 0.75rem;
+      cursor: pointer;
+      text-align: center;
+    }
+    .quick-btn:hover { border-color: var(--accent); color: var(--text); }
+
+    .bet-summary {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .summary-row { display: flex; justify-content: space-between; color: var(--muted2); }
+    .summary-row .val { color: var(--text); font-weight: 600; }
+    .summary-row .val.yes { color: var(--yes); }
+    .summary-row .val.no  { color: var(--no); }
+
+    .bet-submit {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .bet-submit:hover { opacity: 0.88; }
+    .bet-submit.yes { background: var(--yes); color: #000; }
+    .bet-submit.no  { background: var(--no);  color: #fff; }
+
+    /* ACTIVITY FEED */
+    .feed-header {
+      padding: 1rem 1.25rem 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted2);
+      border-bottom: 1px solid var(--border);
+    }
+    .feed-list { max-height: 260px; overflow-y: auto; }
+    .feed-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .feed-item:last-child { border-bottom: none; }
+    .feed-avatar {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .feed-avatar.yes { background: rgba(34,197,94,0.2); color: var(--yes); }
+    .feed-avatar.no  { background: rgba(239,68,68,0.2);  color: var(--no); }
+    .feed-info { flex: 1; }
+    .feed-user { font-weight: 600; color: var(--text); }
+    .feed-action { color: var(--muted); }
+    .feed-action .yes { color: var(--yes); font-weight: 600; }
+    .feed-action .no  { color: var(--no);  font-weight: 600; }
+    .feed-time { color: var(--muted); font-size: 0.72rem; white-space: nowrap; }
+    .feed-amount { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.85rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.2s, transform 0.2s;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show { opacity: 1; transform: none; }
+    .toast .yes { color: var(--yes); font-weight: 700; }
+    .toast .no  { color: var(--no);  font-weight: 700; }
+
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .market-title { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Pred<span>ikt</span></div>
+  <div class="links">
+    <a>Markets</a>
+    <a>Trending</a>
+    <a>Leaderboard</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-outline">Log in</button>
+    <button class="btn-fill">Sign up</button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="market-header">
+    <div class="market-tag">Social Behavior</div>
+    <div class="market-title">Will Rebecca say "stop it" today?</div>
+    <div class="market-meta">
+      <span><span class="dot"></span> Live</span>
+      <span>🕐 Closes midnight, Apr 29 2026</span>
+      <span>👥 <span id="bettor-count">247</span> traders</span>
+      <span>📦 Vol: $<span id="vol-display">14,832</span></span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT COLUMN -->
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+
+      <!-- PRICE + CHART CARD -->
+      <div class="card">
+        <div class="card-body" style="padding-bottom:0.5rem;">
+          <div class="price-display">
+            <div class="price-box yes">
+              <div class="price-label">Yes</div>
+              <div class="price-value" id="yes-price">72¢</div>
+              <div class="price-change" id="yes-change">+3¢ today</div>
+            </div>
+            <div class="price-box no">
+              <div class="price-label">No</div>
+              <div class="price-value" id="no-price">28¢</div>
+              <div class="price-change" id="no-change">-3¢ today</div>
+            </div>
+          </div>
+          <div class="prob-bar" style="--yes-pct:72%">
+            <div class="prob-fill"></div>
+          </div>
+        </div>
+
+        <div class="chart-header">
+          <span class="chart-title">Probability over time</span>
+          <div class="chart-tabs">
+            <button class="chart-tab active">1H</button>
+            <button class="chart-tab">6H</button>
+            <button class="chart-tab">1D</button>
+          </div>
+        </div>
+        <canvas id="chart" width="700" height="180"></canvas>
+
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-label">Volume</div>
+            <div class="stat-value" id="stat-vol">$14,832</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Liquidity</div>
+            <div class="stat-value">$3,210</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Traders</div>
+            <div class="stat-value" id="stat-traders">247</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Expires</div>
+            <div class="stat-value">Tonight</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVITY FEED -->
+      <div class="card">
+        <div class="feed-header">Recent Bets</div>
+        <div class="feed-list" id="feed"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: BET PANEL -->
+    <div>
+      <div class="card">
+        <div class="card-body">
+          <div class="bet-panel">
+            <div class="bet-toggle">
+              <button class="bet-side yes active" id="btn-yes" onclick="selectSide('yes')">YES 72¢</button>
+              <button class="bet-side no" id="btn-no" onclick="selectSide('no')">NO 28¢</button>
+            </div>
+
+            <div class="input-group">
+              <div class="input-label">Amount</div>
+              <div class="input-row">
+                <span class="input-prefix">$</span>
+                <input type="number" id="amount-input" value="10" min="1" oninput="updateSummary()">
+              </div>
+              <div class="quick-amounts">
+                <div class="quick-btn" onclick="setAmount(5)">$5</div>
+                <div class="quick-btn" onclick="setAmount(10)">$10</div>
+                <div class="quick-btn" onclick="setAmount(25)">$25</div>
+                <div class="quick-btn" onclick="setAmount(50)">$50</div>
+              </div>
+            </div>
+
+            <div class="bet-summary">
+              <div class="summary-row">
+                <span>Avg price</span>
+                <span class="val" id="sum-price">72¢</span>
+              </div>
+              <div class="summary-row">
+                <span>Potential return</span>
+                <span class="val yes" id="sum-return">$13.89</span>
+              </div>
+              <div class="summary-row">
+                <span>Profit if correct</span>
+                <span class="val yes" id="sum-profit">+$3.89</span>
+              </div>
+            </div>
+
+            <button class="bet-submit yes" id="submit-btn" onclick="placeBet()">
+              Place YES Bet
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <div class="card" style="margin-top:1rem;">
+        <div class="card-body" style="font-size:0.82rem;line-height:1.6;color:var(--muted2);">
+          <div style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">Market Rules</div>
+          Resolves <strong style="color:var(--text)">YES</strong> if Rebecca is observed
+          saying or writing the phrase "stop it" at any point during
+          Apr 29, 2026 (midnight to midnight UTC).<br><br>
+          Resolves <strong style="color:var(--text)">NO</strong> otherwise.
+          Resolution is based on direct observation or credible screenshot evidence.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── state ───────────────────────────────────────────────────────────────
+let side = 'yes';
+let yesProb = 72;  // percent
+let totalVolume = 14832;
+let traderCount = 247;
+
+// ── chart data (fake 1H history, 60 points) ─────────────────────────────
+function genHistory() {
+  const pts = [];
+  let v = 58;
+  for (let i = 0; i < 60; i++) {
+    v += (Math.random() - 0.42) * 2.5;
+    v = Math.max(20, Math.min(92, v));
+    pts.push(v);
+  }
+  // nudge end toward current prob
+  pts[59] = yesProb;
+  return pts;
+}
+
+let chartData = genHistory();
+
+// ── canvas chart ─────────────────────────────────────────────────────────
+const canvas = document.getElementById('chart');
+const ctx = canvas.getContext('2d');
+
+function drawChart() {
+  const W = canvas.offsetWidth || 700;
+  const H = canvas.height;
+  canvas.width = W;
+
+  ctx.clearRect(0, 0, W, H);
+
+  const pad = { top: 12, bottom: 24, left: 8, right: 8 };
+  const cw = W - pad.left - pad.right;
+  const ch = H - pad.top - pad.bottom;
+
+  const data = chartData;
+  const n = data.length;
+
+  function xOf(i) { return pad.left + (i / (n - 1)) * cw; }
+  function yOf(v) { return pad.top + ch - (v / 100) * ch; }
+
+  // grid lines
+  ctx.strokeStyle = 'rgba(42,51,80,0.8)';
+  ctx.lineWidth = 1;
+  [25, 50, 75].forEach(v => {
+    ctx.beginPath();
+    ctx.moveTo(pad.left, yOf(v));
+    ctx.lineTo(pad.left + cw, yOf(v));
+    ctx.stroke();
+    ctx.fillStyle = '#2a3350';
+    ctx.font = '10px system-ui';
+    ctx.fillText(v + '%', pad.left + 2, yOf(v) - 3);
+  });
+
+  // gradient fill
+  const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + ch);
+  grad.addColorStop(0, 'rgba(99,102,241,0.35)');
+  grad.addColorStop(1, 'rgba(99,102,241,0)');
+
+  ctx.beginPath();
+  ctx.moveTo(xOf(0), yOf(data[0]));
+  for (let i = 1; i < n; i++) ctx.lineTo(xOf(i), yOf(data[i]));
+  ctx.lineTo(xOf(n - 1), pad.top + ch);
+  ctx.lineTo(xOf(0), pad.top + ch);
+  ctx.closePath();
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // line
+  ctx.beginPath();
+  ctx.moveTo(xOf(0), yOf(data[0]));
+  for (let i = 1; i < n; i++) ctx.lineTo(xOf(i), yOf(data[i]));
+  ctx.strokeStyle = '#6366f1';
+  ctx.lineWidth = 2.5;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // end dot
+  const ex = xOf(n - 1), ey = yOf(data[n - 1]);
+  ctx.beginPath();
+  ctx.arc(ex, ey, 4, 0, Math.PI * 2);
+  ctx.fillStyle = '#6366f1';
+  ctx.fill();
+}
+
+window.addEventListener('resize', drawChart);
+setTimeout(drawChart, 50);
+
+// ── users for feed ────────────────────────────────────────────────────────
+const names = [
+  'alex_w','crypto_kai','moonshotr','betqueen','yolo_pete','statsguru',
+  'pamela_t','ironhands9','mktmkr','rebeccafan','doubtful_dan','prob_max',
+  'truther22','nightowl','quickbet','seer_jen','anon_99','voladjust',
+  'betsmart','callitright'
+];
+function rndName() { return names[Math.floor(Math.random() * names.length)]; }
+function rndInitials(n) { return n.slice(0,2).toUpperCase(); }
+
+// pre-populate feed with historical bets
+const seedBets = [
+  { user:'alex_w',    side:'yes', amount:50,  ago:'4m ago' },
+  { user:'moonshotr', side:'yes', amount:120, ago:'7m ago' },
+  { user:'doubtful_dan', side:'no', amount:30, ago:'9m ago' },
+  { user:'betqueen',  side:'yes', amount:200, ago:'12m ago' },
+  { user:'prob_max',  side:'no',  amount:45,  ago:'15m ago' },
+  { user:'statsguru', side:'yes', amount:80,  ago:'18m ago' },
+  { user:'nightowl',  side:'no',  amount:25,  ago:'22m ago' },
+  { user:'crypto_kai',side:'yes', amount:500, ago:'31m ago' },
+  { user:'anon_99',   side:'yes', amount:15,  ago:'38m ago' },
+  { user:'seer_jen',  side:'no',  amount:60,  ago:'45m ago' },
+];
+
+function renderFeedItem({ user, side, amount, ago }) {
+  const li = document.createElement('div');
+  li.className = 'feed-item';
+  li.innerHTML = `
+    <div class="feed-avatar ${side}">${rndInitials(user)}</div>
+    <div class="feed-info">
+      <div class="feed-user">${user}</div>
+      <div class="feed-action">bought <span class="${side}">${side.toUpperCase()}</span></div>
+    </div>
+    <div class="feed-amount">$${amount}</div>
+    <div class="feed-time">${ago}</div>
+  `;
+  return li;
+}
+
+const feed = document.getElementById('feed');
+seedBets.forEach(b => feed.appendChild(renderFeedItem(b)));
+
+// ── bet side toggle ───────────────────────────────────────────────────────
+function selectSide(s) {
+  side = s;
+  document.getElementById('btn-yes').className = 'bet-side yes' + (s==='yes'?' active':'');
+  document.getElementById('btn-no').className  = 'bet-side no'  + (s==='no' ?' active':'');
+  const submit = document.getElementById('submit-btn');
+  submit.className = 'bet-submit ' + s;
+  submit.textContent = 'Place ' + s.toUpperCase() + ' Bet';
+  updateSummary();
+}
+
+function setAmount(v) {
+  document.getElementById('amount-input').value = v;
+  updateSummary();
+}
+
+function updateSummary() {
+  const amt = parseFloat(document.getElementById('amount-input').value) || 0;
+  const price = side === 'yes' ? yesProb / 100 : (100 - yesProb) / 100;
+  const shares = amt / price;
+  const profit = shares - amt;
+  document.getElementById('sum-price').textContent = Math.round(price * 100) + '¢';
+  document.getElementById('sum-return').textContent = '$' + shares.toFixed(2);
+  document.getElementById('sum-profit').textContent = (profit >= 0 ? '+' : '') + '$' + profit.toFixed(2);
+  document.getElementById('sum-return').className = 'val ' + side;
+  document.getElementById('sum-profit').className = 'val ' + side;
+}
+
+// ── place bet ─────────────────────────────────────────────────────────────
+function placeBet() {
+  const amt = parseFloat(document.getElementById('amount-input').value) || 0;
+  if (amt <= 0) return;
+
+  // nudge probability
+  const push = side === 'yes' ? 1 : -1;
+  yesProb = Math.max(5, Math.min(95, yesProb + push * (0.3 + Math.random() * 0.5)));
+  yesProb = Math.round(yesProb * 10) / 10;
+
+  // update prices
+  document.getElementById('yes-price').textContent = Math.round(yesProb) + '¢';
+  document.getElementById('no-price').textContent  = Math.round(100 - yesProb) + '¢';
+  document.getElementById('btn-yes').textContent = 'YES ' + Math.round(yesProb) + '¢';
+  document.getElementById('btn-no').textContent  = 'NO '  + Math.round(100 - yesProb) + '¢';
+
+  // update bar
+  document.querySelector('.prob-bar').style.setProperty('--yes-pct', yesProb + '%');
+
+  // update chart
+  chartData.push(yesProb);
+  if (chartData.length > 80) chartData.shift();
+  drawChart();
+
+  // update stats
+  totalVolume += amt;
+  traderCount += Math.random() > 0.6 ? 1 : 0;
+  const volStr = totalVolume >= 1000 ? '$' + (totalVolume/1000).toFixed(1) + 'k' : '$' + totalVolume;
+  document.getElementById('stat-vol').textContent = volStr;
+  document.getElementById('stat-traders').textContent = traderCount;
+  document.getElementById('vol-display').textContent = totalVolume.toLocaleString();
+  document.getElementById('bettor-count').textContent = traderCount;
+
+  updateSummary();
+
+  // add to feed
+  const item = renderFeedItem({ user: 'you', side, amount: amt, ago: 'just now' });
+  feed.insertBefore(item, feed.firstChild);
+
+  // toast
+  showToast(`Bet placed! $${amt} on <span class="${side}">${side.toUpperCase()}</span>`);
+}
+
+// ── auto-activity (fake bets every ~8s) ───────────────────────────────────
+function fakeActivity() {
+  const s = Math.random() > 0.35 ? 'yes' : 'no';
+  const amt = [5,10,15,20,25,30,50,75,100][Math.floor(Math.random()*9)];
+  const user = rndName();
+
+  const push = s === 'yes' ? 1 : -1;
+  yesProb = Math.max(5, Math.min(95, yesProb + push * Math.random() * 0.6));
+  yesProb = Math.round(yesProb * 10) / 10;
+
+  document.getElementById('yes-price').textContent = Math.round(yesProb) + '¢';
+  document.getElementById('no-price').textContent  = Math.round(100 - yesProb) + '¢';
+  document.getElementById('btn-yes').textContent = 'YES ' + Math.round(yesProb) + '¢';
+  document.getElementById('btn-no').textContent  = 'NO '  + Math.round(100 - yesProb) + '¢';
+  document.querySelector('.prob-bar').style.setProperty('--yes-pct', yesProb + '%');
+
+  chartData.push(yesProb);
+  if (chartData.length > 80) chartData.shift();
+  drawChart();
+
+  totalVolume += amt;
+  traderCount += Math.random() > 0.7 ? 1 : 0;
+  document.getElementById('stat-vol').textContent = '$' + (totalVolume/1000).toFixed(1) + 'k';
+  document.getElementById('stat-traders').textContent = traderCount;
+  document.getElementById('vol-display').textContent = totalVolume.toLocaleString();
+  document.getElementById('bettor-count').textContent = traderCount;
+
+  updateSummary();
+
+  const item = renderFeedItem({ user, side: s, amount: amt, ago: 'just now' });
+  feed.insertBefore(item, feed.firstChild);
+  // trim feed
+  while (feed.children.length > 20) feed.removeChild(feed.lastChild);
+
+  const delay = 5000 + Math.random() * 8000;
+  setTimeout(fakeActivity, delay);
+}
+
+setTimeout(fakeActivity, 3000);
+
+// ── toast ──────────────────────────────────────────────────────────────────
+function showToast(html) {
+  const t = document.getElementById('toast');
+  t.innerHTML = html;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ── chart tab buttons ──────────────────────────────────────────────────────
+document.querySelectorAll('.chart-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    chartData = genHistory();
+    chartData[chartData.length - 1] = yesProb;
+    drawChart();
+  });
+});
+
+// ── init ───────────────────────────────────────────────────────────────────
+updateSummary();
+</script>
+</body>
+</html>
