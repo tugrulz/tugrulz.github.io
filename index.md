@@ -28,7 +28,7 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
   <br>
   Basem Mohammed, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  IEEE Internet Computing **2026**. <strong><i style="color:#e74d3c">Journal</i></strong>
+  IEEE Internet Computing **2026**. <strong><i style="color:#e74d3c">Journal Paper</i></strong>
 
 - **Gendered Communication Patterns of Political Elites on Truth Social**
   <br>
