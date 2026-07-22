@@ -18,7 +18,7 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 
 - **ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit**
   <br>
-  P. Yüce, X. Dai, R. Owens, **Tuğrulcan Elmas**
+  Pelin Yüce, Xiangruo Dai, Rebecca Owens, **Tuğrulcan Elmas**
   <br>
   21st International Conference On Web And Social Media **ICWSM 2027**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
   <br>
