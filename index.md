@@ -267,6 +267,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Services
+- Advise BBC fact-checkers on verifying suspected AI-generated images and video
 - Program Co-Chair: [International AAAI Conference on Web and Social Media (ICWSM) 2027](https://www.icwsm.org/2027/organisation/)
 - [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
 - Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/)
