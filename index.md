@@ -10,8 +10,8 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Recent News
 - Program Co-Chair, [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
-- [GAIL Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), Generative AI Laboratory, University of Edinburgh
-- Awarded [GAIL Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
+- [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
+- Awarded [Generative AI Lab Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
 - Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 - *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
 - Organised [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) (Summer Institute in Computational Social Science)
@@ -264,8 +264,9 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Services
 - Program Co-Chair: [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
-- [GAIL Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), Generative AI Laboratory, University of Edinburgh
+- [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
 - Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/)
+- Committee Member, University of Edinburgh: Ethics Committee, Teaching Committee, Board of Studies
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ, OSNEM
