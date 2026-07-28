@@ -6,7 +6,7 @@
  * Runs after abstract-expand.js so it operates on the finished list.
  */
 (function () {
-  const VISIBLE = 8;
+  const VISIBLE = 9;
 
   function collapse() {
     const list = document.querySelector('#publications + ul');
