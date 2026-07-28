@@ -261,8 +261,9 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Talks
 - Invited Teaching Seminar at John Hopkins SAIS Conflicts and Cultures in Contemporary Turkey course by Lisel Hintz
-- Panelist, "Unmasking the Digital Deception: Defending Against DeepFakes and Disinformation Attacks" — Applied Machine Learning Days (AMLD) 2025, EPFL, Lausanne, Switzerland
+- Panelist, "Unmasking the Digital Deception: Defending Against DeepFakes and Disinformation Attacks" — [Applied Machine Learning Days (AMLD) 2025](https://appliedmldays.org/all-time-speakers/tugrulcan-elmas), EPFL, Lausanne, Switzerland
 - Panelist, [AIM Lab Roundtable Discussion](https://www.youtube.com/watch?v=KKTzTEhKyX0)
+- Invited speaker, [Bilkent AI Tech Talks](https://ais.bilkent.edu.tr/events/tugrulcan-elmas.html) — Artificial Intelligence and Social Media, Bilkent University
 - Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
