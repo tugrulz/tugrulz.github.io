@@ -76,24 +76,6 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   [PDF](https://arxiv.org/abs/2605.24287)
 
-- **Density-aware Walks for Coordinated Campaign Detection**
-  <br>
-  Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
-  <br>
-  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**. <span class="paper-tag">Full Paper</span>
-  <br>
-  [PDF](https://arxiv.org/abs/2506.13912)
-
-- **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
-  <br>
-  **Tuğrulcan Elmas**, Rebekah Overdorf, Ahmed Furkan Özkalay, Karl Aberer
-  <br>
-  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**. <span class="paper-tag">Full Paper</span>
-  <br>
-  [PDF](https://arxiv.org/pdf/1910.07783.pdf) [Code](https://github.com/tugrulz/EphemeralAstroturfing)
-  <br>
-  Featured in [The Next Web](https://thenextweb.com/news/twitter-trending-topics-algorithm-has-vulnerability-hackers-using-ephemeral-astroturfing-attacks), [ACM Technews](https://technews.acm.org/archives.cfm?fo=2021-06-jun/jun-04-2021.html), [Le Temps](https://www.letemps.ch/societe/une-etude-lepfl-indique-20-tendances-twitter-faussees-contenus-ephemeres), [Mashable ME](https://me.mashable.com/tech/14085/turkish-twitter-being-flooded-with-fake-trends-created-by-bots-that-manipulate-algorithms), [Atlantic](https://www.theatlantic.com/technology/archive/2021/09/twitter-should-abolish-trending-topics/620026/), [Anadolu Agency](https://www.aa.com.tr/en/world/half-of-twitter-trending-topics-in-turkey-found-to-be-fake/2269405), [Milliyet](https://www.milliyet.com.tr/yazarlar/savas-onemli/epfl-arastirmasina-gore-turkiye-twitter-gundeminde-yer-alan-trendlerin-yarisi-sahte-6525080), [Hacker News](https://news.ycombinator.com/item?id=27368214), [Ekşi Sözlük](https://eksisozluk.com/2-haziran-2021-twitter-manipulasyon-ifsasi--6937655), Countless Others
-
 - **Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity**
   <br>
   **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <span class="paper-tag">Preprint</span>
@@ -123,6 +105,14 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   The Conference on Information and Knowledge Management **CIKM 2025**. <span class="paper-tag">Short Paper</span>
   <br>
   [PDF](https://www.arxiv.org/abs/2508.13375)
+
+- **Density-aware Walks for Coordinated Campaign Detection**
+  <br>
+  Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
+  <br>
+  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**. <span class="paper-tag">Full Paper</span>
+  <br>
+  [PDF](https://arxiv.org/abs/2506.13912)
 
 - **Cross-Partisan Interactions on Social Media**
   <br>
@@ -219,6 +209,16 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   16th International Conference On Web And Social Media **ICWSM 2022**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2112.02366) [Data](https://github.com/tugrulz/RetweetBots)
+
+- **Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends**
+  <br>
+  **Tuğrulcan Elmas**, Rebekah Overdorf, Ahmed Furkan Özkalay, Karl Aberer
+  <br>
+  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**. <span class="paper-tag">Full Paper</span>
+  <br>
+  [PDF](https://arxiv.org/pdf/1910.07783.pdf) [Code](https://github.com/tugrulz/EphemeralAstroturfing)
+  <br>
+  Featured in [The Next Web](https://thenextweb.com/news/twitter-trending-topics-algorithm-has-vulnerability-hackers-using-ephemeral-astroturfing-attacks), [ACM Technews](https://technews.acm.org/archives.cfm?fo=2021-06-jun/jun-04-2021.html), [Le Temps](https://www.letemps.ch/societe/une-etude-lepfl-indique-20-tendances-twitter-faussees-contenus-ephemeres), [Mashable ME](https://me.mashable.com/tech/14085/turkish-twitter-being-flooded-with-fake-trends-created-by-bots-that-manipulate-algorithms), [Atlantic](https://www.theatlantic.com/technology/archive/2021/09/twitter-should-abolish-trending-topics/620026/), [Anadolu Agency](https://www.aa.com.tr/en/world/half-of-twitter-trending-topics-in-turkey-found-to-be-fake/2269405), [Milliyet](https://www.milliyet.com.tr/yazarlar/savas-onemli/epfl-arastirmasina-gore-turkiye-twitter-gundeminde-yer-alan-trendlerin-yarisi-sahte-6525080), [Hacker News](https://news.ycombinator.com/item?id=27368214), [Ekşi Sözlük](https://eksisozluk.com/2-haziran-2021-twitter-manipulasyon-ifsasi--6937655), Countless Others
 
 - **WayPop Machine: A Wayback Machine to Investigate Popularity and Root Out Trolls**
   <br>
