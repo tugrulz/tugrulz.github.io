@@ -2,12 +2,35 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh. I am a co-director of the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research focuses on Truth & Trust Online, using computational approaches to understand and counter social media manipulation, deepfakes, online Human-Human & Human-AI interactions and the epistemic authority of LLMs. I am broadly interested in Computational Social Science and Natural Language Processing.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on **AI & Social Media**: how LLMs claim epistemic authority and handle disagreement with the people who use them, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
+
+I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish-language YouTube channel](https://www.youtube.com/@tugrulcan).
 
 Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's Observatory on Social Media (OSOME)](https://osome.iu.edu). I received my Ph.D. from [EPFL](https://www.epfl.ch) in 2022, and my B.S. from [Bilkent University](https://www.bilkent.edu.tr) in 2017, with a major in Computer Science and a minor in Philosophy. I also spent a semester at the [National University of Singapore](https://www.nus.edu.sg).
 
-I currently teach [Understanding Society with Big Data: Computational Social Science (CSS)](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm), [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm), and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm).
+## News
+- **2026** — Program Co-Chair, [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- **2026** — Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
+- **2025** — *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
+- **2025** — Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) (Summer Institute in Computational Social Science)
+- **2025** — Awarded UoE Generative AI Lab funding for work on human–AI disagreement
 
+## Teaching
+
+### Courses
+- [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– *(nominated for a UoE Teaching Award)*
+- [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025–
+- [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024– *(information retrieval & NLP)*
+- [Introduction to Object Oriented Programming](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08029.htm) 2025
+- Distributed Information Systems, EPFL, 2018–2021
+- Applied Data Analysis, EPFL, 2018
+- Introduction à la Programmation, EPFL, 2019
+
+### AI Education & Public Engagement
+- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) — an intensive summer institute training researchers in computational methods
+- Author, [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html) — book chapter on teaching programming in the age of generative AI
+- Creator, [Dr. Tuğrulcan Elmas](https://www.youtube.com/@tugrulcan) — Turkish-language YouTube channel explaining AI and social media research to a general audience
+- Supervision: six current lab members across undergraduate, PhD and postdoctoral levels, plus four alumni ([lab page](./research))
 
 ## Team
 {% for member in site.data.team.members -%}
@@ -15,6 +38,24 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 {% endfor %}
 
 ## Publications
+
+<!-- TODO: add the arXiv/PDF links for the two preprints below once they are posted -->
+
+- **How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+
+- **TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+
+<!-- TODO: add co-authors and the book title/editors for the chapter below -->
+
+- **An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Book Chapter</i></strong>
+  <br>
+  [Chapter](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 
 - **Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit**
   <br>
@@ -226,21 +267,12 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 - Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
-## Teaching
-- [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026-
-- [Evidence, Argument and Persuasion in Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025-
-- [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024-
-- [Introduction to Object Oriented Programming](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08029.htm) 2025
-- Distributed Information Systems 2018-2021
-- Applied Data Analysis 2018
-- Introduction à la Programmation 2019
-
-<!--
 ## Services
+- Program Co-Chair: [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people)
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ, OSNEM
--->
 
 ## Media
 - Interviewed by [Ali Tarakçı](https://www.youtube.com/watch?v=UDcsgBqcQQ0)

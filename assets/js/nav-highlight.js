@@ -39,8 +39,9 @@
     });
 
     // ── Active section highlighting ────────────────────────────────────────
-    var sectionIds = ['about', 'team', 'alumni', 'publications', 'preprints',
-                      'talks', 'teaching', 'services', 'media', 'misc'];
+    var sectionIds = ['about', 'news', 'teaching', 'team', 'alumni',
+                      'publications', 'preprints', 'talks', 'services',
+                      'media', 'misc'];
 
     var sections = sectionIds.map(function (id) {
       return document.getElementById(id);
