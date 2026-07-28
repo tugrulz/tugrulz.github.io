@@ -16,18 +16,6 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 
 ## Publications
 
-- **Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit**
-  <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
-  <br>
-  [PDF](https://arxiv.org/abs/2605.24287)
-
-- **Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity**
-  <br>
-  **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <strong><i style="color:#e74d3c">Preprint</i></strong>
-  <br>
-  [PDF](https://arxiv.org/abs/2604.10566)
-
 - **ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit**
   <br>
   Pelin Yüce, Xiangruo Dai, Rebecca Owens, **Tuğrulcan Elmas**
@@ -42,8 +30,21 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
   <br>
   IEEE Internet Computing **2026**. <strong><i style="color:#e74d3c">Journal Paper</i></strong>
   <br>
-  [PDF](https://ieeexplore.ieee.org/abstract/document/11557468) <button class="paper-abstract-toggle" aria-expanded="false"><span>Abstract</span><i class="fas fa-chevron-down"></i></button>
-  <span class="paper-abstract" hidden>Generative AI tools have increased the scale and accessibility of deceptive image creation, but the robustness of existing forgery detection methods under emerging editing tools and real-world social media conditions remains uncertain. This study evaluates state-of-the-art image forgery detectors on recent benchmarks and applies the strongest model to a historical influence-campaign case study: Russian troll activity during the 2016 U.S. presidential election. We find that TruFor is the most consistent detector across legacy and recent datasets, but that its performance degrades on edits produced by advanced tools such as Nano Banana. We then deploy a multimodal pipeline combining forgery localization, Optical Character Recognition (OCR), face recognition, and visual-language-model-based annotation to characterize manipulated images in the campaign. Our analysis suggests that Russian troll accounts relied primarily on low-effort meme-style edits and ridicule-oriented reputation attacks, disproportionately targeting prominent U.S. political figures including Hillary Clinton, Bill Clinton, and Barack Obama.</span>
+  [PDF](https://ieeexplore.ieee.org/abstract/document/11557468) <button class="paper-abstract-toggle" aria-expanded="true"><span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i></button>
+  <span class="paper-abstract">Generative AI tools have increased the scale and accessibility of deceptive image creation, but the robustness of existing forgery detection methods under emerging editing tools and real-world social media conditions remains uncertain. This study evaluates state-of-the-art image forgery detectors on recent benchmarks and applies the strongest model to a historical influence-campaign case study: Russian troll activity during the 2016 U.S. presidential election. We find that TruFor is the most consistent detector across legacy and recent datasets, but that its performance degrades on edits produced by advanced tools such as Nano Banana. We then deploy a multimodal pipeline combining forgery localization, Optical Character Recognition (OCR), face recognition, and visual-language-model-based annotation to characterize manipulated images in the campaign. Our analysis suggests that Russian troll accounts relied primarily on low-effort meme-style edits and ridicule-oriented reputation attacks, disproportionately targeting prominent U.S. political figures including Hillary Clinton, Bill Clinton, and Barack Obama.</span>
+  <p class="paper-tldr">TL;DR: TruFor is the most consistent image-forgery detector but degrades on edits from tools like Nano Banana — applied to Russian troll images from 2016, it shows low-effort meme edits mainly targeted Hillary Clinton, Bill Clinton, and Barack Obama</p>
+
+- **Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  <br>
+  [PDF](https://arxiv.org/abs/2605.24287)
+
+- **Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity**
+  <br>
+  **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <strong><i style="color:#e74d3c">Preprint</i></strong>
+  <br>
+  [PDF](https://arxiv.org/abs/2604.10566)
 
 - **Gendered Communication Patterns of Political Elites on Truth Social**
   <br>
@@ -153,7 +154,9 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
   <br>
   **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
   <br>
-  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf)
+  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf) <button class="paper-abstract-toggle" aria-expanded="true"><span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i></button>
+  <span class="paper-abstract">In recent years there has been a marked increase in disinformation, including as part of a strategy of so-called hybrid warfare. Adversaries not only directly spread misleading content but manipulate social media by employing sophisticated techniques that exploit platform vulnerabilities and avoid detection. It is getting increasingly important to analyze social media manipulation to better understand, detect, and defend public dialogue against it. In this thesis, the author contributes to the research on social media manipulation by describing and analyzing how adversaries employ compromised social media accounts. The thesis provides a background of social media by describing the mechanisms and the influence of the platforms to better understand why adversaries target them, gives a detailed overview of social media manipulation and techniques to detect and counter it, and discusses three main contributions: 1) an extensive analysis of an attack on social media algorithms using compromised accounts, 2) a study of the implications of compromised bots for bot research through the characterization of retweet bots, and 3) a detection method to find compromised accounts that are later repurposed.</span>
+  <p class="paper-tldr">TL;DR: Adversaries hijack compromised social media accounts to attack trending algorithms, pose as retweet bots, and get repurposed after periods of dormancy — this thesis details detection methods for each tactic</p>
 
 - **Misleading Repurposing on Twitter**
   <br>

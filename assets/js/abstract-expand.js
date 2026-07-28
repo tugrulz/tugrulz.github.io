@@ -105,13 +105,13 @@
       if (data.abstract) {
         toggle = document.createElement('button');
         toggle.className = 'paper-abstract-toggle';
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down"></i>';
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i>';
 
         panel = document.createElement('div');
         panel.className = 'paper-abstract';
         panel.textContent = data.abstract;
-        panel.hidden = true;
+        panel.hidden = false;
 
         toggle.addEventListener('click', function (e) {
           e.preventDefault();
