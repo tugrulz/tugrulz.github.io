@@ -18,21 +18,21 @@ members:
     role: "Undergrad"
     url: "https://www.linkedin.com/in/alp-eren-köken-53917a249/"
 
-# Alumni names link out when a `url` is set (GitHub profiles).
+# Alumni names link out when a `url` is set.
 alumni:
   - name: "Ömer Bıçakçıoğlu"
     role: "Undergrad"
     next: "Indiana University Bloomington"
-    # url: "https://github.com/<username>"
+    url: "https://www.linkedin.com/in/%C3%B6mer-b%C4%B1%C3%A7akc%C4%B1o%C4%9Flu-41b506249/"
   - name: "Basem Mohammed"
     role: "Undergrad"
     next: "imec"
-    # url: "https://github.com/<username>"
+    url: "https://www.linkedin.com/in/basemism/"
   - name: "Erencem Özbey"
     role: "Undergrad"
     next: "University of California Santa Barbara"
-    # url: "https://github.com/<username>"
+    url: "https://www.linkedin.com/in/erencemozbey/"
   - name: "Kaho Suzuki"
     role: "MSc"
     next: "IBM Japan"
-    # url: "https://github.com/<username>"
+    url: "https://www.linkedin.com/in/blusail/"
