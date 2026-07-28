@@ -1014,3 +1014,30 @@ strong.paper-title {
   border-radius: 999px;
   padding: 0.14em 0.62em;
 }
+
+/* ── Publications: show-all toggle ──────────────────────────────────────── */
+
+.pub-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.4rem 0 0;
+  padding: 0.4rem 0.95rem;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--link);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+
+  i { font-size: 0.7rem; opacity: 0.7; }
+
+  &:hover {
+    color: var(--link-hover);
+    border-color: var(--link-hover);
+    background: rgba(128, 128, 128, 0.06);
+  }
+}

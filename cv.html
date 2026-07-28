@@ -42,19 +42,18 @@
   .entry-title { font-weight:600; }
   .entry-date { color:var(--muted); font-size:.85em; white-space:nowrap; }
   .entry-sub { color:var(--muted); font-size:.9em; }
-  .venue { color:var(--muted); }
-  .tag {
-    font-size:.72em; text-transform:uppercase; letter-spacing:.06em;
-    color:var(--accent); border:1px solid var(--rule);
-    padding:.06em .42em; border-radius:3px; white-space:nowrap;
+  .venue {
+    display:inline-block; font-size:.72em; font-weight:600;
+    text-transform:uppercase; letter-spacing:.05em; white-space:nowrap;
+    color:var(--accent); background:rgba(123,45,38,.07);
+    border:1px solid rgba(123,45,38,.28); border-radius:999px;
+    padding:.1em .55em; vertical-align:middle;
   }
   a { color:var(--ink); }
-  .todo { background:#fff3cd; padding:0 .25em; border-radius:2px; }
   @media print {
     body { padding:0; font-size:10pt; max-width:none; }
     h2 { margin-top:1.3em; }
     a { text-decoration:none; }
-    .todo { background:none; }
   }
 </style>
 </head>
@@ -76,11 +75,11 @@
 
 <p class="summary">
 AI researcher and educator working on large language models and AI-generated media detection.
-I teach Computational Social Science and Text Technologies in Data Science at the
-<a href="https://informatics.ed.ac.uk">University of Edinburgh</a> — ranked <strong>22nd in the world
-for Computer Science &amp; Information Systems</strong> (QS World University Rankings by Subject) — and
-I teach two ~200-student courses a year, and I have built AI curricula for university students,
-summer institutes, and a general public audience. I teach and lecture in both English and Turkish.
+I teach Computational Social Science and Text Technologies in Data Science — around 200 students
+each per year — at the <a href="https://informatics.ed.ac.uk">University of Edinburgh</a>, ranked
+<strong>22nd in the world for Computer Science &amp; Information Systems</strong> (QS World University
+Rankings by Subject). I have built AI curricula for university students, summer institutes and a
+general public audience, and I teach and lecture in both English and Turkish.
 </p>
 
 <h2>Academic Positions</h2>
@@ -159,28 +158,28 @@ summer institutes, and a general public audience. I teach and lecture in both En
 
 <h3>Large Language Models &amp; Human&ndash;AI Interaction</h3>
 <ul>
-  <li><strong>How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement</strong>. Alnasser, Çetinkaya, Zhao, <strong>Elmas</strong>. <span class="venue">Preprint.</span></li>
-  <li><strong><a href="https://arxiv.org/abs/2605.17712">ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit</a></strong>. Yüce, Dai, Owens, <strong>Elmas</strong>. <span class="venue">ICWSM 2027.</span></li>
+  <li><strong>How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement</strong>. Alnasser, Çetinkaya, Zhao, <strong>Elmas</strong>. <span class="venue">Preprint</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2605.17712">ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit</a></strong>. Yüce, Dai, Owens, <strong>Elmas</strong>. <span class="venue">ICWSM 2027</span></li>
   <li><strong><a href="https://teaching-programming.github.io/book/C10_teaching-with-genai.html">An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI</a></strong>. Watterson, Dabab Nahas, <strong>Elmas</strong>, Shoukry, Evkaya. <span class="venue">In <em>Teaching Programming Across Disciplines</em>, book chapter.</span></li>
 </ul>
 
 <h3>AI-Generated Media &amp; Vision-Language Models</h3>
 <ul>
-  <li><strong>TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings</strong>. Özdemir, Çetinkaya, <strong>Elmas</strong>. <span class="venue">Preprint.</span></li>
-  <li><strong><a href="https://arxiv.org/abs/2605.24287">Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit</a></strong>. <strong>Elmas</strong>. <span class="venue">Preprint.</span></li>
-  <li><strong><a href="https://ieeexplore.ieee.org/abstract/document/11557468">Evaluating Image Forgery Detection and Propaganda in Manipulated Images of the Russian Trolls Campaign</a></strong>. Mohammed, Çetinkaya, <strong>Elmas</strong>. <span class="venue">IEEE Internet Computing, 2026.</span></li>
+  <li><strong>TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings</strong>. Özdemir, Çetinkaya, <strong>Elmas</strong>. <span class="venue">Preprint</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2605.24287">Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit</a></strong>. <strong>Elmas</strong>. <span class="venue">Preprint</span></li>
+  <li><strong><a href="https://ieeexplore.ieee.org/abstract/document/11557468">Evaluating Image Forgery Detection and Propaganda in Manipulated Images of the Russian Trolls Campaign</a></strong>. Mohammed, Çetinkaya, <strong>Elmas</strong>. <span class="venue">IEEE Internet Computing, 2026</span></li>
 </ul>
 
 <h3>Machine Learning &amp; Social Media</h3>
 <ul>
-  <li><strong><a href="https://arxiv.org/abs/2506.13912">Density-aware Walks for Coordinated Campaign Detection</a></strong>. Gopalakrishnan, Hossain, <strong>Elmas</strong>, Sariyuce. <span class="venue">ECML PKDD 2025.</span></li>
-  <li><strong><a href="https://arxiv.org/abs/2503.00599">Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends</a></strong>. Gopalakrishnan, Hossain, <strong>Elmas</strong>, Sariyuce. <span class="venue">ICWSM 2025.</span></li>
-  <li><strong><a href="https://www.arxiv.org/abs/2508.13375">State &amp; Geopolitical Censorship on Twitter (X): Detection &amp; Impact Analysis of Withheld Content</a></strong>. Çetinkaya, <strong>Elmas</strong>. <span class="venue">CIKM 2025.</span></li>
-  <li><strong><a href="https://arxiv.org/pdf/1910.07783.pdf">Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends</a></strong>. <strong>Elmas</strong>, Overdorf, Özkalay, Aberer. <span class="venue">IEEE European Symposium on Security and Privacy (Euro S&amp;P) 2021.</span> Covered by <em>The Atlantic</em>, <em>The Next Web</em>, <em>ACM TechNews</em>, <em>Le Temps</em>, <em>Anadolu Agency</em>.</li>
-  <li><strong><a href="https://arxiv.org/abs/2504.09376">Cross-Partisan Interactions on Social Media</a></strong>. Çetinkaya, Ghafouri, Such, Suarez Tangil, <strong>Elmas</strong>. <span class="venue">ICWSM 2025.</span></li>
-  <li><strong><a href="https://arxiv.org/abs/2010.10600">Misleading Repurposing on Twitter</a></strong>. <strong>Elmas</strong>, Overdorf, Aberer. <span class="venue">ICWSM 2023.</span></li>
-  <li><strong><a href="https://arxiv.org/abs/2112.02366">Characterizing Retweet Bots: The Case of Black Market Accounts</a></strong>. <strong>Elmas</strong>, Overdorf, Aberer. <span class="venue">ICWSM 2022.</span></li>
-  <li><strong><a href="https://arxiv.org/pdf/2303.00902">The Impact of Data Persistence Bias on Social Media Studies</a></strong>. <strong>Elmas</strong>. <span class="venue">WebSci 2023.</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2506.13912">Density-aware Walks for Coordinated Campaign Detection</a></strong>. Gopalakrishnan, Hossain, <strong>Elmas</strong>, Sariyuce. <span class="venue">ECML PKDD 2025</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2503.00599">Large Engagement Networks for Classifying Coordinated Campaigns and Organic Twitter Trends</a></strong>. Gopalakrishnan, Hossain, <strong>Elmas</strong>, Sariyuce. <span class="venue">ICWSM 2025</span></li>
+  <li><strong><a href="https://www.arxiv.org/abs/2508.13375">State &amp; Geopolitical Censorship on Twitter (X): Detection &amp; Impact Analysis of Withheld Content</a></strong>. Çetinkaya, <strong>Elmas</strong>. <span class="venue">CIKM 2025</span></li>
+  <li><strong><a href="https://arxiv.org/pdf/1910.07783.pdf">Ephemeral Astroturfing Attacks: The Case of Fake Twitter Trends</a></strong>. <strong>Elmas</strong>, Overdorf, Özkalay, Aberer. <span class="venue">IEEE European Symposium on Security and Privacy (Euro S&amp;P) 2021</span> Covered by <em>The Atlantic</em>, <em>The Next Web</em>, <em>ACM TechNews</em>, <em>Le Temps</em>, <em>Anadolu Agency</em>.</li>
+  <li><strong><a href="https://arxiv.org/abs/2504.09376">Cross-Partisan Interactions on Social Media</a></strong>. Çetinkaya, Ghafouri, Such, Suarez Tangil, <strong>Elmas</strong>. <span class="venue">ICWSM 2025</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2010.10600">Misleading Repurposing on Twitter</a></strong>. <strong>Elmas</strong>, Overdorf, Aberer. <span class="venue">ICWSM 2023</span></li>
+  <li><strong><a href="https://arxiv.org/abs/2112.02366">Characterizing Retweet Bots: The Case of Black Market Accounts</a></strong>. <strong>Elmas</strong>, Overdorf, Aberer. <span class="venue">ICWSM 2022</span></li>
+  <li><strong><a href="https://arxiv.org/pdf/2303.00902">The Impact of Data Persistence Bias on Social Media Studies</a></strong>. <strong>Elmas</strong>. <span class="venue">WebSci 2023</span></li>
 </ul>
 
 <h2>Service &amp; Leadership</h2>
@@ -203,7 +202,7 @@ summer institutes, and a general public audience. I teach and lecture in both En
 
 <h2>Languages</h2>
 <ul>
-  <li><strong>Turkish</strong> — native; able to lecture in Turkish and to Azerbaijani-speaking audiences</li>
+  <li><strong>Turkish</strong> — native</li>
   <li><strong>English</strong> — fluent; medium of instruction at the University of Edinburgh, EPFL and Indiana University</li>
   <li><strong>French</strong> — intermediate (B1)</li>
 </ul>
