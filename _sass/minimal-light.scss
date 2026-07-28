@@ -966,3 +966,34 @@ strong.paper-title {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Recent News: compact, scrollable feed ──────────────────────────────── */
+
+#recent-news + ul {
+  max-height: 11.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 0.6rem 0.9rem 0.6rem 2rem;
+  border: 1px solid var(--border, rgba(128, 128, 128, 0.25));
+  border-radius: 6px;
+  background: var(--card-bg, rgba(128, 128, 128, 0.04));
+  scrollbar-width: thin;
+
+  li {
+    margin-bottom: 0.5rem;
+    font-size: 0.94rem;
+    line-height: 1.5;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &::-webkit-scrollbar { width: 7px; }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.35);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track { background: transparent; }
+}

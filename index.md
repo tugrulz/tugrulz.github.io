@@ -2,18 +2,19 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on **AI & Social Media**: how LLMs claim epistemic authority and handle disagreements with users, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on AI & Social Media: how LLMs claim epistemic authority and handle disagreements with users, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
 
 I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish-language YouTube channel](https://www.youtube.com/@tugrulcan).
 
 Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's Observatory on Social Media (OSOME)](https://osome.iu.edu). I received my Ph.D. from [EPFL](https://www.epfl.ch) in 2022, and my B.S. from [Bilkent University](https://www.bilkent.edu.tr) in 2017, with a major in Computer Science and a minor in Philosophy. I also spent a semester at the [National University of Singapore](https://www.nus.edu.sg).
 
-## News
-- **2026** — Program Co-Chair, [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
-- **2026** — Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
-- **2025** — *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
-- **2025** — Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) (Summer Institute in Computational Social Science)
-- **2025** — Awarded UoE Generative AI Lab funding for work on human–AI disagreement
+## Recent News
+- Program Co-Chair, [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- [GAIL Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), Generative AI Laboratory, University of Edinburgh
+- Awarded [GAIL Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
+- Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
+- *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
+- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) (Summer Institute in Computational Social Science)
 
 ## Teaching
 
@@ -264,12 +265,14 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Talks
 - Invited Teaching Seminar at John Hopkins SAIS Conflicts and Cultures in Contemporary Turkey course by Lisel Hintz
-- Panelist at AMLD 2025, Lausanne, Switzerland
+- Panelist, "Unmasking the Digital Deception: Defending Against DeepFakes and Disinformation Attacks" — Applied Machine Learning Days (AMLD) 2025, EPFL, Lausanne, Switzerland
+- Panelist, [AIM Lab Roundtable Discussion](https://www.youtube.com/watch?v=KKTzTEhKyX0)
 - Speaker & Panelist at Scotsman Data Conference 2024, Edinburgh, UK
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Services
 - Program Co-Chair: [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- [GAIL Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), Generative AI Laboratory, University of Edinburgh
 - Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people)
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018

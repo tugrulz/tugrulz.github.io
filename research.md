@@ -44,6 +44,7 @@ layout: research
   We study how people interact with AI assistants in high-stakes and sensitive domains — from romantic relationships and mental health support to legal and medical advice. A central question is how LLMs handle disagreement: when they defer, push back, or subtly steer a user's views. This connects to broader questions of epistemic authority — how AI systems shape what people believe, how they reason, and whom they trust.
 </div>
 <p class="project-card__funding">🏆 Awarded UoE Generative AI Lab Funding: £2,500</p>
+<p class="project-card__funding">🏆 <a href="https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use">GAIL Seed Funding</a>: <em>Can LLMs Give Relationship Advice?</em></p>
 <ul class="project-card__papers">
   <li>How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement — Preprint</li>
 </ul>
