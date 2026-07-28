@@ -2,7 +2,7 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on AI & Social Media: how LLMs claim epistemic authority and handle disagreements with users, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
+I’m an Assistant Professor in the [School of Informatics](https://informatics.ed.ac.uk) at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on AI & Social Media: how to detect fake / AI-generated media at scale, how LLMs claim epistemic authority and handle disagreements with users, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
 
 I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish YouTube channel](https://www.youtube.com/@tugrulcan).
 

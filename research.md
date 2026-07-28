@@ -26,10 +26,9 @@ layout: research
 </div>
 <ul class="project-card__papers">
   <li>TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings — Preprint</li>
-  <li><a href="https://arxiv.org/abs/2508.13375">State &amp; Geopolitical Censorship on Twitter (X) — CIKM 2025</a></li>
+  <li><a href="https://arxiv.org/abs/2605.24287">Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit — Preprint</a></li>
   <li><a href="https://arxiv.org/abs/2010.10600">Misleading Repurposing on Twitter — ICWSM 2023</a></li>
   <li><a href="https://arxiv.org/pdf/1910.07783.pdf">Ephemeral Astroturfing Attacks — Euro S&amp;P 2021</a></li>
-  <li><a href="https://arxiv.org/abs/2105.13398">Tactical Reframing of Disinformation Campaigns — ICWSM 2021</a></li>
 </ul>
 </div>
 
@@ -72,6 +71,7 @@ layout: research
   We explore how LLMs and multi-agent AI systems can accelerate scientific workflows and transform education — from automated opinion mining and structured election analysis to orchestrating agent collaborations that produce full data science research papers end-to-end. We are also building AI-assisted teaching tools and studying the epistemic implications of delegating scientific reasoning to generative models.
 </div>
 <ul class="project-card__papers">
+  <li><a href="https://arxiv.org/abs/2605.17712">ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit — ICWSM 2027</a></li>
   <li><a href="https://teaching-programming.github.io/book/C10_teaching-with-genai.html">An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI — Book Chapter</a></li>
   <li><a href="https://arxiv.org/abs/2304.03434">Opinion Mining from YouTube Captions Using ChatGPT — arXiv 2023</a></li>
 </ul>
@@ -91,7 +91,7 @@ layout: research
 
 <ul>
 {% for person in site.data.team.alumni %}
-  <li>{{ person.name }} ({{ person.role }}){% if person.next %} &rarr; {{ person.next }}{% endif %}</li>
+  <li>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %} ({{ person.role }}){% if person.next %} &rarr; {{ person.next }}{% endif %}</li>
 {% endfor %}
 </ul>
 

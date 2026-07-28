@@ -18,16 +18,21 @@ members:
     role: "Undergrad"
     url: "https://www.linkedin.com/in/alp-eren-köken-53917a249/"
 
+# Alumni names link out when a `url` is set (GitHub profiles).
 alumni:
   - name: "Ömer Bıçakçıoğlu"
     role: "Undergrad"
     next: "Indiana University Bloomington"
+    # url: "https://github.com/<username>"
   - name: "Basem Mohammed"
     role: "Undergrad"
     next: "imec"
+    # url: "https://github.com/<username>"
   - name: "Erencem Özbey"
     role: "Undergrad"
     next: "University of California Santa Barbara"
+    # url: "https://github.com/<username>"
   - name: "Kaho Suzuki"
     role: "MSc"
     next: "IBM Japan"
+    # url: "https://github.com/<username>"
