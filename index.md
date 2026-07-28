@@ -14,12 +14,12 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 - Awarded [GAIL Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
 - Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 - *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
-- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) (Summer Institute in Computational Social Science)
+- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) (Summer Institute in Computational Social Science)
 
 ## Teaching
 
 ### Courses
-- [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– *(nominated for a UoE Teaching Award)*
+- [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– *(nominated for a UoE Teaching Award)* — [open course materials](https://opencourse.inf.ed.ac.uk/css)
 - [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025–
 - [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024– *(information retrieval & NLP)*
 - [Introduction to Object Oriented Programming](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08029.htm) 2025
@@ -28,7 +28,8 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 - Introduction à la Programmation, EPFL, 2019
 
 ### AI Education & Public Engagement
-- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people) — an intensive summer institute training researchers in computational methods
+- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) — an intensive summer institute training researchers in computational methods
+- [Open course materials for Computational Social Science](https://opencourse.inf.ed.ac.uk/css) — full lecture materials published openly by the University of Edinburgh
 - Author, [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html) — book chapter on teaching programming in the age of generative AI
 - Creator, [Dr. Tuğrulcan Elmas](https://www.youtube.com/@tugrulcan) — Turkish-language YouTube channel explaining AI and social media research to a general audience
 - Supervision: six current lab members across undergraduate, PhD and postdoctoral levels, plus four alumni ([lab page](./research))
@@ -42,11 +43,11 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 - **How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  Riyadh Alnasser, Yusuf Mücahit Çetinkaya, Sumin Zhao, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
 
 - **TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  Onat Özdemir, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
 
 - **An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI**
   <br>
@@ -273,7 +274,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 ## Services
 - Program Co-Chair: [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
 - [GAIL Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), Generative AI Laboratory, University of Edinburgh
-- Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/people)
+- Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/)
 - PC Member: WebSci, ICWSM, CySoc
 - Conference Reviewer: Euro S&P 2021, EDBT 2021, ICDE 2020, IEEE CIC 2019, CIKM 2019, WISE 2018, IEEE Big Data 2018
 - Journal Reviewer: Turkish Journal Of Electrical Engineering & Computer Sciences, Online Social Networks and Media, EPJ Data Science, PeerJ, OSNEM
