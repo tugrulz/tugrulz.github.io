@@ -6,8 +6,6 @@ layout: research
 
 <h2>Turullab</h2>
 
-<p>We are a group at the University of Edinburgh working at the intersection of large language models, computational social science, and online safety. We are part of the <a href="https://smash.inf.ed.ac.uk">SMASH</a> group in the School of Informatics.</p>
-
 <div class="team-photo-section" style="margin-top:2rem;">
 <div class="team-photo-wrap">
   <img src="./assets/img/lab.jpeg" alt="Turullab team photo" class="team-photo-img">
@@ -94,11 +92,12 @@ layout: research
 
 <ul>
 {% for person in site.data.team.alumni %}
-  <li>{{ person.name }} ({{ person.role }})</li>
+  <li>{{ person.name }} ({{ person.role }}){% if person.next %} &rarr; {{ person.next }}{% endif %}</li>
 {% endfor %}
 </ul>
 
-<p class="turullab-rules-label">House rules:</p>
+<h2 id="house-rules">House Rules</h2>
+
 <ol class="turullab-rules">
   <li>Turullab is not Trollab</li>
   <li>Turullab is <strong>NOT</strong> Trollab</li>

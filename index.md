@@ -4,7 +4,7 @@ layout: homepage
 
 I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on AI & Social Media: how LLMs claim epistemic authority and handle disagreements with users, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
 
-I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish-language YouTube channel](https://www.youtube.com/@tugrulcan).
+I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish YouTube channel](https://www.youtube.com/@tugrulcan).
 
 Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's Observatory on Social Media (OSOME)](https://osome.iu.edu). I received my Ph.D. from [EPFL](https://www.epfl.ch) in 2022, and my B.S. from [Bilkent University](https://www.bilkent.edu.tr) in 2017, with a major in Computer Science and a minor in Philosophy. I also spent a semester at the [National University of Singapore](https://www.nus.edu.sg).
 
@@ -14,25 +14,16 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 - Awarded [GAIL Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
 - Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 - *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
-- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) (Summer Institute in Computational Social Science)
+- Organised [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) (Summer Institute in Computational Social Science)
 
 ## Teaching
-
-### Courses
-- [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– *(nominated for a UoE Teaching Award)* — [open course materials](https://opencourse.inf.ed.ac.uk/css)
-- [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025–
-- [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024– *(information retrieval & NLP)*
+- [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– — [Open Course Materials](https://opencourse.inf.ed.ac.uk/css)
+- [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm) 2024–
+- [Evidence, Argument and Persuasion in a Digital Age](http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm) 2025–2026
 - [Introduction to Object Oriented Programming](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08029.htm) 2025
 - Distributed Information Systems, EPFL, 2018–2021
 - Applied Data Analysis, EPFL, 2018
 - Introduction à la Programmation, EPFL, 2019
-
-### AI Education & Public Engagement
-- Organiser, [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) — an intensive summer institute training researchers in computational methods
-- [Open course materials for Computational Social Science](https://opencourse.inf.ed.ac.uk/css) — full lecture materials published openly by the University of Edinburgh
-- Author, [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html) — book chapter on teaching programming in the age of generative AI
-- Creator, [Dr. Tuğrulcan Elmas](https://www.youtube.com/@tugrulcan) — Turkish-language YouTube channel explaining AI and social media research to a general audience
-- Supervision: six current lab members across undergraduate, PhD and postdoctoral levels, plus four alumni ([lab page](./research))
 
 ## Team
 {% for member in site.data.team.members -%}
@@ -53,7 +44,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Steven Watterson, Laila Dabab Nahas, **Tuğrulcan Elmas**, Hebatallah Shoukry, Ozan Evkaya
   <br>
-  In [*Teaching Programming*](https://teaching-programming.github.io/book/). <strong><i style="color:#e74d3c">Book Chapter</i></strong>
+  In [*Teaching Programming Across Disciplines*](https://teaching-programming.github.io/book/). <strong><i style="color:#e74d3c">Book Chapter</i></strong>
   <br>
   [Chapter](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 

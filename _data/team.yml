@@ -21,9 +21,13 @@ members:
 alumni:
   - name: "Ömer Bıçakçıoğlu"
     role: "Undergrad"
+    next: "Indiana University Bloomington"
   - name: "Basem Mohammed"
     role: "Undergrad"
+    next: "Imec"
   - name: "Erencem Özbey"
     role: "Undergrad"
+    next: "University of California Santa Barbara"
   - name: "Kaho Suzuki"
     role: "MSc"
+    next: "IBM Japan"
