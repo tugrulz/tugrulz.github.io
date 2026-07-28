@@ -2,7 +2,7 @@
 layout: homepage
 ---
 
-I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on **AI & Social Media**: how LLMs claim epistemic authority and handle disagreement with the people who use them, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
+I’m an Assistant Professor in the School of Informatics at the University of Edinburgh, where I co-direct the [Social Media Analysis and Support for Humanity (SMASH)](https://smash.inf.ed.ac.uk) group. My research is on **AI & Social Media**: how LLMs claim epistemic authority and handle disagreements with users, how to detect AI-generated media at scale, and how multi-agent AI systems can automate scientific work and education. I am broadly interested in Natural Language Processing and Computational Social Science.
 
 I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) and [Text Technologies in Data Science](https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm), supervise [a lab of six](./research), and explain AI to a general audience on my [Turkish-language YouTube channel](https://www.youtube.com/@tugrulcan).
 
@@ -39,8 +39,6 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Publications
 
-<!-- TODO: add the arXiv/PDF links for the two preprints below once they are posted -->
-
 - **How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement**
   <br>
   **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
@@ -49,11 +47,11 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
 
-<!-- TODO: add co-authors and the book title/editors for the chapter below -->
-
 - **An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Book Chapter</i></strong>
+  **Tuğrulcan Elmas**
+  <br>
+  In [*Teaching Programming*](https://teaching-programming.github.io/book/). <strong><i style="color:#e74d3c">Book Chapter</i></strong>
   <br>
   [Chapter](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 
