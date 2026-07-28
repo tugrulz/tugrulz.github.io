@@ -49,7 +49,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 - **An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI**
   <br>
-  **Tuğrulcan Elmas**
+  Steven Watterson, Laila Dabab Nahas, **Tuğrulcan Elmas**, Hebatallah Shoukry, Ozan Evkaya
   <br>
   In [*Teaching Programming*](https://teaching-programming.github.io/book/). <strong><i style="color:#e74d3c">Book Chapter</i></strong>
   <br>
