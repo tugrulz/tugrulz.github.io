@@ -913,6 +913,10 @@ strong.paper-title {
   background: var(--bg);
   border-left: 2px solid var(--accent);
   border-radius: 0 4px 4px 0;
+
+  &[hidden] {
+    display: none;
+  }
 }
 
 .turullab-rules {
