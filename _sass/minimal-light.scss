@@ -424,13 +424,15 @@ th {
   user-select: none;
 }
 
-// Paper link pills [PDF] [Code] [Data]
-.main-content a[href*="arxiv"],
-.main-content a[href*="arxiv.org"],
-.main-content a[href*="github"],
-.main-content a[href*="zenodo"],
-.main-content a[href*="ieeexplore"],
-.main-content a[href*="infoscience.epfl.ch"] {
+// Paper link pills [PDF] [Code] [Data].
+// Excludes the title wrapper (styled separately, below) and links whose label
+// is italic text — e.g. a book title — which are prose, not badges.
+.main-content a[href*="arxiv"]:not(.paper-title-link):not(:has(em)),
+.main-content a[href*="arxiv.org"]:not(.paper-title-link):not(:has(em)),
+.main-content a[href*="github"]:not(.paper-title-link):not(:has(em)),
+.main-content a[href*="zenodo"]:not(.paper-title-link):not(:has(em)),
+.main-content a[href*="ieeexplore"]:not(.paper-title-link):not(:has(em)),
+.main-content a[href*="infoscience.epfl.ch"]:not(.paper-title-link):not(:has(em)) {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
@@ -856,11 +858,18 @@ a.paper-title-link {
   }
 }
 
+// Every publication title gets the same rounded plate, whether or not it
+// links out. box-decoration-break keeps the ends rounded across line wraps.
 strong.paper-title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--heading);
   transition: opacity 0.15s ease;
+  background: var(--accent-dim);
+  border-radius: 999px;
+  padding: 0.1rem 0.75rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 // TL;DR injected by abstract-expand.js

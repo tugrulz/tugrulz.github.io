@@ -39,6 +39,13 @@
   }
 
   function enhance() {
+    // Mark every publication title, including those with no outbound link,
+    // so they all pick up the same styling.
+    document.querySelectorAll('#publications + ul > li').forEach(li => {
+      const title = li.querySelector('strong:first-of-type');
+      if (title) title.classList.add('paper-title');
+    });
+
     // Wire up any hand-authored toggle + panel pairs (e.g. papers without
     // an arXiv link, whose abstract is written directly in the markdown).
     document.querySelectorAll('#publications + ul > li').forEach(li => {

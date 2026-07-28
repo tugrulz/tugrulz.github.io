@@ -10,11 +10,9 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 ## Recent News
 - Program Co-Chair, [International AAAI Conference on Web and Social Media (ICWSM) 2027](https://www.icwsm.org/2027/organisation/)
-- [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
 - Awarded [Generative AI Lab Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
 - Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 - *Understanding Society with Big Data: Computational Social Science* nominated for a University of Edinburgh Teaching Award
-- Organised [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/) (Summer Institute in Computational Social Science)
 
 ## Teaching
 - [Understanding Society with Big Data: Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm) 2026– — [Open Course Materials](https://opencourse.inf.ed.ac.uk/css)
@@ -31,6 +29,12 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 {% endfor %}
 
 ## Publications
+
+- **Online Safety Regulation Increases Privacy Risk: Evidence from the UK Online Safety Act**
+  <br>
+  Dhyey Mehta, Eldar Jalilzade, Maksim Kalameyets, Rebecca Owens, Marc Juarez, Stergios Aidinlis, Lei Shi, **Tuğrulcan Elmas** <span class="paper-tag">Preprint</span>
+  <br>
+  [PDF](https://arxiv.org/abs/2606.05273)
 
 - **How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement**
   <br>
