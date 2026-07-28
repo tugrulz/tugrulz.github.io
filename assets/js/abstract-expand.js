@@ -11,8 +11,7 @@
  *
  * Interactions:
  *   - Click title          → open arXiv page
- *   - Click card body      → toggle abstract (skip if target is a/button)
- *   - Click Abstract button → toggle abstract
+ *   - Click Abstract button → toggle abstract (collapsed by default)
  */
 (function () {
   const ARXIV_ID_RE = /arxiv\.org\/(?:abs|pdf)\/([\d]{4}\.[\d]{4,5})/;
@@ -29,16 +28,12 @@
     toggle.querySelector('i').style.transform = expanded ? '' : 'rotate(180deg)';
   }
 
+  // Only the Abstract button toggles. The card itself is not clickable, so
+  // the publication entry always stays fully visible.
   function wireToggle(li, toggle, panel) {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      toggleAbstract(toggle, panel);
-    });
-
-    li.style.cursor = 'pointer';
-    li.addEventListener('click', function (e) {
-      if (e.target.closest('a') || e.target.closest('button')) return;
       toggleAbstract(toggle, panel);
     });
   }
@@ -105,13 +100,13 @@
       if (data.abstract) {
         toggle = document.createElement('button');
         toggle.className = 'paper-abstract-toggle';
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i>';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.innerHTML = '<span>Abstract</span><i class="fas fa-chevron-down"></i>';
 
         panel = document.createElement('div');
         panel.className = 'paper-abstract';
         panel.textContent = data.abstract;
-        panel.hidden = false;
+        panel.hidden = true;
 
         toggle.addEventListener('click', function (e) {
           e.preventDefault();
@@ -126,14 +121,6 @@
           anchor = anchor.parentNode;
         }
         anchor.insertAdjacentElement('afterend', panel);
-
-        // --- Card-level click → toggle abstract ---
-        li.style.cursor = 'pointer';
-        li.addEventListener('click', function (e) {
-          // Ignore clicks on links or buttons
-          if (e.target.closest('a') || e.target.closest('button')) return;
-          toggleAbstract(toggle, panel);
-        });
       }
 
       if (data.tldr) {

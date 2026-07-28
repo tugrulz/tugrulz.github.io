@@ -9,7 +9,7 @@ I teach [Computational Social Science](http://www.drps.ed.ac.uk/25-26/dpt/cxinfr
 Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's Observatory on Social Media (OSOME)](https://osome.iu.edu). I received my Ph.D. from [EPFL](https://www.epfl.ch) in 2022, and my B.S. from [Bilkent University](https://www.bilkent.edu.tr) in 2017, with a major in Computer Science and a minor in Philosophy. I also spent a semester at the [National University of Singapore](https://www.nus.edu.sg).
 
 ## Recent News
-- Program Co-Chair, [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- Program Co-Chair, [International AAAI Conference on Web and Social Media (ICWSM) 2027](https://www.icwsm.org/2027/organisation/)
 - [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
 - Awarded [Generative AI Lab Seed Funding](https://gail.ed.ac.uk/gail-funds-five-new-projects-on-ais-impact-and-use) for *Can LLMs Give Relationship Advice?*, with Yusuf Mücahit Çetinkaya — building the first large-scale, theory-grounded dataset of online relationship narratives and AI-generated advice, and benchmarking how well LLMs understand complex relational problems
 - Book chapter published: [*An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI*](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
@@ -34,17 +34,17 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 
 - **How AI Models Manage Epistemic Authority: A Taxonomy and Comparative Analysis of Responses to User Disagreement**
   <br>
-  Riyadh Alnasser, Yusuf Mücahit Çetinkaya, Sumin Zhao, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  Riyadh Alnasser, Yusuf Mücahit Çetinkaya, Sumin Zhao, **Tuğrulcan Elmas** <span class="paper-tag">Preprint</span>
 
 - **TRACE-Inset: Unified Whole-Image and Partial-Match Image Retrieval with Vision-Language Embeddings**
   <br>
-  Onat Özdemir, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  Onat Özdemir, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas** <span class="paper-tag">Preprint</span>
 
 - **An Optimistic Outlook on Teaching, Learning and Assessment for Coding With the Emergence of Generative AI**
   <br>
   Steven Watterson, Laila Dabab Nahas, **Tuğrulcan Elmas**, Hebatallah Shoukry, Ozan Evkaya
   <br>
-  In [*Teaching Programming Across Disciplines*](https://teaching-programming.github.io/book/). <strong><i style="color:#e74d3c">Book Chapter</i></strong>
+  In [*Teaching Programming Across Disciplines*](https://teaching-programming.github.io/book/). <span class="paper-tag">Book Chapter</span>
   <br>
   [Chapter](https://teaching-programming.github.io/book/C10_teaching-with-genai.html)
 
@@ -52,7 +52,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Pelin Yüce, Xiangruo Dai, Rebecca Owens, **Tuğrulcan Elmas**
   <br>
-  21st International Conference On Web And Social Media **ICWSM 2027**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  21st International Conference On Web And Social Media **ICWSM 2027**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2605.17712)
 
@@ -60,21 +60,21 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Basem Mohammed, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  IEEE Internet Computing **2026**. <strong><i style="color:#e74d3c">Journal Paper</i></strong>
+  IEEE Internet Computing **2026**. <span class="paper-tag">Journal Paper</span>
   <br>
-  [PDF](https://ieeexplore.ieee.org/abstract/document/11557468) <button class="paper-abstract-toggle" aria-expanded="true"><span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i></button>
-  <span class="paper-abstract">Generative AI tools have increased the scale and accessibility of deceptive image creation, but the robustness of existing forgery detection methods under emerging editing tools and real-world social media conditions remains uncertain. This study evaluates state-of-the-art image forgery detectors on recent benchmarks and applies the strongest model to a historical influence-campaign case study: Russian troll activity during the 2016 U.S. presidential election. We find that TruFor is the most consistent detector across legacy and recent datasets, but that its performance degrades on edits produced by advanced tools such as Nano Banana. We then deploy a multimodal pipeline combining forgery localization, Optical Character Recognition (OCR), face recognition, and visual-language-model-based annotation to characterize manipulated images in the campaign. Our analysis suggests that Russian troll accounts relied primarily on low-effort meme-style edits and ridicule-oriented reputation attacks, disproportionately targeting prominent U.S. political figures including Hillary Clinton, Bill Clinton, and Barack Obama.</span>
+  [PDF](https://ieeexplore.ieee.org/abstract/document/11557468) <button class="paper-abstract-toggle" aria-expanded="false"><span>Abstract</span><i class="fas fa-chevron-down"></i></button>
+  <span class="paper-abstract" hidden>Generative AI tools have increased the scale and accessibility of deceptive image creation, but the robustness of existing forgery detection methods under emerging editing tools and real-world social media conditions remains uncertain. This study evaluates state-of-the-art image forgery detectors on recent benchmarks and applies the strongest model to a historical influence-campaign case study: Russian troll activity during the 2016 U.S. presidential election. We find that TruFor is the most consistent detector across legacy and recent datasets, but that its performance degrades on edits produced by advanced tools such as Nano Banana. We then deploy a multimodal pipeline combining forgery localization, Optical Character Recognition (OCR), face recognition, and visual-language-model-based annotation to characterize manipulated images in the campaign. Our analysis suggests that Russian troll accounts relied primarily on low-effort meme-style edits and ridicule-oriented reputation attacks, disproportionately targeting prominent U.S. political figures including Hillary Clinton, Bill Clinton, and Barack Obama.</span>
   <p class="paper-tldr">TL;DR: TruFor is the most consistent image-forgery detector but degrades on edits from tools like Nano Banana — applied to Russian troll images from 2016, it shows low-effort meme edits mainly targeted Hillary Clinton, Bill Clinton, and Barack Obama</p>
 
 - **Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  **Tuğrulcan Elmas** <span class="paper-tag">Preprint</span>
   <br>
   [PDF](https://arxiv.org/abs/2605.24287)
 
 - **Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity**
   <br>
-  **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <strong><i style="color:#e74d3c">Preprint</i></strong>
+  **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <span class="paper-tag">Preprint</span>
   <br>
   [PDF](https://arxiv.org/abs/2604.10566)
 
@@ -82,7 +82,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Tom Bidewell, Artemis Deligianni, **Tuğrulcan Elmas**, Clare Llewellyn, Bjorn Ross
   <br>
-  18th ACM Web Science Conference **WebSci 2026**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  18th ACM Web Science Conference **WebSci 2026**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2603.23027)
 
@@ -90,7 +90,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Yining Wang, Alhasan Abdellatif, Artemis Deligianni, Hannah Hok, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  20th International Conference On Web And Social Media **ICWSM 2026**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  20th International Conference On Web And Social Media **ICWSM 2026**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2603.17901)
 
@@ -98,7 +98,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
-  The Conference on Information and Knowledge Management **CIKM 2025**. <strong><i style="color:#e74d3c">Short Paper</i></strong>
+  The Conference on Information and Knowledge Management **CIKM 2025**. <span class="paper-tag">Short Paper</span>
   <br>
   [PDF](https://www.arxiv.org/abs/2508.13375)
 
@@ -106,7 +106,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
   <br>
-  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases **ECML PKDD 2025**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2506.13912)
 
@@ -114,7 +114,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Yusuf Mücahit Çetinkaya, Vahid Ghafouri, Jose Such, Guillermo Suarez Tangil, **Tuğrulcan Elmas**
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  19th International Conference On Web And Social Media **ICWSM 2025**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2504.09376)
 
@@ -122,7 +122,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Atul Anand Gopalakrishnan, Jakir Hossain, **Tuğrulcan Elmas**, Ahmet Erdem Sariyuce
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  19th International Conference On Web And Social Media **ICWSM 2025**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2503.00599)
 
@@ -130,7 +130,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Manita Pote, **Tuğrulcan Elmas**, Alessandro Flammini, Fil Menczer
   <br>
-  19th International Conference On Web And Social Media **ICWSM 2025**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  19th International Conference On Web And Social Media **ICWSM 2025**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2410.19272)
 
@@ -138,7 +138,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Munjung Kim, **Tuğrulcan Elmas**, Filippo Menczer
   <br>
-  International Workshop on Cyber Social Threats **CySoc 2024** (colocated with ICWSM 2024). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  International Workshop on Cyber Social Threats **CySoc 2024** (colocated with ICWSM 2024). <span class="paper-tag">Workshop Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2404.08110)
 
@@ -146,7 +146,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Mathis Randl, Youssef Attia
   <br>
-  18th International Conference On Web And Social Media **ICWSM 2024**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  18th International Conference On Web And Social Media **ICWSM 2024**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2403.15856)
 
@@ -154,7 +154,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Caroline Violot, **Tuğrulcan Elmas**, Igor Bilogrevic, Mathias Humbert
   <br>
-  16th ACM Web Science Conference **WebSci 2024**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  16th ACM Web Science Conference **WebSci 2024**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2403.00454)
 
@@ -162,7 +162,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Selim Stephane, Célia Houssiaux
   <br>
-  ACM Web Conference 2023 **WebConf 2023**. <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  ACM Web Conference 2023 **WebConf 2023**. <span class="paper-tag">Workshop Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2303.06120) [Data](https://github.com/tugrulz/ViralTweets)
 
@@ -170,7 +170,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**
   <br>
-  International Workshop on Cyber Social Threats **CySoc 2023** (colocated with WebConf 2023). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  International Workshop on Cyber Social Threats **CySoc 2023** (colocated with WebConf 2023). <span class="paper-tag">Workshop Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2304.07907) [Data](https://github.com/tugrulz/EphemeralAstroturfing)
 
@@ -178,23 +178,23 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**
   <br>
-  15th ACM Web Science Conference **WebSci 2023**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  15th ACM Web Science Conference **WebSci 2023**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/pdf/2303.00902) [Data](https://github.com/tugrulz/DataPersistenceBias)
 
 - **The Role of Compromised Accounts in Social Media Manipulation**
   <br>
-  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Ph.D. Thesis</i></strong>
+  **Tuğrulcan Elmas** <span class="paper-tag">Ph.D. Thesis</span>
   <br>
-  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf) <button class="paper-abstract-toggle" aria-expanded="true"><span>Abstract</span><i class="fas fa-chevron-down" style="transform:rotate(180deg)"></i></button>
-  <span class="paper-abstract">In recent years there has been a marked increase in disinformation, including as part of a strategy of so-called hybrid warfare. Adversaries not only directly spread misleading content but manipulate social media by employing sophisticated techniques that exploit platform vulnerabilities and avoid detection. It is getting increasingly important to analyze social media manipulation to better understand, detect, and defend public dialogue against it. In this thesis, the author contributes to the research on social media manipulation by describing and analyzing how adversaries employ compromised social media accounts. The thesis provides a background of social media by describing the mechanisms and the influence of the platforms to better understand why adversaries target them, gives a detailed overview of social media manipulation and techniques to detect and counter it, and discusses three main contributions: 1) an extensive analysis of an attack on social media algorithms using compromised accounts, 2) a study of the implications of compromised bots for bot research through the characterization of retweet bots, and 3) a detection method to find compromised accounts that are later repurposed.</span>
+  [PDF](https://infoscience.epfl.ch/record/297318/files/EPFL_TH8991.pdf) <button class="paper-abstract-toggle" aria-expanded="false"><span>Abstract</span><i class="fas fa-chevron-down"></i></button>
+  <span class="paper-abstract" hidden>In recent years there has been a marked increase in disinformation, including as part of a strategy of so-called hybrid warfare. Adversaries not only directly spread misleading content but manipulate social media by employing sophisticated techniques that exploit platform vulnerabilities and avoid detection. It is getting increasingly important to analyze social media manipulation to better understand, detect, and defend public dialogue against it. In this thesis, the author contributes to the research on social media manipulation by describing and analyzing how adversaries employ compromised social media accounts. The thesis provides a background of social media by describing the mechanisms and the influence of the platforms to better understand why adversaries target them, gives a detailed overview of social media manipulation and techniques to detect and counter it, and discusses three main contributions: 1) an extensive analysis of an attack on social media algorithms using compromised accounts, 2) a study of the implications of compromised bots for bot research through the characterization of retweet bots, and 3) a detection method to find compromised accounts that are later repurposed.</span>
   <p class="paper-tldr">TL;DR: Adversaries hijack compromised social media accounts to attack trending algorithms, pose as retweet bots, and get repurposed after periods of dormancy — this thesis details detection methods for each tactic</p>
 
 - **Misleading Repurposing on Twitter**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  17th International Conference On Web And Social Media **ICWSM 2023**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  17th International Conference On Web And Social Media **ICWSM 2023**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2010.10600)
 
@@ -202,7 +202,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  16th International Conference On Web And Social Media **ICWSM 2022**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  16th International Conference On Web And Social Media **ICWSM 2022**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2112.02366) [Data](https://github.com/tugrulz/RetweetBots)
 
@@ -210,7 +210,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Ahmed Furkan Özkalay, Karl Aberer
   <br>
-  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**. <strong><i style="color:#e74d3c">Full Paper</i></strong>
+  2021 IEEE European Symposium on Security and Privacy **Euro S&P 2021**. <span class="paper-tag">Full Paper</span>
   <br>
   [PDF](https://arxiv.org/pdf/1910.07783.pdf) [Code](https://github.com/tugrulz/EphemeralAstroturfing)
   <br>
@@ -220,14 +220,14 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Thomas Romain Ibanez, Alexandre Hutter, Rebekah Overdorf, Karl Aberer
   <br>
-  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022** (colocated with ASONAM 2022). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  International Symposium on Foundations of Open Source Intelligence and Security Informatics **FOSINT-SI 2022** (colocated with ASONAM 2022). <span class="paper-tag">Workshop Paper</span>
   <br>
 
 - **A Dataset of State-Censored Tweets**
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  15th International Conference On Web And Social Media **ICWSM 2021**. <strong><i style="color:#e74d3c">Dataset Paper</i></strong>
+  15th International Conference On Web And Social Media **ICWSM 2021**. <span class="paper-tag">Dataset Paper</span>
   <br>
   [PDF](https://arxiv.org/pdf/2101.05919.pdf) [Data](https://zenodo.org/record/4439509)
 
@@ -235,7 +235,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   **Tuğrulcan Elmas**, Rebekah Overdorf, Karl Aberer
   <br>
-  Data for the Welbeing of Most Vulnerable **colocated with ICWSM 2021**. <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  Data for the Welbeing of Most Vulnerable **colocated with ICWSM 2021**. <span class="paper-tag">Workshop Paper</span>
   <br>
   [PDF](https://arxiv.org/abs/2105.13398)
 
@@ -245,13 +245,13 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
   <br>
   Innovative Ideas in Data Science (colocated with **WebConf 2020**).
   <br>
-  MISINFO (colocated with **WebConf 2021**). <strong><i style="color:#e74d3c">Workshop Paper</i></strong>
+  MISINFO (colocated with **WebConf 2021**). <span class="paper-tag">Workshop Paper</span>
   <br>
   [PDF](https://arxiv.org/pdf/2003.06857.pdf)
 
 - **Opinion Mining from YouTube Captions Using ChatGPT: A Case Study of Street Interviews Polling the 2023 Turkish Elections**
   <br>
-  İlker Gül, **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  İlker Gül, **Tuğrulcan Elmas** <span class="paper-tag">Preprint</span>
   <br>
   [PDF](https://arxiv.org/abs/2304.03434)
 
@@ -263,7 +263,7 @@ Previously, I was a Postdoctoral Scholar at [Indiana University at Bloomington's
 - Speaker & Panelist at Middle East Conference 2024, Doha, Qatar
 
 ## Services
-- Program Co-Chair: [ICWSM 2027](https://www.icwsm.org/2027/organisation/)
+- Program Co-Chair: [International AAAI Conference on Web and Social Media (ICWSM) 2027](https://www.icwsm.org/2027/organisation/)
 - [Generative AI Lab Fellow](https://gail.ed.ac.uk/about-gail/gail-fellows), University of Edinburgh
 - Organiser: [SICSS Edinburgh 2025](https://sicss.io/2025/edinburgh/)
 - Committee Member, University of Edinburgh: Ethics Committee, Teaching Committee, Board of Studies

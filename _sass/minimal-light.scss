@@ -997,3 +997,20 @@ strong.paper-title {
 
   &::-webkit-scrollbar-track { background: transparent; }
 }
+
+/* ── Publication venue tags ─────────────────────────────────────────────── */
+
+.paper-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: #e74d3c;
+  background: rgba(231, 77, 60, 0.09);
+  border: 1px solid rgba(231, 77, 60, 0.32);
+  border-radius: 999px;
+  padding: 0.14em 0.62em;
+}

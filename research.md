@@ -20,7 +20,7 @@ layout: research
 <div class="project-card__icon" style="background:rgba(239,68,68,0.12); color:#ef4444;">
   <i class="fas fa-shield-halved"></i>
 </div>
-<div class="project-card__title">Misinformation &amp; Deepfakes</div>
+<div class="project-card__title">AI-Generated Media &amp; Social Media Manipulation Detection</div>
 <div class="project-card__desc">
   We study how false and misleading content spreads on social media — from coordinated inauthentic behaviour and state censorship to AI-generated deepfakes and synthetic media. We build detection methods and characterize the impact of these threats on public discourse.
 </div>
