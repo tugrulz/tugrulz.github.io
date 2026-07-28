@@ -428,7 +428,8 @@ th {
 .main-content a[href*="arxiv"],
 .main-content a[href*="arxiv.org"],
 .main-content a[href*="github"],
-.main-content a[href*="zenodo"] {
+.main-content a[href*="zenodo"],
+.main-content a[href*="ieeexplore"] {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
@@ -903,6 +904,7 @@ strong.paper-title {
 
 // Expanded abstract panel
 .paper-abstract {
+  display: block;
   font-size: 0.72rem;
   line-height: 1.6;
   color: var(--text-muted);

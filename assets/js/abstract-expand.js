@@ -29,7 +29,46 @@
     toggle.querySelector('i').style.transform = expanded ? '' : 'rotate(180deg)';
   }
 
+  function wireToggle(li, toggle, panel) {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleAbstract(toggle, panel);
+    });
+
+    li.style.cursor = 'pointer';
+    li.addEventListener('click', function (e) {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      toggleAbstract(toggle, panel);
+    });
+  }
+
   function enhance() {
+    // Wire up any hand-authored toggle + panel pairs (e.g. papers without
+    // an arXiv link, whose abstract is written directly in the markdown).
+    document.querySelectorAll('#publications + ul > li').forEach(li => {
+      const toggle = li.querySelector('.paper-abstract-toggle:not([data-wired])');
+      if (!toggle) return;
+      const panel = li.querySelector('.paper-abstract');
+      if (!panel) return;
+      toggle.setAttribute('data-wired', 'true');
+
+      const titleStrong = li.querySelector('strong:first-of-type');
+      const firstLink = li.querySelector('a');
+      if (titleStrong && firstLink && !titleStrong.closest('a')) {
+        titleStrong.classList.add('paper-title');
+        const titleLink = document.createElement('a');
+        titleLink.href = firstLink.href;
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener';
+        titleLink.className = 'paper-title-link';
+        titleStrong.replaceWith(titleLink);
+        titleLink.appendChild(titleStrong);
+      }
+
+      wireToggle(li, toggle, panel);
+    });
+
     const papers = window.__PAPERS__;
     if (!papers) return;
 

@@ -16,6 +16,18 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
 
 ## Publications
 
+- **Humans Cannot Detect AI-Generated Media But Communities May — For Now: Collaborative AI Detection in r/RealOrAI on Reddit**
+  <br>
+  **Tuğrulcan Elmas** <strong><i style="color:#e74d3c">Preprint</i></strong>
+  <br>
+  [PDF](https://arxiv.org/abs/2605.24287)
+
+- **Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity**
+  <br>
+  **Tuğrulcan Elmas**, Filipi Nascimento Silva, Manita Pote, Priyanka Dey, Keng-Chi Chang, Jinyi Ye, Luca Luceri, Cody Buntain, Emilio Ferrara, Alessandro Flammini, Fil Menczer <strong><i style="color:#e74d3c">Preprint</i></strong>
+  <br>
+  [PDF](https://arxiv.org/abs/2604.10566)
+
 - **ChatGPT vs Teachers vs Students: Large-Scale Analysis of Generative AI Discourse in Education Communities on Reddit**
   <br>
   Pelin Yüce, Xiangruo Dai, Rebecca Owens, **Tuğrulcan Elmas**
@@ -29,6 +41,9 @@ I currently teach [Understanding Society with Big Data: Computational Social Sci
   Basem Mohammed, Yusuf Mücahit Çetinkaya, **Tuğrulcan Elmas**
   <br>
   IEEE Internet Computing **2026**. <strong><i style="color:#e74d3c">Journal Paper</i></strong>
+  <br>
+  [PDF](https://ieeexplore.ieee.org/abstract/document/11557468) <button class="paper-abstract-toggle" aria-expanded="false"><span>Abstract</span><i class="fas fa-chevron-down"></i></button>
+  <span class="paper-abstract" hidden>Generative AI tools have increased the scale and accessibility of deceptive image creation, but the robustness of existing forgery detection methods under emerging editing tools and real-world social media conditions remains uncertain. This study evaluates state-of-the-art image forgery detectors on recent benchmarks and applies the strongest model to a historical influence-campaign case study: Russian troll activity during the 2016 U.S. presidential election. We find that TruFor is the most consistent detector across legacy and recent datasets, but that its performance degrades on edits produced by advanced tools such as Nano Banana. We then deploy a multimodal pipeline combining forgery localization, Optical Character Recognition (OCR), face recognition, and visual-language-model-based annotation to characterize manipulated images in the campaign. Our analysis suggests that Russian troll accounts relied primarily on low-effort meme-style edits and ridicule-oriented reputation attacks, disproportionately targeting prominent U.S. political figures including Hillary Clinton, Bill Clinton, and Barack Obama.</span>
 
 - **Gendered Communication Patterns of Political Elites on Truth Social**
   <br>
