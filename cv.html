@@ -13,7 +13,17 @@
     max-width:52em; margin:0 auto; padding:3em 2em 4em;
     font-size:11.2pt; line-height:1.5;
   }
-  header { border-bottom:2px solid var(--ink); padding-bottom:.9em; margin-bottom:1.4em; }
+  header {
+    border-bottom:2px solid var(--ink); padding-bottom:.9em; margin-bottom:1.4em;
+    display:grid; grid-template-columns:1fr auto; grid-template-rows:auto auto auto;
+    column-gap:1.5em; align-items:start;
+  }
+  header h1, header .role, header .contact { grid-column:1; }
+  .portrait {
+    grid-column:2; grid-row:1 / span 3;
+    width:6.6em; height:6.6em; object-fit:cover;
+    border-radius:4px; border:1px solid var(--rule);
+  }
   h1 { font-size:2em; margin:0 0 .12em; letter-spacing:-.01em; }
   .role { font-size:1.05em; color:var(--muted); margin:0 0 .5em; }
   .contact { font-size:.86em; color:var(--muted); }
@@ -51,10 +61,11 @@
 <body>
 
 <header>
+  <img class="portrait" src="./assets/img/avatar.png" alt="Tuğrulcan Elmas">
   <h1>Tuğrulcan Elmas</h1>
   <p class="role">Assistant Professor, School of Informatics, University of Edinburgh</p>
   <p class="contact">
-    tugrulcanelmas at gmail &middot;
+    <a href="mailto:tugrulcanelmas@gmail.com">tugrulcanelmas@gmail.com</a> &middot;
     <a href="https://tugrulcan.com">tugrulcan.com</a> &middot;
     <a href="https://scholar.google.com/citations?user=0oyamTsAAAAJ">Google Scholar</a> &middot;
     <a href="https://www.linkedin.com/in/tugrulcanelmas/">LinkedIn</a> &middot;
@@ -68,8 +79,8 @@ AI researcher and educator working on large language models and AI-generated med
 I teach Computational Social Science and Text Technologies in Data Science at the
 <a href="https://informatics.ed.ac.uk">University of Edinburgh</a> — ranked <strong>22nd in the world
 for Computer Science &amp; Information Systems</strong> (QS World University Rankings by Subject) — and
-I have built AI curricula for university students, summer institutes, and a general public audience.
-I teach and lecture in both English and Turkish.
+I teach two ~200-student courses a year, and I have built AI curricula for university students,
+summer institutes, and a general public audience. I teach and lecture in both English and Turkish.
 </p>
 
 <h2>Academic Positions</h2>
@@ -120,8 +131,8 @@ I teach and lecture in both English and Turkish.
 
 <h3>University courses</h3>
 <ul>
-  <li><strong><a href="http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm">Understanding Society with Big Data: Computational Social Science</a></strong> (2026–) — <em>nominated for a University of Edinburgh Teaching Award</em>. Lecture materials published openly at <a href="https://opencourse.inf.ed.ac.uk/css">opencourse.inf.ed.ac.uk/css</a>.</li>
-  <li><strong><a href="https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm">Text Technologies in Data Science</a></strong> (2024–) — web search and retrieval-augmented generation. University of Edinburgh, MSc/senior undergraduate.</li>
+  <li><strong><a href="http://www.drps.ed.ac.uk/25-26/dpt/cxinfr08034.htm">Understanding Society with Big Data: Computational Social Science</a></strong> (2026–) — ~200 students per year. <em>Nominated for a University of Edinburgh Teaching Award.</em> Lecture materials published openly at <a href="https://opencourse.inf.ed.ac.uk/css">opencourse.inf.ed.ac.uk/css</a>.</li>
+  <li><strong><a href="https://www.drps.ed.ac.uk/25-26/dpt/cxinfr11229.htm">Text Technologies in Data Science</a></strong> (2024–) — ~200 students per year. Web search and retrieval-augmented generation. University of Edinburgh, MSc/senior undergraduate.</li>
   <li><strong><a href="http://www.drps.ed.ac.uk/25-26/dpt/cxefie11080.htm">Evidence, Argument and Persuasion in a Digital Age</a></strong> (2025–2026) — Edinburgh Futures Institute.</li>
   <li><strong>Introduction to Object Oriented Programming</strong> (2025) — University of Edinburgh.</li>
   <li><strong>Distributed Information Systems</strong> (2018–2021), <strong>Applied Data Analysis</strong> (2018), <strong>Introduction à la Programmation</strong> (2019) — EPFL.</li>
