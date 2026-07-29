@@ -4,13 +4,46 @@ layout: research
 
 <div class="research-page">
 
-<h2>TRLLAB</h2>
+<style>
+.trllab-banner-wrap { margin: 0 -4rem 2rem -3.5rem; }
+.trllab-banner-wrap img { display:block; width:100%; height:auto; border-bottom:3px solid #1a3a8f; }
+@media (max-width: 900px) {
+  .trllab-banner-wrap { margin: 0 -1.5rem 2rem -1.5rem; }
+}
+@media (max-width: 540px) {
+  .trllab-banner-wrap { margin: 0 -1rem 2rem -1rem; }
+}
+.trllab-roster { list-style:none; padding:0; margin: 0 0 2rem; display:grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); column-gap: 1.5rem; }
+@media (max-width: 540px) {
+  .trllab-roster { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+}
+</style>
 
-<div class="team-photo-section" style="margin-top:2rem;">
+<div class="trllab-banner-wrap">
+  <img src="./assets/img/banner4.png" alt="TRLLAB — Trust, Reasoning &amp; Language Lab">
+</div>
+
+<h2 id="team" style="display:none;">Team</h2>
+
+<ul class="trllab-roster">
+{% for member in site.data.team.members %}
+  <li><a href="{{ member.url }}">{{ member.name }}</a> ({{ member.role }})</li>
+{% endfor %}
+</ul>
+
+<div class="team-photo-section">
 <div class="team-photo-wrap">
   <img src="./assets/img/lab.jpeg" alt="TRLLAB team photo" class="team-photo-img">
 </div>
 </div>
+
+<h2 id="alumni">Alumni</h2>
+
+<ul>
+{% for person in site.data.team.alumni %}
+  <li>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %} ({{ person.role }}){% if person.next %} &rarr; {{ person.next }}{% endif %}</li>
+{% endfor %}
+</ul>
 
 <h2>Projects</h2>
 
@@ -78,22 +111,6 @@ layout: research
 </div>
 
 </div>
-
-<h2 id="team">Team</h2>
-
-<ul>
-{% for member in site.data.team.members %}
-  <li><a href="{{ member.url }}">{{ member.name }}</a> ({{ member.role }})</li>
-{% endfor %}
-</ul>
-
-<h2 id="alumni">Alumni</h2>
-
-<ul>
-{% for person in site.data.team.alumni %}
-  <li>{% if person.url %}<a href="{{ person.url }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %} ({{ person.role }}){% if person.next %} &rarr; {{ person.next }}{% endif %}</li>
-{% endfor %}
-</ul>
 
 <!--
 <h2 id="house-rules">House Rules</h2>
