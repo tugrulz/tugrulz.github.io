@@ -5,14 +5,8 @@ layout: research
 <div class="research-page">
 
 <style>
-.trllab-banner-wrap { margin: 0 -4rem 2rem -3.5rem; }
+.trllab-banner-wrap { margin: 0 0 2rem; }
 .trllab-banner-wrap img { display:block; width:100%; height:auto; border-bottom:3px solid #1a3a8f; }
-@media (max-width: 900px) {
-  .trllab-banner-wrap { margin: 0 -1.5rem 2rem -1.5rem; }
-}
-@media (max-width: 540px) {
-  .trllab-banner-wrap { margin: 0 -1rem 2rem -1rem; }
-}
 .trllab-roster { list-style:none; padding:0; margin: 0 0 2rem; display:grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(4, auto); column-gap: 1.5rem; }
 @media (max-width: 540px) {
   .trllab-roster { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
