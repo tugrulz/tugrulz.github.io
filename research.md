@@ -4,11 +4,11 @@ layout: research
 
 <div class="research-page">
 
-<h2>Turullab</h2>
+<h2>TRLLAB</h2>
 
 <div class="team-photo-section" style="margin-top:2rem;">
 <div class="team-photo-wrap">
-  <img src="./assets/img/lab.jpeg" alt="Turullab team photo" class="team-photo-img">
+  <img src="./assets/img/lab.jpeg" alt="TRLLAB team photo" class="team-photo-img">
 </div>
 </div>
 
@@ -95,12 +95,14 @@ layout: research
 {% endfor %}
 </ul>
 
+<!--
 <h2 id="house-rules">House Rules</h2>
 
 <ol class="turullab-rules">
-  <li>Turullab is not Trollab</li>
-  <li>Turullab is <strong>NOT</strong> Trollab</li>
-  <li>Turullab does not exist. We are a subset of the <a href="https://smash.inf.ed.ac.uk">SMASH</a> group</li>
+  <li>TRLLAB is not Trollab</li>
+  <li>TRLLAB is <strong>NOT</strong> Trollab</li>
+  <li>TRLLAB does not exist. We are a subset of the <a href="https://smash.inf.ed.ac.uk">SMASH</a> group</li>
 </ol>
+-->
 
 </div>
